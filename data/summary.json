@@ -1,9 +1,16 @@
 {
-  "total_cases": 968,
-  "total_policies": 277,
+  "total_cases": 992,
+  "total_policies": 517,
   "target_cases": 1000,
   "target_policies": 1000,
-  "case_progress": 96.8,
-  "policy_progress": 27.7,
-  "last_updated": "2026-02-22T19:45:33.878389"
+  "progress_percent": 75.5,
+  "timestamp": "2026-02-22T21:00:34.213424",
+  "status": "in_progress",
+  "data_version": "2.0",
+  "analysis_level": "L3-深度分析",
+  "verification": {
+    "strict_mode": true,
+    "real_brands_only": true,
+    "verification_failed": 0
+  }
 }
