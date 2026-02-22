@@ -1,0 +1,82 @@
+[
+  {
+    "id": "case_001",
+    "name": "故宫文创IP运营",
+    "brand": "故宫博物院",
+    "category": "博物馆文创",
+    "province": "北京市",
+    "city": "东城区",
+    "description": "故宫博物院通过创新的文创产品开发，将传统文化元素与现代设计相结合，打造了多个爆款文创产品。",
+    "highlights": ["年销售额超15亿", "文创产品超10000种", "社交媒体粉丝超千万"],
+    "kpi": {
+      "sales_volume": "1000万+",
+      "revenue": "15亿+",
+      "conversion_rate": "4.5%",
+      "repurchase_rate": "35%"
+    }
+  },
+  {
+    "id": "case_002",
+    "name": "泡泡玛特盲盒营销",
+    "brand": "泡泡玛特",
+    "category": "潮玩盲盒",
+    "province": "北京市",
+    "city": "朝阳区",
+    "description": "泡泡玛特通过盲盒营销模式，成功将潮流玩具文化推广至全国，成为年轻人追捧的文化现象。",
+    "highlights": ["港股上市", "年营收超50亿", "会员超1500万"],
+    "kpi": {
+      "sales_volume": "5000万+",
+      "revenue": "50亿+",
+      "conversion_rate": "8.5%",
+      "repurchase_rate": "45%"
+    }
+  },
+  {
+    "id": "case_003",
+    "name": "敦煌研究院数字化",
+    "brand": "敦煌研究院",
+    "category": "数字文创",
+    "province": "甘肃省",
+    "city": "敦煌市",
+    "description": "敦煌研究院通过数字化技术保护和传播敦煌文化，开发了多个数字文创产品和虚拟展览。",
+    "highlights": ["数字敦煌项目", "全球访问量超千万", "文化遗产保护标杆"],
+    "kpi": {
+      "sales_volume": "100万+",
+      "revenue": "1亿+",
+      "conversion_rate": "3.2%",
+      "repurchase_rate": "28%"
+    }
+  },
+  {
+    "id": "case_004",
+    "name": "三星堆博物馆文创",
+    "brand": "三星堆博物馆",
+    "category": "博物馆文创",
+    "province": "四川省",
+    "city": "广汉市",
+    "description": "三星堆博物馆以神秘的古蜀文明为主题，开发了一系列深受欢迎的文创产品，让文物活起来。",
+    "highlights": ["考古盲盒爆款", "文创雪糕出圈", "年轻游客增长300%"],
+    "kpi": {
+      "sales_volume": "500万+",
+      "revenue": "5亿+",
+      "conversion_rate": "5.5%",
+      "repurchase_rate": "32%"
+    }
+  },
+  {
+    "id": "case_005",
+    "name": "河南博物院考古盲盒",
+    "brand": "河南博物院",
+    "category": "博物馆文创",
+    "province": "河南省",
+    "city": "郑州市",
+    "description": "河南博物院推出的考古盲盒让消费者体验考古发掘的乐趣，成为现象级文创产品。",
+    "highlights": ["月销量超10万", "话题阅读量超10亿", "博物馆文创标杆"],
+    "kpi": {
+      "sales_volume": "300万+",
+      "revenue": "3亿+",
+      "conversion_rate": "6.8%",
+      "repurchase_rate": "40%"
+    }
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "policy_national_001",
+    "title": "关于推动文化文物单位文化创意产品开发的若干意见",
+    "level": "national",
+    "region": "全国",
+    "category": "文创开发",
+    "tags": ["文创", "博物馆", "政策支持"],
+    "summary": "鼓励博物馆、美术馆等文化文物单位开发文创产品，推动文化资源活化利用。",
+    "issue_date": "2016-05-11"
+  },
+  {
+    "id": "policy_national_002",
+    "title": "文化和旅游部关于推动数字文化产业高质量发展的意见",
+    "level": "national",
+    "region": "全国",
+    "category": "数字文化",
+    "tags": ["数字文化", "文创", "高质量发展"],
+    "summary": "支持数字文创产业发展，推动传统文化数字化转型升级。",
+    "issue_date": "2020-11-16"
+  },
+  {
+    "id": "policy_national_003",
+    "title": "十四五文化和旅游发展规划",
+    "level": "national",
+    "region": "全国",
+    "category": "发展规划",
+    "tags": ["十四五", "文旅", "发展规划"],
+    "summary": "明确提出发展文化创意产业，推动文旅融合发展。",
+    "issue_date": "2021-06-02"
+  },
+  {
+    "id": "policy_beijing_001",
+    "title": "北京市推进文化创意产业创新发展的意见",
+    "level": "provincial",
+    "region": "北京市",
+    "category": "文创产业",
+    "tags": ["文创", "创新发展", "北京"],
+    "summary": "支持文创企业发展，打造全国文化中心。",
+    "issue_date": "2018-03-15"
+  },
+  {
+    "id": "policy_shanghai_001",
+    "title": "上海市促进文化创意产业发展条例",
+    "level": "provincial",
+    "region": "上海市",
+    "category": "文创产业",
+    "tags": ["文创", "产业发展", "上海"],
+    "summary": "为文创产业发展提供法律保障和政策支持。",
+    "issue_date": "2019-07-25"
+  }
+]
