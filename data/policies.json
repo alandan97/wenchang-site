@@ -1,0 +1,79 @@
+[
+  {
+    "id": "policy_national_001",
+    "title": "关于推动文化文物单位文化创意产品开发的若干意见",
+    "level": "国家级",
+    "year": 2016,
+    "summary": "鼓励博物馆、美术馆等文化文物单位开发文创产品，推动文化资源活化利用。"
+  },
+  {
+    "id": "policy_national_002",
+    "title": "文化和旅游部关于推动数字文化产业高质量发展的意见",
+    "level": "国家级",
+    "year": 2020,
+    "summary": "支持数字文创产业发展，推动传统文化数字化转型升级。"
+  },
+  {
+    "id": "policy_national_003",
+    "title": "十四五文化和旅游发展规划",
+    "level": "国家级",
+    "year": 2021,
+    "summary": "明确提出发展文化创意产业，推动文旅融合发展。"
+  },
+  {
+    "id": "policy_beijing_001",
+    "title": "北京市推进文化创意产业创新发展的意见",
+    "level": "省级",
+    "province": "北京市",
+    "year": 2018,
+    "summary": "支持文创企业发展，打造全国文化中心。"
+  },
+  {
+    "id": "policy_shanghai_001",
+    "title": "上海市促进文化创意产业发展条例",
+    "level": "省级",
+    "province": "上海市",
+    "year": 2019,
+    "summary": "为文创产业发展提供法律保障和政策支持。"
+  },
+  {
+    "id": "policy_guangdong_001",
+    "title": "广东省关于加快文化产业发展的若干意见",
+    "level": "省级",
+    "province": "广东省",
+    "year": 2020,
+    "summary": "推动粤港澳大湾区文化产业发展，打造文化创新高地。"
+  },
+  {
+    "id": "policy_zhejiang_001",
+    "title": "浙江省文化产业高质量发展实施意见",
+    "level": "省级",
+    "province": "浙江省",
+    "year": 2021,
+    "summary": "支持数字文化、文创设计等产业发展，建设文化强省。"
+  },
+  {
+    "id": "policy_jiangsu_001",
+    "title": "江苏省文化产业促进条例",
+    "level": "省级",
+    "province": "江苏省",
+    "year": 2019,
+    "summary": "促进文化产业健康发展，提升文化软实力。"
+  },
+  {
+    "id": "policy_sichuan_001",
+    "title": "四川省关于推动文化旅游深度融合发展的实施意见",
+    "level": "省级",
+    "province": "四川省",
+    "year": 2020,
+    "summary": "推动文旅融合，发展特色文创产业。"
+  },
+  {
+    "id": "policy_shaanxi_001",
+    "title": "陕西省关于推动文化产业高质量发展的实施意见",
+    "level": "省级",
+    "province": "陕西省",
+    "year": 2021,
+    "summary": "发挥历史文化资源优势，打造文化产业高地。"
+  }
+]
