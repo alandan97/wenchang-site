@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>案例详情 - 文创指南</title>
-    <script src="github-data-loader.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -26,7 +25,6 @@
             line-height: 1.8;
         }
         
-        /* 导航 */
         nav {
             background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
             padding: 1rem 2rem;
@@ -62,7 +60,6 @@
             color: var(--gold);
         }
         
-        /* 主内容 */
         main {
             padding-top: 80px;
             max-width: 1000px;
@@ -70,20 +67,15 @@
             padding: 100px 2rem 4rem;
         }
         
-        /* 加载状态 */
-        .loading {
+        .loading, .error, .not-found {
             text-align: center;
             padding: 4rem;
-            color: var(--text-secondary);
         }
         
-        .error {
-            text-align: center;
-            padding: 4rem;
-            color: var(--primary);
-        }
+        .loading { color: var(--text-secondary); }
+        .error { color: var(--primary); }
+        .not-found { color: var(--text-secondary); }
         
-        /* 案例头部 */
         .case-header {
             background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
             color: white;
@@ -117,7 +109,6 @@
             opacity: 0.8;
         }
         
-        /* 内容区块 */
         .section {
             background: white;
             padding: 2rem;
@@ -138,7 +129,10 @@
             color: var(--text-secondary);
         }
         
-        /* KPI 网格 */
+        .section-content p {
+            margin-bottom: 1rem;
+        }
+        
         .kpi-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -163,7 +157,6 @@
             margin-top: 0.5rem;
         }
         
-        /* 列表样式 */
         .feature-list {
             list-style: none;
         }
@@ -182,7 +175,6 @@
             color: var(--gold);
         }
         
-        /* 返回按钮 */
         .back-btn {
             display: inline-block;
             margin-bottom: 2rem;
@@ -199,7 +191,6 @@
             color: white;
         }
         
-        /* 标签 */
         .tag {
             display: inline-block;
             background: var(--cream);
@@ -233,6 +224,16 @@
     </main>
     
     <script>
+        // 本地案例数据（与首页一致）
+        const localCases = [
+            { id: 'gugong', name: '故宫淘宝', category: '博物馆文创', feature: '宫廷风', desc: '以故宫文化为核心，打造年轻化、时尚化的文创产品', brand: '故宫博物院', province: '北京市', city: '东城区' },
+            { id: 'popmart', name: '泡泡玛特', category: '潮玩盲盒', feature: '潮流IP', desc: '潮流文化娱乐品牌，通过设计师IP和盲盒模式连接艺术家与粉丝', brand: '泡泡玛特', province: '北京市', city: '朝阳区' },
+            { id: 'sanxingdui', name: '三星堆博物馆', category: '博物馆文创', feature: '神秘古蜀', desc: '以三星堆文物为灵感，打造神秘古蜀风格的文创产品', brand: '三星堆博物馆', province: '四川省', city: '德阳市' },
+            { id: 'gansumuseum', name: '甘肃省博物馆', category: '博物馆文创', feature: '绿马玩偶', desc: '以铜奔马为原型开发的绿马玩偶走红网络', brand: '甘肃省博物馆', province: '甘肃省', city: '兰州市' },
+            { id: 'henanmuseum', name: '河南博物院', category: '博物馆文创', feature: '考古盲盒', desc: '考古盲盒销量破百万，开创博物馆文创新模式', brand: '河南博物院', province: '河南省', city: '郑州市' },
+            { id: 'suzhoumuseum', name: '苏州博物馆', category: '博物馆文创', feature: '江南文化', desc: '江南文化主题，年营收超5000万元', brand: '苏州博物馆', province: '江苏省', city: '苏州市' }
+        ];
+        
         // 获取 URL 参数
         function getUrlParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -249,64 +250,87 @@
                 return;
             }
             
-            try {
-                // 加载案例数据
-                const cases = await WenChangData.fetchCases();
-                const caseData = cases.find(c => c.id === caseId);
-                
-                if (!caseData) {
-                    container.innerHTML = '<div class="error">错误：未找到案例</div>';
-                    return;
+            console.log('查找案例:', caseId);
+            
+            // 先尝试从本地数据查找
+            let caseData = localCases.find(c => c.id === caseId);
+            
+            // 如果本地找不到，尝试从 data/cases.json 加载
+            if (!caseData) {
+                try {
+                    const response = await fetch('./data/cases.json');
+                    if (response.ok) {
+                        const cases = await response.json();
+                        caseData = cases.find(c => c.id === caseId);
+                    }
+                } catch (e) {
+                    console.log('加载外部数据失败:', e);
                 }
-                
-                // 渲染详情
+            }
+            
+            if (!caseData) {
                 container.innerHTML = `
-                    <div class="case-header">
-                        <span class="case-category">${caseData.category}</span>
-                        <h1 class="case-title">${caseData.name}</h1>
-                        <div class="case-brand">${caseData.brand}</div>
-                        <div class="case-location">📍 ${caseData.city || caseData.province}</div>
-                    </div>
-                    
-                    <div class="section">
-                        <h2 class="section-title">产品描述</h2>
-                        <div class="section-content">
-                            <p>${caseData.description}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="section">
-                        <h2 class="section-title">核心亮点</h2>
-                        <ul class="feature-list">
-                            ${caseData.highlights ? caseData.highlights.map(h => `<li>${h}</li>`).join('') : '<li>暂无数据</li>'}
-                        </ul>
-                    </div>
-                    
-                    <div class="section">
-                        <h2 class="section-title">关键数据</h2>
-                        <div class="kpi-grid">
-                            ${caseData.kpi ? Object.entries(caseData.kpi).map(([key, value]) => `
-                                <div class="kpi-item">
-                                    <div class="kpi-value">${value}</div>
-                                    <div class="kpi-label">${key}</div>
-                                </div>
-                            `).join('') : '<div class="kpi-item"><div class="kpi-value">-</div><div class="kpi-label">暂无数据</div></div>'}
-                        </div>
-                    </div>
-                    
-                    <div class="section">
-                        <h2 class="section-title">位置信息</h2>
-                        <div class="section-content">
-                            <p><strong>省份：</strong>${caseData.province || '未知'}</p>
-                            <p><strong>城市：</strong>${caseData.city || '未知'}</p>
-                        </div>
+                    <div class="not-found">
+                        <h2>未找到案例</h2>
+                        <p>案例ID: ${caseId}</p>
+                        <p>该案例可能尚未收录或ID不正确</p>
+                        <br>
+                        <a href="index.html" class="back-btn">返回首页</a>
                     </div>
                 `;
-                
-            } catch (error) {
-                console.error('加载案例失败:', error);
-                container.innerHTML = '<div class="error">加载失败，请刷新重试</div>';
+                return;
             }
+            
+            console.log('找到案例:', caseData);
+            
+            // 渲染详情
+            container.innerHTML = `
+                <div class="case-header">
+                    <span class="case-category">${caseData.category}</span>
+                    <h1 class="case-title">${caseData.name}</h1>
+                    <div class="case-brand">${caseData.brand || caseData.name}</div>
+                    <div class="case-location">📍 ${caseData.city || caseData.province || '未知'}</div>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">产品描述</h2>
+                    <div class="section-content">
+                        <p>${caseData.desc || caseData.description || '暂无描述'}</p>
+                    </div>
+                </div>
+                
+                ${caseData.feature ? `
+                <div class="section">
+                    <h2 class="section-title">核心特色</h2>
+                    <div class="section-content">
+                        <span class="tag">${caseData.feature}</span>
+                        ${caseData.highlights ? caseData.highlights.map(h => `<span class="tag">${h}</span>`).join('') : ''}
+                    </div>
+                </div>
+                ` : ''}
+                
+                ${caseData.kpi ? `
+                <div class="section">
+                    <h2 class="section-title">关键数据</h2>
+                    <div class="kpi-grid">
+                        ${Object.entries(caseData.kpi).map(([key, value]) => `
+                            <div class="kpi-item">
+                                <div class="kpi-value">${value}</div>
+                                <div class="kpi-label">${key}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                ` : ''}
+                
+                <div class="section">
+                    <h2 class="section-title">位置信息</h2>
+                    <div class="section-content">
+                        <p><strong>省份：</strong>${caseData.province || '未知'}</p>
+                        <p><strong>城市：</strong>${caseData.city || '未知'}</p>
+                    </div>
+                </div>
+            `;
         }
         
         // 页面加载完成后渲染
