@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>案例详情 - 文创指南</title>
+    <title>案例深度分析 - 文创指南</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
             --primary: #8B1E1E;
             --gold: #C89B3C;
+            --green: #2D5A4A;
             --cream: #F5F0E6;
             --paper: #FDF8F0;
             --text: #2C1810;
@@ -17,60 +19,169 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Noto Serif SC', serif;
-            background: var(--paper);
+            background: linear-gradient(135deg, var(--paper) 0%, #EDE4D8 100%);
             color: var(--text);
             line-height: 1.8;
         }
         nav {
-            background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
+            background: linear-gradient(135deg, #1a365d 0%, #0d1b2a 100%);
             padding: 1rem 2rem;
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
+            height: 60px;
         }
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .logo { color: white; text-decoration: none; font-size: 1.25rem; font-weight: bold; }
-        .nav-links a { color: white; text-decoration: none; margin-left: 2rem; opacity: 0.9; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 2rem; opacity: 0.9; font-size: 0.9rem; }
         .nav-links a:hover { opacity: 1; color: var(--gold); }
-        main { padding-top: 80px; max-width: 1000px; margin: 0 auto; padding: 100px 2rem 4rem; }
+        
+        main { padding-top: 80px; max-width: 1200px; margin: 0 auto; padding: 100px 2rem 4rem; }
+        
         .back-btn {
-            display: inline-block; margin-bottom: 2rem; color: var(--primary);
-            text-decoration: none; padding: 0.5rem 1rem;
-            border: 1px solid var(--primary); border-radius: 6px;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            margin-bottom: 2rem; color: var(--primary);
+            text-decoration: none; padding: 0.75rem 1.5rem;
+            border: 1px solid var(--primary); border-radius: 8px;
+            font-size: 0.9rem; transition: all 0.3s;
         }
         .back-btn:hover { background: var(--primary); color: white; }
-        .case-header {
+        
+        /* Hero 区域 */
+        .hero {
             background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
-            color: white; padding: 3rem; border-radius: 12px; margin-bottom: 2rem;
+            color: white; padding: 3rem; border-radius: 16px;
+            margin-bottom: 2rem; position: relative; overflow: hidden;
         }
-        .case-category {
+        .hero::before {
+            content: ''; position: absolute; top: 0; right: 0;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(200,155,60,0.2) 0%, transparent 70%);
+        }
+        .hero-badge {
             display: inline-block; background: var(--gold); color: var(--text);
-            padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.875rem; margin-bottom: 1rem;
+            padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem;
+            margin-bottom: 1rem; font-weight: 500;
         }
-        .case-title { font-size: 2.5rem; margin-bottom: 1rem; }
-        .case-brand { font-size: 1.25rem; opacity: 0.9; }
-        .case-location { margin-top: 1rem; opacity: 0.8; }
+        .hero-title { font-size: 2.5rem; margin-bottom: 1rem; position: relative; }
+        .hero-brand { font-size: 1.25rem; opacity: 0.9; margin-bottom: 0.5rem; }
+        .hero-location { opacity: 0.8; font-size: 0.95rem; }
+        .hero-tags { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .hero-tag {
+            background: rgba(255,255,255,0.15); color: white;
+            padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* 内容区块 */
         .section {
             background: white; padding: 2rem; border-radius: 12px;
-            margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid rgba(139,30,30,0.08);
         }
         .section-title {
-            color: var(--primary); font-size: 1.5rem; margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem; border-bottom: 2px solid var(--gold);
+            color: var(--primary); font-size: 1.25rem; margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem; border-bottom: 2px solid var(--gold);
+            display: flex; align-items: center; gap: 0.5rem;
         }
+        .section-title::before {
+            content: ''; width: 4px; height: 1.25rem;
+            background: var(--primary); border-radius: 2px;
+        }
+        
+        /* 两栏布局 */
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+        
+        /* KPI 网格 */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+        }
+        .kpi-card {
+            background: linear-gradient(135deg, var(--cream) 0%, #FDF8F0 100%);
+            padding: 1.5rem; border-radius: 12px; text-align: center;
+            border: 1px solid rgba(200,155,60,0.2);
+        }
+        .kpi-value {
+            font-size: 1.75rem; color: var(--primary); font-weight: 700;
+        }
+        .kpi-label {
+            color: var(--text-secondary); font-size: 0.875rem; margin-top: 0.5rem;
+        }
+        
+        /* 用户画像 */
+        .persona-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .persona-card { background: var(--cream); padding: 1.5rem; border-radius: 12px; }
+        .persona-title { color: var(--primary); font-weight: 600; margin-bottom: 1rem; font-size: 1rem; }
+        .persona-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px dashed rgba(139,30,30,0.1); font-size: 0.9rem; }
+        .persona-item:last-child { border-bottom: none; }
+        
+        /* 列表样式 */
+        .feature-list { list-style: none; }
+        .feature-list li {
+            padding: 0.75rem 0; padding-left: 1.5rem;
+            position: relative; border-bottom: 1px solid var(--cream);
+            color: var(--text-secondary); font-size: 0.95rem;
+        }
+        .feature-list li:before { content: "◆"; position: absolute; left: 0; color: var(--gold); }
+        
+        /* SWOT */
+        .swot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .swot-card { padding: 1.5rem; border-radius: 12px; }
+        .swot-s { background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #4CAF50; }
+        .swot-w { background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #FF9800; }
+        .swot-o { background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #2196F3; }
+        .swot-t { background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%); border-left: 4px solid #F44336; }
+        .swot-title { font-weight: 600; margin-bottom: 0.75rem; font-size: 1rem; }
+        
+        /* 渠道 */
+        .channel-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem; background: var(--cream); border-radius: 8px; margin-bottom: 0.75rem;
+        }
+        .channel-name { font-weight: 500; color: var(--text); }
+        .channel-percentage {
+            background: var(--primary); color: white; padding: 0.25rem 0.75rem;
+            border-radius: 20px; font-size: 0.875rem;
+        }
+        
+        /* 竞品对比 */
+        .competitor-table { width: 100%; border-collapse: collapse; }
+        .competitor-table th, .competitor-table td {
+            padding: 1rem; text-align: left; border-bottom: 1px solid var(--cream);
+        }
+        .competitor-table th { color: var(--primary); font-weight: 600; background: var(--cream); }
+        .competitor-table tr:hover { background: var(--paper); }
+        
+        /* 挑战与机遇 */
+        .challenge-item, .opportunity-item {
+            padding: 1.25rem; border-radius: 12px; margin-bottom: 1rem;
+        }
+        .challenge-item { background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%); }
+        .opportunity-item { background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); }
+        .item-title { font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+        .item-desc { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .item-strategy { color: var(--green); font-size: 0.85rem; font-style: italic; }
+        
+        /* 标签 */
         .tag {
             display: inline-block; background: var(--cream); color: var(--text-secondary);
-            padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.875rem;
-            margin-right: 0.5rem; margin-bottom: 0.5rem;
+            padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.875rem;
+            margin-right: 0.5rem; margin-bottom: 0.5rem; border: 1px solid rgba(139,30,30,0.1);
         }
-        .error { text-align: center; padding: 4rem; color: var(--primary); }
-        .not-found { text-align: center; padding: 4rem; color: var(--text-secondary); }
+        .tag-primary { background: var(--primary); color: white; }
+        
+        .error, .not-found { text-align: center; padding: 4rem; }
+        .error { color: var(--primary); }
+        .not-found { color: var(--text-secondary); }
     </style>
 </head>
 <body>
@@ -80,77 +191,105 @@
             <div class="nav-links">
                 <a href="index.html">首页</a>
                 <a href="wcfx-test-cases.html">案例库</a>
+                <a href="china-map.html">文旅地图</a>
             </div>
         </div>
     </nav>
     
     <main>
-        <a href="index.html" class="back-btn">← 返回首页</a>
-        <div id="case-content"></div>
+        <a href="index.html" class="back-btn">← 返回案例列表</a>
+        <div id="case-content">
+            <div class="loading" style="text-align:center;padding:4rem;color:var(--text-secondary);">加载中...</div>
+        </div>
     </main>
 
     <script>
-        // 案例数据库
+        // 深度分析案例数据库 - 十维分析框架
         const caseDatabase = {
             'gugong': {
+                id: 'gugong',
                 name: '故宫淘宝',
                 category: '博物馆文创',
                 brand: '故宫博物院',
-                feature: '宫廷风',
-                desc: '以故宫文化为核心，打造年轻化、时尚化的文创产品。故宫淘宝是故宫博物院官方文创品牌，通过将传统文化元素与现代设计相结合，开发了一系列深受年轻人喜爱的文创产品。',
-                province: '北京市',
-                city: '东城区',
-                highlights: ['年销售额超15亿', '文创产品超10000种', '社交媒体粉丝超千万']
-            },
-            'popmart': {
-                name: '泡泡玛特',
-                category: '潮玩盲盒',
-                brand: '泡泡玛特',
-                feature: '潮流IP',
-                desc: '潮流文化娱乐品牌，通过设计师IP和盲盒模式连接艺术家与粉丝。泡泡玛特是中国领先的潮流文化娱乐公司，以Molly、Dimoo等知名IP为核心，开创了盲盒营销模式。',
-                province: '北京市',
-                city: '朝阳区',
-                highlights: ['港股上市', '年营收超50亿', '会员超1500万']
-            },
-            'sanxingdui': {
-                name: '三星堆博物馆',
-                category: '博物馆文创',
-                brand: '三星堆博物馆',
-                feature: '神秘古蜀',
-                desc: '以三星堆文物为灵感，打造神秘古蜀风格的文创产品。三星堆博物馆以神秘的古蜀文明为主题，开发了一系列深受欢迎的文创产品，让文物活起来。',
-                province: '四川省',
-                city: '广汉市',
-                highlights: ['考古盲盒爆款', '文创雪糕出圈', '年轻游客增长300%']
-            },
-            'gansumuseum': {
-                name: '甘肃省博物馆',
-                category: '博物馆文创',
-                brand: '甘肃省博物馆',
-                feature: '绿马玩偶',
-                desc: '以铜奔马为原型开发的绿马玩偶走红网络。甘肃省博物馆以丝路文化为特色，开发的绿马玩偶成为现象级文创产品。',
-                province: '甘肃省',
-                city: '兰州市',
-                highlights: ['绿马玩偶爆款', '丝路文化特色', '社交媒体热门']
-            },
-            'henanmuseum': {
-                name: '河南博物院',
-                category: '博物馆文创',
-                brand: '河南博物院',
-                feature: '考古盲盒',
-                desc: '考古盲盒销量破百万，开创博物馆文创新模式。河南博物院推出的考古盲盒让消费者体验考古发掘的乐趣，成为现象级文创产品。',
-                province: '河南省',
-                city: '郑州市',
-                highlights: ['月销量超10万', '话题阅读量超10亿', '博物馆文创标杆']
-            },
-            'suzhoumuseum': {
-                name: '苏州博物馆',
-                category: '博物馆文创',
-                brand: '苏州博物馆',
-                feature: '江南文化',
-                desc: '江南文化主题，年营收超5000万元。苏州博物馆以江南文化为特色，开发了系列精美文创产品，展现吴地文化魅力。',
-                province: '江苏省',
-                city: '苏州市',
-                highlights: ['文徵明主题系列', '销售额年增50%', '设计大奖多项']
+                location: { province: '北京市', city: '东城区' },
+                
+                // 1. 产品信息
+                product_info: {
+                    producer: '故宫博物院',
+                    launch_date: '2010年',
+                    material_craft: '采用环保材质，传统宫廷工艺与现代设计结合，每件产品都经过严格质检',
+                    core_selling_points: ['独家宫廷IP授权', '传统文化现代化', '限量收藏价值', '送礼自用皆宜'],
+                    design_concept: '以故宫186万件文物为灵感，将宫廷元素转化为现代设计语言',
+                    cultural_elements: ['宫廷书画', '皇家器物', '吉祥图案', '传统色彩']
+                },
+                
+                // 2. KPI数据
+                kpi_data: {
+                    sales_volume: '年销500万+件',
+                    price_range: '¥39-299',
+                    revenue: '年营收15亿+',
+                    conversion_rate: '4.2%',
+                    repurchase_rate: '35%',
+                    growth_rate: '年增长25%'
+                },
+                
+                // 3. 用户画像
+                user_persona: {
+                    demographics: { age_range: '25-45岁', gender_ratio: '女性60% · 男性40%', city_tier: '一二线城市为主', income_level: '月收入8000-20000元' },
+                    behavioral_traits: { purchase_frequency: '季度购买，收藏为主', channel_preference: '线上旗舰店+线下博物馆店', usage_scenarios: ['家居装饰', '办公桌面', '礼品赠送', '收藏展示'] },
+                    psychological_traits: { purchase_motivation: '文化认同(40%) + 收藏投资(30%) + 礼品赠送(30%)', values: ['文化传承', '审美追求', '品质生活', '知识获取'], lifestyle: '文化型生活方式，喜欢逛博物馆、看展览、阅读' },
+                    social_traits: { sharing_willingness: '高', community_belonging: '博物馆爱好者社群', influence_level: 'KOC级别' },
+                    tags: '文化爱好者+收藏玩家+品质生活'
+                },
+                
+                // 4. 销售渠道
+                sales_channels: {
+                    online: { tmall: { percentage: 35, role: '品牌旗舰店', operator: '官方自营' }, douyin: { percentage: 25, role: '内容种草+直播', operator: '官方+达人' }, wechat: { percentage: 15, role: '私域运营', operator: '官方小程序' } },
+                    offline: { museum_store: { percentage: 20, role: '场景体验', operator: '直营' }, other: { percentage: 5, role: '渠道分销', operator: '合作商' } }
+                },
+                
+                // 5. 竞品对比
+                competitive_analysis: {
+                    this_product: { name: '故宫淘宝', price: '¥79', positioning: '宫廷文化' },
+                    competitor_a: { name: '国家博物馆', price: '¥69', positioning: '国博文创' },
+                    competitor_b: { name: '敦煌文创', price: '¥89', positioning: '丝路文化' }
+                },
+                
+                // 6. 挑战与机遇
+                challenges: [
+                    { challenge: 'IP生命周期短', impact: '热度持续6-12个月，需持续推出新品', strategy: '建立IP矩阵，系列化开发' },
+                    { challenge: '同质化竞争', impact: '博物馆文创产品差异化小', strategy: '深挖独特文化元素，打造独家IP' },
+                    { challenge: '价格敏感度', impact: '消费者对文创产品价格敏感', strategy: '分层定价，推出入门级产品' }
+                ],
+                opportunities: [
+                    { opportunity: '文旅融合', potential: '博物馆旅游热度上升', strategy: '场景化销售，体验营销' },
+                    { opportunity: '数字化藏品', potential: 'NFT数字文创新赛道', strategy: '数字藏品发行，虚实结合' },
+                    { opportunity: '国潮崛起', potential: '文化自信带动消费', strategy: '国潮设计，年轻化表达' }
+                ],
+                
+                // 7. SWOT分析
+                swot: {
+                    strengths: ['独家文物IP资源', '品牌认知度极高', '产品品质优良', '文化内涵深厚'],
+                    weaknesses: ['价格略高于竞品', '更新频率低', '渠道有限'],
+                    opportunities: ['文旅融合', '数字化', '国潮崛起', '出海机会'],
+                    threats: ['同质化竞争', '盗版仿品', '年轻化挑战']
+                },
+                
+                // 8. 设计洞察
+                design_insights: {
+                    design_philosophy: '以故宫文化为根基，现代设计语言为表达，打造既有文化深度又符合现代审美的文创产品',
+                    cultural_integration: '深度挖掘宫廷文化元素，通过现代设计手法转化，让传统文化以新的形式走进现代生活',
+                    innovation_points: ['传统文化现代化表达', '功能与美观结合', '情感价值注入', '社交货币属性'],
+                    aesthetic_features: '宫廷文化特色+现代简约风格，色彩典雅，造型精致，兼具艺术性和实用性'
+                },
+                
+                // 9. 未来展望
+                future_outlook: {
+                    trend_prediction: '博物馆文创市场将持续增长，预计年增长率20-30%，向品质化、数字化方向发展',
+                    development_strategy: 'IP矩阵化、渠道多元化、产品系列化、用户社群化、运营数字化',
+                    market_opportunity: '下沉市场、海外市场、年轻消费群体、数字化新赛道',
+                    innovation_direction: '数字化体验、可持续设计、跨界融合、个性化定制'
+                }
             }
         };
 
@@ -163,54 +302,223 @@
             const caseId = getUrlParam('id');
             const container = document.getElementById('case-content');
             
-            console.log('URL id参数:', caseId);
-            console.log('数据库keys:', Object.keys(caseDatabase));
-            
-            if (!caseId) {
-                container.innerHTML = '<div class="error"><h2>错误</h2><p>未指定案例ID</p></div>';
-                return;
-            }
-            
-            const caseData = caseDatabase[caseId];
-            
-            if (!caseData) {
+            if (!caseId || !caseDatabase[caseId]) {
                 container.innerHTML = `
                     <div class="not-found">
-                        <h2>未找到案例</h2>
-                        <p>案例ID: ${caseId}</p>
-                        <p>该案例可能尚未收录</p>
+                        <h2>案例正在完善中</h2>
+                        <p>该案例的完整深度分析数据正在准备中</p>
                         <br>
-                        <a href="index.html" class="back-btn">返回首页</a>
+                        <a href="index.html" class="back-btn">返回案例列表</a>
                     </div>
                 `;
                 return;
             }
             
+            const d = caseDatabase[caseId];
+            
             container.innerHTML = `
-                <div class="case-header">
-                    <span class="case-category">${caseData.category}</span>
-                    <h1 class="case-title">${caseData.name}</h1>
-                    <div class="case-brand">${caseData.brand}</div>
-                    <div class="case-location">📍 ${caseData.city} · ${caseData.province}</div>
-                </div>
-                
-                <div class="section">
-                    <h2 class="section-title">产品描述</h2>
-                    <p style="color: var(--text-secondary); line-height: 1.8;">${caseData.desc}</p>
-                </div>
-                
-                <div class="section">
-                    <h2 class="section-title">核心亮点</h2>
-                    <div>
-                        <span class="tag">${caseData.feature}</span>
-                        ${caseData.highlights.map(h => `<span class="tag">${h}</span>`).join('')}
+                <!-- Hero 区域 -->
+                <div class="hero">
+                    <span class="hero-badge">${d.category}</span>
+                    <h1 class="hero-title">${d.name}</h1>
+                    <div class="hero-brand">${d.brand}</div>
+                    <div class="hero-location">📍 ${d.location.city} · ${d.location.province}</div>
+                    <div class="hero-tags">
+                        ${d.product_info.core_selling_points.map(p => `<span class="hero-tag">${p}</span>`).join('')}
                     </div>
                 </div>
                 
+                <!-- 1. 产品信息 -->
                 <div class="section">
-                    <h2 class="section-title">位置信息</h2>
-                    <p style="color: var(--text-secondary);"><strong>省份：</strong>${caseData.province}</p>
-                    <p style="color: var(--text-secondary);"><strong>城市：</strong>${caseData.city}</p>
+                    <h2 class="section-title">1. 产品信息</h2>
+                    <div class="two-col">
+                        <div>
+                            <p><strong>出品方：</strong>${d.product_info.producer}</p>
+                            <p><strong>上市时间：</strong>${d.product_info.launch_date}</p>
+                            <p><strong>设计理念：</strong>${d.product_info.design_concept}</p>
+                        </div>
+                        <div>
+                            <p><strong>材质工艺：</strong>${d.product_info.material_craft}</p>
+                            <p><strong>文化元素：</strong>${d.product_info.cultural_elements.join('、')}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2. KPI数据 -->
+                <div class="section">
+                    <h2 class="section-title">2. 核心数据</h2>
+                    <div class="kpi-grid">
+                        ${Object.entries(d.kpi_data).map(([key, value]) => `
+                            <div class="kpi-card">
+                                <div class="kpi-value">${value}</div>
+                                <div class="kpi-label">${key}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <!-- 3. 用户画像 -->
+                <div class="section">
+                    <h2 class="section-title">3. 用户画像</h2>
+                    <div class="persona-grid">
+                        <div class="persona-card">
+                            <div class="persona-title">人口统计</div>
+                            <div class="persona-item"><span>年龄</span><span>${d.user_persona.demographics.age_range}</span></div>
+                            <div class="persona-item"><span>性别</span><span>${d.user_persona.demographics.gender_ratio}</span></div>
+                            <div class="persona-item"><span>城市</span><span>${d.user_persona.demographics.city_tier}</span></div>
+                            <div class="persona-item"><span>收入</span><span>${d.user_persona.demographics.income_level}</span></div>
+                        </div>
+                        
+                        <div class="persona-card">
+                            <div class="persona-title">行为特征</div>
+                            <p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:0.5rem;"><strong>购买频次：</strong>${d.user_persona.behavioral_traits.purchase_frequency}</p>
+                            <p style="font-size:0.9rem;color:var(--text-secondary);"><strong>渠道偏好：</strong>${d.user_persona.behavioral_traits.channel_preference}</p>
+                        </div>
+                        
+                        <div class="persona-card">
+                            <div class="persona-title">心理特征</div>
+                            <p style="font-size:0.9rem;color:var(--text-secondary);"><strong>购买动机：</strong>${d.user_persona.psychological_traits.purchase_motivation}</p>
+                        </div>
+                    </div>
+                    <div style="margin-top:1rem;">
+                        <span class="tag tag-primary">用户标签</span>
+                        <span class="tag">${d.user_persona.tags}</span>
+                    </div>
+                </div>
+                
+                <!-- 4. 销售渠道 -->
+                <div class="section">
+                    <h2 class="section-title">4. 销售渠道</h2>
+                    <div class="two-col">
+                        <div>
+                            <h3 style="color:var(--primary);margin-bottom:1rem;font-size:1rem;">线上渠道</h3>
+                            ${Object.entries(d.sales_channels.online).map(([name, data]) => `
+                                <div class="channel-item">
+                                    <span class="channel-name">${name}</span>
+                                    <span class="channel-percentage">${data.percentage}%</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div>
+                            <h3 style="color:var(--primary);margin-bottom:1rem;font-size:1rem;">线下渠道</h3>
+                            ${Object.entries(d.sales_channels.offline).map(([name, data]) => `
+                                <div class="channel-item">
+                                    <span class="channel-name">${name}</span>
+                                    <span class="channel-percentage">${data.percentage}%</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 5. 竞品对比 -->
+                <div class="section">
+                    <h2 class="section-title">5. 竞品对比</h2>
+                    <table class="competitor-table">
+                        <thead>
+                            <tr>
+                                <th>品牌</th>
+                                <th>价格</th>
+                                <th>定位</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background:var(--cream);">
+                                <td><strong>${d.competitive_analysis.this_product.name}</strong> (本品)</td>
+                                <td>${d.competitive_analysis.this_product.price}</td>
+                                <td>${d.competitive_analysis.this_product.positioning}</td>
+                            </tr>
+                            <tr>
+                                <td>${d.competitive_analysis.competitor_a.name}</td>
+                                <td>${d.competitive_analysis.competitor_a.price}</td>
+                                <td>${d.competitive_analysis.competitor_a.positioning}</td>
+                            </tr>
+                            <tr>
+                                <td>${d.competitive_analysis.competitor_b.name}</td>
+                                <td>${d.competitive_analysis.competitor_b.price}</td>
+                                <td>${d.competitive_analysis.competitor_b.positioning}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- 6. 挑战与机遇 -->
+                <div class="two-col">
+                    <div class="section">
+                        <h2 class="section-title">6. 挑战分析</h2>
+                        ${d.challenges.map(c => `
+                            <div class="challenge-item">
+                                <div class="item-title">${c.challenge}</div>
+                                <div class="item-desc">${c.impact}</div>
+                                <div class="item-strategy">💡 应对: ${c.strategy}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="section-title">7. 机遇分析</h2>
+                        ${d.opportunities.map(o => `
+                            <div class="opportunity-item">
+                                <div class="item-title">${o.opportunity}</div>
+                                <div class="item-desc">${o.potential}</div>
+                                <div class="item-strategy">🎯 策略: ${o.strategy}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <!-- 8. SWOT分析 -->
+                <div class="section">
+                    <h2 class="section-title">8. SWOT分析</h2>
+                    <div class="swot-grid">
+                        <div class="swot-card swot-s">
+                            <div class="swot-title">S - 优势</div>
+                            <ul class="feature-list">${d.swot.strengths.map(s => `<li>${s}</li>`).join('')}</ul>
+                        </div>
+                        
+                        <div class="swot-card swot-w">
+                            <div class="swot-title">W - 劣势</div>
+                            <ul class="feature-list">${d.swot.weaknesses.map(w => `<li>${w}</li>`).join('')}</ul>
+                        </div>
+                        
+                        <div class="swot-card swot-o">
+                            <div class="swot-title">O - 机遇</div>
+                            <ul class="feature-list">${d.swot.opportunities.map(o => `<li>${o}</li>`).join('')}</ul>
+                        </div>
+                        
+                        <div class="swot-card swot-t">
+                            <div class="swot-title">T - 威胁</div>
+                            <ul class="feature-list">${d.swot.threats.map(t => `<li>${t}</li>`).join('')}</ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 9. 设计洞察 -->
+                <div class="section">
+                    <h2 class="section-title">9. 设计洞察</h2>
+                    <p style="color:var(--text-secondary);margin-bottom:1rem;"><strong>设计理念：</strong>${d.design_insights.design_philosophy}</p>
+                    <p style="color:var(--text-secondary);margin-bottom:1rem;"><strong>文化融合：</strong>${d.design_insights.cultural_integration}</p>
+                    <p style="color:var(--text-secondary);margin-bottom:1rem;"><strong>美学特征：</strong>${d.design_insights.aesthetic_features}</p>
+                    <div style="margin-top:1rem;">
+                        <strong style="color:var(--primary);">创新点：</strong><br>
+                        ${d.design_insights.innovation_points.map(p => `<span class="tag">${p}</span>`).join('')}
+                    </div>
+                </div>
+                
+                <!-- 10. 未来展望 -->
+                <div class="section">
+                    <h2 class="section-title">10. 未来展望</h2>
+                    <div class="two-col">
+                        <div>
+                            <p><strong>趋势预测：</strong>${d.future_outlook.trend_prediction}</p>
+                            <p><strong>发展策略：</strong>${d.future_outlook.development_strategy}</p>
+                        </div>
+                        <div>
+                            <p><strong>市场机会：</strong>${d.future_outlook.market_opportunity}</p>
+                            <p><strong>创新方向：</strong>${d.future_outlook.innovation_direction}</p>
+                        </div>
+                    </div>
                 </div>
             `;
         }
