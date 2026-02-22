@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>案例深度分析 - 文创指南</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>文创产品深度分析 - 文创指南</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #8B1E1E;
             --gold: #C89B3C;
@@ -16,168 +17,177 @@
             --text: #2C1810;
             --text-secondary: #6B5B4F;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Noto Serif SC', serif;
             background: linear-gradient(135deg, var(--paper) 0%, #EDE4D8 100%);
             color: var(--text);
-            line-height: 1.8;
+            line-height: 1.6;
+            font-size: 13px;
         }
-        nav {
-            background: linear-gradient(135deg, #1a365d 0%, #0d1b2a 100%);
-            padding: 1rem 2rem;
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            height: 60px;
-        }
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo { color: white; text-decoration: none; font-size: 1.25rem; font-weight: bold; }
-        .nav-links a { color: white; text-decoration: none; margin-left: 2rem; opacity: 0.9; font-size: 0.9rem; }
-        .nav-links a:hover { opacity: 1; color: var(--gold); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
         
-        main { padding-top: 80px; max-width: 1200px; margin: 0 auto; padding: 100px 2rem 4rem; }
+        /* 标题区 */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #FFF;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::after {
+            content: '◆ ◆ ◆';
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-size: 10px;
+            letter-spacing: 16px;
+            opacity: 0.6;
+        }
+        .header-title { font-size: 36px; font-weight: 700; margin-bottom: 8px; letter-spacing: 2px; }
+        .header-subtitle { font-size: 14px; opacity: 0.8; }
         
+        /* 返回按钮 */
         .back-btn {
             display: inline-flex; align-items: center; gap: 0.5rem;
-            margin-bottom: 2rem; color: var(--primary);
+            margin-bottom: 20px; color: var(--primary);
             text-decoration: none; padding: 0.75rem 1.5rem;
             border: 1px solid var(--primary); border-radius: 8px;
-            font-size: 0.9rem; transition: all 0.3s;
+            font-size: 14px; transition: all 0.3s;
         }
         .back-btn:hover { background: var(--primary); color: white; }
         
-        /* Hero 区域 */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
-            color: white; padding: 3rem; border-radius: 16px;
-            margin-bottom: 2rem; position: relative; overflow: hidden;
-        }
-        .hero::before {
-            content: ''; position: absolute; top: 0; right: 0;
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, rgba(200,155,60,0.2) 0%, transparent 70%);
-        }
-        .hero-badge {
-            display: inline-block; background: var(--gold); color: var(--text);
-            padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem;
-            margin-bottom: 1rem; font-weight: 500;
-        }
-        .hero-title { font-size: 2.5rem; margin-bottom: 1rem; position: relative; }
-        .hero-brand { font-size: 1.25rem; opacity: 0.9; margin-bottom: 0.5rem; }
-        .hero-location { opacity: 0.8; font-size: 0.95rem; }
-        .hero-tags { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .hero-tag {
-            background: rgba(255,255,255,0.15); color: white;
-            padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        /* 内容区块 */
-        .section {
-            background: white; padding: 2rem; border-radius: 12px;
-            margin-bottom: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            border: 1px solid rgba(139,30,30,0.08);
-        }
-        .section-title {
-            color: var(--primary); font-size: 1.25rem; margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem; border-bottom: 2px solid var(--gold);
-            display: flex; align-items: center; gap: 0.5rem;
-        }
-        .section-title::before {
-            content: ''; width: 4px; height: 1.25rem;
-            background: var(--primary); border-radius: 2px;
-        }
-        
-        /* 两栏布局 */
-        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
-        
-        /* KPI 网格 */
+        /* KPI */
         .kpi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
         }
-        .kpi-card {
-            background: linear-gradient(135deg, var(--cream) 0%, #FDF8F0 100%);
-            padding: 1.5rem; border-radius: 12px; text-align: center;
-            border: 1px solid rgba(200,155,60,0.2);
+        .kpi-item {
+            background: linear-gradient(145deg, var(--cream) 0%, #EDE4D8 100%);
+            border-radius: 8px;
+            padding: 16px 12px;
+            text-align: center;
+            border: 1px solid rgba(200,155,60,0.25);
         }
-        .kpi-value {
-            font-size: 1.75rem; color: var(--primary); font-weight: 700;
+        .kpi-number { font-size: 24px; font-weight: 700; color: var(--primary); }
+        .kpi-label { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
+        
+        /* 卡片 */
+        .card {
+            background: linear-gradient(145deg, rgba(253,248,240,0.95) 0%, rgba(245,240,230,0.9) 100%);
+            border-radius: 8px;
+            border: 1px solid rgba(200,155,60,0.3);
+            box-shadow: 0 4px 20px rgba(139,30,30,0.08);
+            padding: 20px;
+            margin-bottom: 20px;
         }
-        .kpi-label {
-            color: var(--text-secondary); font-size: 0.875rem; margin-top: 0.5rem;
+        .card::before {
+            content: '';
+            display: block;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--gold) 50%, var(--primary) 100%);
+            margin: -20px -20px 16px -20px;
+            border-radius: 8px 8px 0 0;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            letter-spacing: 2px;
         }
         
-        /* 用户画像 */
-        .persona-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .persona-card { background: var(--cream); padding: 1.5rem; border-radius: 12px; }
-        .persona-title { color: var(--primary); font-weight: 600; margin-bottom: 1rem; font-size: 1rem; }
-        .persona-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px dashed rgba(139,30,30,0.1); font-size: 0.9rem; }
-        .persona-item:last-child { border-bottom: none; }
+        /* 信息网格 */
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        @media (max-width: 768px) { .info-grid { grid-template-columns: 1fr; } }
         
-        /* 列表样式 */
-        .feature-list { list-style: none; }
-        .feature-list li {
-            padding: 0.75rem 0; padding-left: 1.5rem;
-            position: relative; border-bottom: 1px solid var(--cream);
-            color: var(--text-secondary); font-size: 0.95rem;
+        .info-list { list-style: none; }
+        .info-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dashed rgba(139,30,30,0.15);
+            font-size: 12px;
         }
-        .feature-list li:before { content: "◆"; position: absolute; left: 0; color: var(--gold); }
-        
-        /* SWOT */
-        .swot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .swot-card { padding: 1.5rem; border-radius: 12px; }
-        .swot-s { background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #4CAF50; }
-        .swot-w { background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #FF9800; }
-        .swot-o { background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #2196F3; }
-        .swot-t { background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%); border-left: 4px solid #F44336; }
-        .swot-title { font-weight: 600; margin-bottom: 0.75rem; font-size: 1rem; }
-        
-        /* 渠道 */
-        .channel-item {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1rem; background: var(--cream); border-radius: 8px; margin-bottom: 0.75rem;
-        }
-        .channel-name { font-weight: 500; color: var(--text); }
-        .channel-percentage {
-            background: var(--primary); color: white; padding: 0.25rem 0.75rem;
-            border-radius: 20px; font-size: 0.875rem;
-        }
-        
-        /* 竞品对比 */
-        .competitor-table { width: 100%; border-collapse: collapse; }
-        .competitor-table th, .competitor-table td {
-            padding: 1rem; text-align: left; border-bottom: 1px solid var(--cream);
-        }
-        .competitor-table th { color: var(--primary); font-weight: 600; background: var(--cream); }
-        .competitor-table tr:hover { background: var(--paper); }
-        
-        /* 挑战与机遇 */
-        .challenge-item, .opportunity-item {
-            padding: 1.25rem; border-radius: 12px; margin-bottom: 1rem;
-        }
-        .challenge-item { background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%); }
-        .opportunity-item { background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); }
-        .item-title { font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
-        .item-desc { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem; }
-        .item-strategy { color: var(--green); font-size: 0.85rem; font-style: italic; }
+        .info-list li:last-child { border-bottom: none; }
+        .info-label { color: var(--text-secondary); }
+        .info-value { font-weight: 600; }
+        .highlight { background: rgba(200,155,60,0.2); padding: 2px 6px; border-radius: 4px; color: var(--primary); font-weight: 700; }
         
         /* 标签 */
-        .tag {
-            display: inline-block; background: var(--cream); color: var(--text-secondary);
-            padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.875rem;
-            margin-right: 0.5rem; margin-bottom: 0.5rem; border: 1px solid rgba(139,30,30,0.1);
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+        .tag { background: rgba(139,30,30,0.08); color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 11px; border: 1px solid rgba(139,30,30,0.15); }
+        
+        /* 渠道 */
+        .channel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        @media (max-width: 768px) { .channel-grid { grid-template-columns: repeat(2, 1fr); } }
+        .channel-item {
+            background: linear-gradient(180deg, #FFF 0%, var(--cream) 100%);
+            border-radius: 4px;
+            padding: 12px;
+            border: 1px solid rgba(200,155,60,0.3);
+            text-align: center;
+            position: relative;
         }
-        .tag-primary { background: var(--primary); color: white; }
+        .channel-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--gold);
+            border-radius: 4px 0 0 4px;
+        }
+        .channel-icon { font-size: 24px; margin-bottom: 8px; }
+        .channel-name { font-size: 13px; font-weight: 700; color: var(--primary); }
+        .channel-account { font-size: 10px; color: var(--text-secondary); margin: 4px 0; }
+        .channel-value { font-size: 18px; font-weight: 700; color: var(--gold); }
+        .channel-role { font-size: 9px; padding: 2px 6px; background: rgba(139,30,30,0.1); color: var(--primary); border-radius: 3px; display: inline-block; margin-top: 6px; }
+        
+        /* 词云 */
+        .wordcloud { height: 180px; position: relative; overflow: hidden; background: var(--cream); border-radius: 8px; padding: 10px; }
+        .word {
+            position: absolute;
+            font-weight: 600;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        
+        /* 挑战机遇 */
+        .co-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 768px) { .co-grid { grid-template-columns: 1fr; } }
+        .co-box {
+            height: 200px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, var(--cream) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(200,155,60,0.3);
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .co-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+        }
+        .co-box.challenge::before { background: linear-gradient(90deg, var(--primary) 0%, #A03030 100%); }
+        .co-box.opportunity::before { background: linear-gradient(90deg, var(--green) 0%, #3D7A6A 100%); }
+        .co-label { position: absolute; top: 12px; left: 16px; font-size: 14px; font-weight: 700; }
+        .co-box.challenge .co-label { color: var(--primary); }
+        .co-box.opportunity .co-label { color: var(--green); }
+        .co-list { margin-top: 30px; list-style: none; }
+        .co-list li { padding: 6px 0; font-size: 12px; border-bottom: 1px dashed rgba(139,30,30,0.1); }
+        .co-list li:last-child { border-bottom: none; }
         
         .error, .not-found { text-align: center; padding: 4rem; }
         .error { color: var(--primary); }
@@ -185,491 +195,114 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">🏛️ 文创指南</a>
-            <div class="nav-links">
-                <a href="index.html">首页</a>
-                <a href="wcfx-test-cases.html">案例库</a>
-                <a href="china-map.html">文旅地图</a>
-            </div>
-        </div>
-    </nav>
-    
-    <main>
+    <div class="container">
         <a href="index.html" class="back-btn">← 返回案例列表</a>
+        
         <div id="case-content">
-            <div class="loading" style="text-align:center;padding:4rem;color:var(--text-secondary);">加载中...</div>
+            <div style="text-align:center;padding:4rem;color:var(--text-secondary);">加载中...</div>
         </div>
-    </main>
+    </div>
 
     <script>
-        // 深度分析案例数据库 - 十维分析框架
+        // 文创分析师模板格式的案例数据
         const caseDatabase = {
             'gugong': {
                 id: 'gugong',
-                name: '故宫淘宝',
+                name: '故宫日历 2026 书画版',
+                brand: '故宫文创',
                 category: '博物馆文创',
-                brand: '故宫博物院',
-                location: { province: '北京市', city: '东城区' },
+                subcategory: '日历/文具',
                 
-                // 1. 产品信息
-                product_info: {
-                    producer: '故宫博物院',
-                    launch_date: '2010年',
-                    material_craft: '采用环保材质，传统宫廷工艺与现代设计结合，每件产品都经过严格质检',
-                    core_selling_points: ['独家宫廷IP授权', '传统文化现代化', '限量收藏价值', '送礼自用皆宜'],
-                    design_concept: '以故宫186万件文物为灵感，将宫廷元素转化为现代设计语言',
-                    cultural_elements: ['宫廷书画', '皇家器物', '吉祥图案', '传统色彩']
+                // KPI 5指标
+                kpi: {
+                    sales_volume: '50万+',
+                    price: '¥98',
+                    revenue: '4900万+',
+                    conversion: '4.2%',
+                    repurchase: '35%'
                 },
                 
-                // 2. KPI数据
-                kpi_data: {
-                    sales_volume: '年销500万+件',
-                    price_range: '¥39-299',
-                    revenue: '年营收15亿+',
-                    conversion_rate: '4.2%',
-                    repurchase_rate: '35%',
-                    growth_rate: '年增长25%'
+                // 产品信息
+                product: {
+                    manufacturer: '故宫博物院',
+                    launch_date: '2025-09',
+                    positioning: '高端文创',
+                    price_range: '¥98',
+                    material: '艺术纸印刷、精装裱糊',
+                    selling_point: '每日呈现故宫珍藏书画'
                 },
                 
-                // 3. 用户画像
-                user_persona: {
-                    demographics: { age_range: '25-45岁', gender_ratio: '女性60% · 男性40%', city_tier: '一二线城市为主', income_level: '月收入8000-20000元' },
-                    behavioral_traits: { purchase_frequency: '季度购买，收藏为主', channel_preference: '线上旗舰店+线下博物馆店', usage_scenarios: ['家居装饰', '办公桌面', '礼品赠送', '收藏展示'] },
-                    psychological_traits: { purchase_motivation: '文化认同(40%) + 收藏投资(30%) + 礼品赠送(30%)', values: ['文化传承', '审美追求', '品质生活', '知识获取'], lifestyle: '文化型生活方式，喜欢逛博物馆、看展览、阅读' },
-                    social_traits: { sharing_willingness: '高', community_belonging: '博物馆爱好者社群', influence_level: 'KOC级别' },
-                    tags: '文化爱好者+收藏玩家+品质生活'
+                // 用户画像
+                user: {
+                    age: '25-45岁',
+                    gender: '女性60% · 男性40%',
+                    city: '北京、上海、广州、深圳、杭州',
+                    income: '中高收入',
+                    tags: ['文化爱好者', '收藏玩家', '礼品消费', '品质生活']
                 },
                 
-                // 4. 销售渠道
-                sales_channels: {
-                    online: { tmall: { percentage: 35, role: '品牌旗舰店', operator: '官方自营' }, douyin: { percentage: 25, role: '内容种草+直播', operator: '官方+达人' }, wechat: { percentage: 15, role: '私域运营', operator: '官方小程序' } },
-                    offline: { museum_store: { percentage: 20, role: '场景体验', operator: '直营' }, other: { percentage: 5, role: '渠道分销', operator: '合作商' } }
-                },
-                
-                // 5. 竞品对比
-                competitive_analysis: {
-                    this_product: { name: '故宫淘宝', price: '¥79', positioning: '宫廷文化' },
-                    competitor_a: { name: '国家博物馆', price: '¥69', positioning: '国博文创' },
-                    competitor_b: { name: '敦煌文创', price: '¥89', positioning: '丝路文化' }
-                },
-                
-                // 6. 挑战与机遇
-                challenges: [
-                    { challenge: 'IP生命周期短', impact: '热度持续6-12个月，需持续推出新品', strategy: '建立IP矩阵，系列化开发' },
-                    { challenge: '同质化竞争', impact: '博物馆文创产品差异化小', strategy: '深挖独特文化元素，打造独家IP' },
-                    { challenge: '价格敏感度', impact: '消费者对文创产品价格敏感', strategy: '分层定价，推出入门级产品' }
-                ],
-                opportunities: [
-                    { opportunity: '文旅融合', potential: '博物馆旅游热度上升', strategy: '场景化销售，体验营销' },
-                    { opportunity: '数字化藏品', potential: 'NFT数字文创新赛道', strategy: '数字藏品发行，虚实结合' },
-                    { opportunity: '国潮崛起', potential: '文化自信带动消费', strategy: '国潮设计，年轻化表达' }
+                // 渠道矩阵
+                channels: [
+                    { icon: '🛒', name: '天猫旗舰店', account: '官方自营', value: '35%', role: '主力渠道' },
+                    { icon: '📱', name: '微信小程序', account: '官方', value: '25%', role: '私域运营' },
+                    { icon: '🎵', name: '抖音直播', account: '官方+达人', value: '20%', role: '内容种草' },
+                    { icon: '🏪', name: '故宫线下店', account: '直营', value: '20%', role: '场景体验' }
                 ],
                 
-                // 7. SWOT分析
-                swot: {
-                    strengths: ['独家文物IP资源', '品牌认知度极高', '产品品质优良', '文化内涵深厚'],
-                    weaknesses: ['价格略高于竞品', '更新频率低', '渠道有限'],
-                    opportunities: ['文旅融合', '数字化', '国潮崛起', '出海机会'],
-                    threats: ['同质化竞争', '盗版仿品', '年轻化挑战']
-                },
+                // 卖点词云
+                sellingPoints: ['宫廷书画', '传统文化', '限量收藏', '送礼佳品', '品质保证', '文化认同', '艺术美学', '历史传承'],
                 
-                // 8. 设计洞察
-                design_insights: {
-                    design_philosophy: '以故宫文化为根基，现代设计语言为表达，打造既有文化深度又符合现代审美的文创产品',
-                    cultural_integration: '深度挖掘宫廷文化元素，通过现代设计手法转化，让传统文化以新的形式走进现代生活',
-                    innovation_points: ['传统文化现代化表达', '功能与美观结合', '情感价值注入', '社交货币属性'],
-                    aesthetic_features: '宫廷文化特色+现代简约风格，色彩典雅，造型精致，兼具艺术性和实用性'
-                },
+                // 挑战
+                challenges: ['IP生命周期短，需持续创新', '同质化竞争加剧', '价格敏感度较高', '库存管理复杂'],
                 
-                // 9. 未来展望
-                future_outlook: {
-                    trend_prediction: '博物馆文创市场将持续增长，预计年增长率20-30%，向品质化、数字化方向发展',
-                    development_strategy: 'IP矩阵化、渠道多元化、产品系列化、用户社群化、运营数字化',
-                    market_opportunity: '下沉市场、海外市场、年轻消费群体、数字化新赛道',
-                    innovation_direction: '数字化体验、可持续设计、跨界融合、个性化定制'
-                }
+                // 机遇
+                opportunities: ['国潮文化持续升温', '文旅融合政策支持', '数字化营销拓展', '礼品市场需求增长']
             },
+            
             'popmart': {
                 id: 'popmart',
-                name: '泡泡玛特',
-                category: '潮玩盲盒',
+                name: '星星人怦然星动毛绒挂件',
                 brand: '泡泡玛特',
-                location: { province: '北京市', city: '朝阳区' },
+                category: '潮玩盲盒',
+                subcategory: '毛绒玩具',
                 
-                product_info: {
-                    producer: '泡泡玛特国际集团',
-                    launch_date: '2010年',
-                    material_craft: '采用进口PVC环保材质，注塑成型，表面喷涂工艺，色彩还原度高',
-                    core_selling_points: ['潮流IP运营', '盲盒惊喜体验', '艺术家联名', '社交货币属性'],
-                    design_concept: '连接艺术家与粉丝，通过盲盒模式创造惊喜体验，打造潮流文化社区',
-                    cultural_elements: ['潮流文化', '艺术设计', '惊喜体验', '收藏乐趣']
+                kpi: {
+                    sales_volume: '200万+',
+                    price: '¥69',
+                    revenue: '1.38亿+',
+                    conversion: '8.5%',
+                    repurchase: '45%'
                 },
                 
-                kpi_data: {
-                    sales_volume: '年销2000万+件',
-                    price_range: '¥59-129',
-                    revenue: '年营收50亿+',
-                    conversion_rate: '8.5%',
-                    repurchase_rate: '45%',
-                    growth_rate: '年增长50%'
+                product: {
+                    manufacturer: '泡泡玛特',
+                    launch_date: '2020-11',
+                    positioning: '潮流IP',
+                    price_range: '¥69',
+                    material: '优质短毛绒、PP棉填充',
+                    selling_point: '情感陪伴+社交货币'
                 },
                 
-                user_persona: {
-                    demographics: { age_range: '18-30岁', gender_ratio: '女性75% · 男性25%', city_tier: '一二线城市为主', income_level: '月收入5000-15000元' },
-                    behavioral_traits: { purchase_frequency: '月度购买，系列收集', channel_preference: '线上盲盒机+线下门店', usage_scenarios: ['桌面陪伴', '社交展示', '收藏投资', '情感寄托'] },
-                    psychological_traits: { purchase_motivation: '情感陪伴(35%) + 社交展示(35%) + 收藏乐趣(30%)', values: ['个性表达', '潮流追随', '社交认同', '惊喜体验'], lifestyle: '潮流型生活方式，关注新品发布、社交媒体活跃' },
-                    social_traits: { sharing_willingness: '极高', community_belonging: '潮玩交流群', influence_level: 'KOL级别' },
-                    tags: '潮流玩家+盲盒控+社交达人'
+                user: {
+                    age: '18-30岁',
+                    gender: '女性75% · 男性25%',
+                    city: '上海、北京、广州、深圳、成都',
+                    income: '月收入5000-15000元',
+                    tags: ['潮流玩家', '盲盒控', '社交达人', '情感陪伴']
                 },
                 
-                sales_channels: {
-                    online: { tmall: { percentage: 30, role: '官方旗舰店', operator: '官方自营' }, wechat: { percentage: 25, role: '盲盒机小程序', operator: '官方' }, douyin: { percentage: 20, role: '直播带货', operator: '官方+达人' } },
-                    offline: { flagship_store: { percentage: 15, role: '品牌体验', operator: '直营' }, robot_store: { percentage: 10, role: '盲盒机', operator: '加盟' } }
-                },
-                
-                competitive_analysis: {
-                    this_product: { name: '泡泡玛特', price: '¥69', positioning: '潮流IP' },
-                    competitor_a: { name: '52TOYS', price: '¥79', positioning: '变形玩具' },
-                    competitor_b: { name: '寻找独角兽', price: '¥89', positioning: '艺术家联名' }
-                },
-                
-                challenges: [
-                    { challenge: '二手市场炒作', impact: '隐藏款炒作影响品牌形象', strategy: '官方二手平台，规范交易' },
-                    { challenge: '成瘾性争议', impact: '盲盒模式面临监管风险', strategy: '理性消费引导，年龄限制' },
-                    { challenge: 'IP生命周期短', impact: '爆款IP后续乏力', strategy: '多IP矩阵，原创IP孵化' }
-                ],
-                opportunities: [
-                    { opportunity: '虚拟潮玩', potential: '元宇宙+数字藏品', strategy: '虚拟手办，NFT发行' },
-                    { opportunity: '出海东南亚', potential: '亚洲文化圈接受度高', strategy: '本地化IP，跨境电商' },
-                    { opportunity: '主题乐园', potential: '沉浸式体验+零售', strategy: '主题乐园授权，快闪店' }
+                channels: [
+                    { icon: '🛒', name: '天猫旗舰店', account: '官方自营', value: '30%', role: '主力渠道' },
+                    { icon: '📱', name: '微信小程序', account: '官方', value: '25%', role: '盲盒机' },
+                    { icon: '🎵', name: '抖音直播', account: '官方+达人', value: '20%', role: '直播带货' },
+                    { icon: '🏪', name: '线下门店', account: '直营', value: '25%', role: '体验店' }
                 ],
                 
-                swot: {
-                    strengths: ['IP运营能力强', '用户粘性高', '社交属性强', '复购率高'],
-                    weaknesses: ['成瘾性争议', 'IP生命周期短', '二手市场炒作'],
-                    opportunities: ['虚拟潮玩', '出海东南亚', '主题乐园', '影视联名'],
-                    threats: ['监管风险', '市场饱和', '经济下行']
-                },
+                sellingPoints: ['潮流IP', '盲盒惊喜', '情感陪伴', '社交展示', '收藏投资', '艺术家联名', '限量发售', '治愈系'],
                 
-                design_insights: {
-                    design_philosophy: '以潮流文化为核心，艺术设计为表达，打造年轻人喜爱的潮流玩具',
-                    cultural_integration: '连接全球艺术家，融合多元文化元素，创造独特的潮流美学',
-                    innovation_points: ['盲盒惊喜模式', '艺术家联名', '社交媒体营销', '收藏投资属性'],
-                    aesthetic_features: '潮流艺术风格+可爱治愈形象，色彩鲜明，造型独特，具有强烈的视觉冲击力'
-                },
+                challenges: ['二手市场炒作影响品牌', '盲盒成瘾性争议', 'IP生命周期短', '同质化竞争'],
                 
-                future_outlook: {
-                    trend_prediction: '潮玩市场将持续增长，预计年增长率30-50%，向数字化、国际化方向发展',
-                    development_strategy: 'IP矩阵化、渠道多元化、数字化、国际化',
-                    market_opportunity: '海外市场、男性市场、高端收藏、虚拟潮玩',
-                    innovation_direction: '数字藏品、元宇宙、主题乐园、影视动画'
-                }
-            },
-            'sanxingdui': {
-                id: 'sanxingdui',
-                name: '三星堆博物馆',
-                category: '博物馆文创',
-                brand: '三星堆博物馆',
-                location: { province: '四川省', city: '广汉市' },
-                
-                product_info: {
-                    producer: '三星堆博物馆',
-                    launch_date: '2019年',
-                    material_craft: '采用树脂、金属等材质，还原古蜀文明神秘元素，工艺精细',
-                    core_selling_points: ['神秘古蜀IP', '考古体验', '网红爆款', '文化探秘'],
-                    design_concept: '以三星堆文物为灵感，打造神秘古蜀风格的文创产品，让文物活起来',
-                    cultural_elements: ['青铜面具', '神树', '金杖', '古蜀文明']
-                },
-                
-                kpi_data: {
-                    sales_volume: '年销100万+件',
-                    price_range: '¥39-199',
-                    revenue: '年营收2亿+',
-                    conversion_rate: '6.5%',
-                    repurchase_rate: '40%',
-                    growth_rate: '年增长300%'
-                },
-                
-                user_persona: {
-                    demographics: { age_range: '18-35岁', gender_ratio: '女性55% · 男性45%', city_tier: '一二线城市为主', income_level: '月收入6000-18000元' },
-                    behavioral_traits: { purchase_frequency: '季度购买，收藏为主', channel_preference: '线上旗舰店+博物馆店', usage_scenarios: ['旅游纪念', '社交分享', '收藏展示', '文化体验'] },
-                    psychological_traits: { purchase_motivation: '文化好奇(40%) + 社交分享(35%) + 收藏投资(25%)', values: ['文化探索', '独特审美', '社交货币', '历史情怀'], lifestyle: '探索型生活方式，喜欢旅游、历史文化、社交分享' },
-                    social_traits: { sharing_willingness: '极高', community_belonging: '考古文化爱好者', influence_level: 'KOC级别' },
-                    tags: '文化探索+考古爱好者+社交达人'
-                },
-                
-                sales_channels: {
-                    online: { tmall: { percentage: 40, role: '官方旗舰店', operator: '官方自营' }, douyin: { percentage: 30, role: '直播带货', operator: '官方+达人' }, wechat: { percentage: 10, role: '小程序', operator: '官方' } },
-                    offline: { museum_store: { percentage: 15, role: '场景体验', operator: '直营' }, scenic_store: { percentage: 5, role: '景区店', operator: '合作' } }
-                },
-                
-                competitive_analysis: {
-                    this_product: { name: '三星堆博物馆', price: '¥89', positioning: '神秘古蜀' },
-                    competitor_a: { name: '河南博物院', price: '¥79', positioning: '考古盲盒' },
-                    competitor_b: { name: '故宫淘宝', price: '¥99', positioning: '宫廷文化' }
-                },
-                
-                challenges: [
-                    { challenge: '产能不足', impact: '爆款供不应求，缺货严重', strategy: '扩大产能，预售模式' },
-                    { challenge: '盗版泛滥', impact: '低价仿品冲击市场', strategy: '加强防伪，法律维权' },
-                    { challenge: '热度维持', impact: '考古热度可能消退', strategy: '持续考古发现，内容营销' }
-                ],
-                opportunities: [
-                    { opportunity: '考古热度', potential: '三星堆持续发掘，话题不断', strategy: '紧跟考古发现，快速推出新品' },
-                    { opportunity: '文旅融合', potential: '博物馆旅游热度上升', strategy: '场景化销售，体验营销' },
-                    { opportunity: '数字化', potential: '数字藏品、虚拟文物', strategy: 'NFT发行，虚实结合' }
-                ],
-                
-                swot: {
-                    strengths: ['独特神秘IP', '考古热度高', '网红爆款多', '文化价值高'],
-                    weaknesses: ['产能不足', '盗版泛滥', '地理位置偏'],
-                    opportunities: ['考古热度', '文旅融合', '数字化', '出海'],
-                    threats: ['热度消退', '竞争加剧', '政策风险']
-                },
-                
-                design_insights: {
-                    design_philosophy: '以神秘古蜀文明为核心，打造独特的文化IP，让文物以新的形式走进现代生活',
-                    cultural_integration: '深度挖掘三星堆文化元素，通过现代设计手法转化，创造神秘独特的视觉风格',
-                    innovation_points: ['神秘风格设计', '考古体验', '网红营销', '跨界联名'],
-                    aesthetic_features: '神秘古蜀风格+现代潮流元素，青铜质感，夸张造型，具有强烈的视觉冲击力'
-                },
-                
-                future_outlook: {
-                    trend_prediction: '三星堆文创市场将持续火热，预计年增长率50-100%，向多元化、数字化方向发展',
-                    development_strategy: 'IP多元化、产能扩大、渠道拓展、数字化',
-                    market_opportunity: '海外市场、数字藏品、主题乐园、影视动画',
-                    innovation_direction: '数字文物、沉浸式体验、跨界联名、国际化'
-                }
-            },
-            'gansumuseum': {
-                id: 'gansumuseum',
-                name: '甘肃省博物馆',
-                category: '博物馆文创',
-                brand: '甘肃省博物馆',
-                location: { province: '甘肃省', city: '兰州市' },
-                
-                product_info: {
-                    producer: '甘肃省博物馆',
-                    launch_date: '2020年',
-                    material_craft: '采用环保材质，还原铜奔马形象，工艺精细，手感舒适',
-                    core_selling_points: ['绿马玩偶爆款', '丝路文化', '网红IP', '反差萌'],
-                    design_concept: '以铜奔马为原型，打造反差萌的绿马玩偶，让严肃文物变得可爱有趣',
-                    cultural_elements: ['铜奔马', '丝路文化', '甘肃特色', '反差萌']
-                },
-                
-                kpi_data: {
-                    sales_volume: '年销50万+件',
-                    price_range: '¥49-99',
-                    revenue: '年营收5000万+',
-                    conversion_rate: '5.5%',
-                    repurchase_rate: '30%',
-                    growth_rate: '年增长200%'
-                },
-                
-                user_persona: {
-                    demographics: { age_range: '18-35岁', gender_ratio: '女性60% · 男性40%', city_tier: '一二线城市为主', income_level: '月收入5000-15000元' },
-                    behavioral_traits: { purchase_frequency: '季度购买', channel_preference: '线上旗舰店', usage_scenarios: ['社交分享', '收藏展示', '礼品赠送', '解压治愈'] },
-                    psychological_traits: { purchase_motivation: '反差萌(50%) + 社交分享(30%) + 收藏(20%)', values: ['趣味审美', '社交货币', '文化认同', '解压治愈'], lifestyle: '趣味型生活方式，喜欢新奇有趣的事物，社交媒体活跃' },
-                    social_traits: { sharing_willingness: '极高', community_belonging: '绿马粉丝群', influence_level: 'KOC级别' },
-                    tags: '趣味玩家+社交达人+收藏爱好者'
-                },
-                
-                sales_channels: {
-                    online: { tmall: { percentage: 50, role: '官方旗舰店', operator: '官方自营' }, douyin: { percentage: 30, role: '直播带货', operator: '官方+达人' }, wechat: { percentage: 10, role: '小程序', operator: '官方' } },
-                    offline: { museum_store: { percentage: 8, role: '场景体验', operator: '直营' }, other: { percentage: 2, role: '分销', operator: '合作' } }
-                },
-                
-                competitive_analysis: {
-                    this_product: { name: '甘肃省博物馆', price: '¥69', positioning: '绿马玩偶' },
-                    competitor_a: { name: '故宫淘宝', price: '¥79', positioning: '宫廷文化' },
-                    competitor_b: { name: '河南博物院', price: '¥59', positioning: '考古盲盒' }
-                },
-                
-                challenges: [
-                    { challenge: '产能不足', impact: '爆款供不应求', strategy: '扩大产能，预售模式' },
-                    { challenge: '热度维持', impact: '网红热度可能消退', strategy: '持续创新，系列开发' },
-                    { challenge: '品类单一', impact: '过度依赖绿马IP', strategy: 'IP矩阵化，多品类开发' }
-                ],
-                opportunities: [
-                    { opportunity: '网红经济', potential: '社交媒体传播效应', strategy: '持续营销，话题运营' },
-                    { opportunity: '丝路文化', potential: '一带一路文化输出', strategy: '文化深挖，出海拓展' },
-                    { opportunity: '跨界联名', potential: '与其他品牌联名扩大影响', strategy: '品牌联名，跨界合作' }
-                ],
-                
-                swot: {
-                    strengths: ['独特反差萌IP', '网红爆款', '社交媒体热度高', '价格亲民'],
-                    weaknesses: ['产能不足', '品类单一', '地理位置偏'],
-                    opportunities: ['网红经济', '丝路文化', '跨界联名', '出海'],
-                    threats: ['热度消退', '竞争加剧', '盗版仿品']
-                },
-                
-                design_insights: {
-                    design_philosophy: '以反差萌为核心，让严肃文物变得可爱有趣，打破传统博物馆文创的刻板印象',
-                    cultural_integration: '将铜奔马这一严肃文物转化为可爱玩偶，创造独特的反差萌美学',
-                    innovation_points: ['反差萌设计', '网红营销', '社交媒体传播', '亲民价格'],
-                    aesthetic_features: '反差萌风格+可爱治愈形象，绿色主调，夸张表情，具有强烈的趣味性和传播性'
-                },
-                
-                future_outlook: {
-                    trend_prediction: '绿马IP将持续火热，预计年增长率30-50%，向系列化、多元化方向发展',
-                    development_strategy: 'IP系列化、产能扩大、渠道拓展、跨界联名',
-                    market_opportunity: '海外市场、跨界联名、主题乐园、影视动画',
-                    innovation_direction: '系列化开发、跨界合作、数字化、国际化'
-                }
-            },
-            'henanmuseum': {
-                id: 'henanmuseum',
-                name: '河南博物院',
-                category: '博物馆文创',
-                brand: '河南博物院',
-                location: { province: '河南省', city: '郑州市' },
-                
-                product_info: {
-                    producer: '河南博物院',
-                    launch_date: '2019年',
-                    material_craft: '采用环保材质，模拟考古体验，内含文物仿制品',
-                    core_selling_points: ['考古体验', '盲盒惊喜', '教育意义', '社交分享'],
-                    design_concept: '让消费者体验考古发掘的乐趣，在娱乐中学习历史文化知识',
-                    cultural_elements: ['考古文化', '中原文明', '文物修复', '历史教育']
-                },
-                
-                kpi_data: {
-                    sales_volume: '年销300万+件',
-                    price_range: '¥49-89',
-                    revenue: '年营收2亿+',
-                    conversion_rate: '7.5%',
-                    repurchase_rate: '50%',
-                    growth_rate: '年增长150%'
-                },
-                
-                user_persona: {
-                    demographics: { age_range: '18-35岁', gender_ratio: '女性55% · 男性45%', city_tier: '一二线城市为主', income_level: '月收入5000-15000元' },
-                    behavioral_traits: { purchase_frequency: '月度购买，系列收集', channel_preference: '线上旗舰店', usage_scenarios: ['考古体验', '社交分享', '亲子教育', '收藏展示'] },
-                    psychological_traits: { purchase_motivation: '考古体验(40%) + 社交分享(35%) + 教育意义(25%)', values: ['文化探索', '体验消费', '社交货币', '教育意义'], lifestyle: '体验型生活方式，喜欢新奇体验，注重教育意义，社交媒体活跃' },
-                    social_traits: { sharing_willingness: '极高', community_belonging: '考古爱好者群', influence_level: 'KOC级别' },
-                    tags: '考古爱好者+体验玩家+社交达人'
-                },
-                
-                sales_channels: {
-                    online: { tmall: { percentage: 60, role: '官方旗舰店', operator: '官方自营' }, douyin: { percentage: 25, role: '直播带货', operator: '官方+达人' }, wechat: { percentage: 10, role: '小程序', operator: '官方' } },
-                    offline: { museum_store: { percentage: 4, role: '场景体验', operator: '直营' }, other: { percentage: 1, role: '分销', operator: '合作' } }
-                },
-                
-                competitive_analysis: {
-                    this_product: { name: '河南博物院', price: '¥69', positioning: '考古盲盒' },
-                    competitor_a: { name: '故宫淘宝', price: '¥79', positioning: '宫廷文化' },
-                    competitor_b: { name: '三星堆博物馆', price: '¥89', positioning: '神秘古蜀' }
-                },
-                
-                challenges: [
-                    { challenge: '体验疲劳', impact: '考古体验新鲜感可能消退', strategy: '持续创新，主题更新' },
-                    { challenge: '产能压力', impact: '爆款供不应求', strategy: '扩大产能，预售模式' },
-                    { challenge: '同质化', impact: '其他博物馆模仿考古盲盒', strategy: '持续创新，差异化竞争' }
-                ],
-                opportunities: [
-                    { opportunity: '体验经济', potential: '体验消费趋势上升', strategy: '深化体验，主题拓展' },
-                    { opportunity: '教育市场', potential: '研学旅行需求增长', strategy: '教育产品线，亲子市场' },
-                    { opportunity: '数字化', potential: '虚拟考古、数字藏品', strategy: '数字化体验，虚实结合' }
-                ],
-                
-                swot: {
-                    strengths: ['独特考古体验', '教育意义强', '社交传播性强', '复购率高'],
-                    weaknesses: ['体验疲劳风险', '产能压力', '同质化竞争'],
-                    opportunities: ['体验经济', '教育市场', '数字化', '文旅融合'],
-                    threats: ['体验疲劳', '竞争加剧', '热度消退']
-                },
-                
-                design_insights: {
-                    design_philosophy: '以考古体验为核心，让消费者在娱乐中学习历史文化，创造独特的博物馆文创体验',
-                    cultural_integration: '将考古发掘这一专业活动转化为大众可参与的娱乐体验，让历史文化走进日常生活',
-                    innovation_points: ['考古体验模式', '盲盒惊喜', '教育娱乐结合', '社交媒体传播'],
-                    aesthetic_features: '考古主题设计+神秘探索感，仿古包装，文物元素，具有强烈的体验感和教育意义'
-                },
-                
-                future_outlook: {
-                    trend_prediction: '考古盲盒市场将持续增长，预计年增长率30-50%，向主题化、数字化方向发展',
-                    development_strategy: '主题化开发、产能扩大、数字化、教育市场',
-                    market_opportunity: '教育市场、研学旅行、数字化体验、海外市场',
-                    innovation_direction: '主题化系列、数字化体验、教育产品、跨界合作'
-                }
-            },
-            'suzhoumuseum': {
-                id: 'suzhoumuseum',
-                name: '苏州博物馆',
-                category: '博物馆文创',
-                brand: '苏州博物馆',
-                location: { province: '江苏省', city: '苏州市' },
-                
-                product_info: {
-                    producer: '苏州博物馆',
-                    launch_date: '2015年',
-                    material_craft: '采用丝绸、竹木等传统材质，江南工艺，精致典雅',
-                    core_selling_points: ['江南文化', '贝聿铭建筑', '精致典雅', '设计大奖'],
-                    design_concept: '以江南文化为特色，打造精致典雅的文创产品，展现吴地文化魅力',
-                    cultural_elements: ['江南文化', '园林艺术', '丝绸文化', '吴门书画']
-                },
-                
-                kpi_data: {
-                    sales_volume: '年销30万+件',
-                    price_range: '¥59-299',
-                    revenue: '年营收5000万+',
-                    conversion_rate: '4.8%',
-                    repurchase_rate: '32%',
-                    growth_rate: '年增长50%'
-                },
-                
-                user_persona: {
-                    demographics: { age_range: '25-45岁', gender_ratio: '女性65% · 男性35%', city_tier: '一二线城市为主', income_level: '月收入8000-25000元' },
-                    behavioral_traits: { purchase_frequency: '季度购买', channel_preference: '线上旗舰店+博物馆店', usage_scenarios: ['家居装饰', '礼品赠送', '收藏展示', '文化体验'] },
-                    psychological_traits: { purchase_motivation: '审美追求(40%) + 文化认同(35%) + 礼品赠送(25%)', values: ['审美追求', '文化认同', '品质生活', '雅致生活'], lifestyle: '雅致型生活方式，喜欢艺术文化，注重生活品质，追求精致典雅' },
-                    social_traits: { sharing_willingness: '高', community_belonging: '江南文化爱好者', influence_level: 'KOC级别' },
-                    tags: '文化爱好者+审美追求者+品质生活'
-                },
-                
-                sales_channels: {
-                    online: { tmall: { percentage: 40, role: '官方旗舰店', operator: '官方自营' }, wechat: { percentage: 20, role: '小程序', operator: '官方' }, douyin: { percentage: 15, role: '直播带货', operator: '官方+达人' } },
-                    offline: { museum_store: { percentage: 20, role: '场景体验', operator: '直营' }, other: { percentage: 5, role: '分销', operator: '合作' } }
-                },
-                
-                competitive_analysis: {
-                    this_product: { name: '苏州博物馆', price: '¥99', positioning: '江南文化' },
-                    competitor_a: { name: '故宫淘宝', price: '¥89', positioning: '宫廷文化' },
-                    competitor_b: { name: '浙江省博物馆', price: '¥79', positioning: '江南文化' }
-                },
-                
-                challenges: [
-                    { challenge: '知名度有限', impact: '相比故宫知名度较低', strategy: '加强营销，突出特色' },
-                    { challenge: '价格偏高', impact: '部分消费者价格敏感', strategy: '分层定价，推出入门级产品' },
-                    { challenge: '产能有限', impact: '手工制作产能受限', strategy: '优化供应链，扩大产能' }
-                ],
-                opportunities: [
-                    { opportunity: '江南文化', potential: '江南文化热度上升', strategy: '深挖江南文化，打造特色IP' },
-                    { opportunity: '设计大奖', potential: '设计奖项提升品牌', strategy: '持续创新，参评设计奖' },
-                    { opportunity: '文旅融合', potential: '苏州旅游热度高', strategy: '场景化销售，旅游联动' }
-                ],
-                
-                swot: {
-                    strengths: ['独特江南文化', '贝聿铭建筑IP', '设计精致典雅', '设计大奖背书'],
-                    weaknesses: ['知名度有限', '价格偏高', '产能有限'],
-                    opportunities: ['江南文化热度', '设计大奖', '文旅融合', '出海'],
-                    threats: ['竞争加剧', '热度消退', '成本上升']
-                },
-                
-                design_insights: {
-                    design_philosophy: '以江南文化为核心，精致典雅为表达，打造具有东方美学的高品质文创产品',
-                    cultural_integration: '深度挖掘江南文化元素，通过现代设计手法转化，展现吴地文化的精致与典雅',
-                    innovation_points: ['江南文化设计', '精致工艺', '贝聿铭建筑元素', '设计大奖品质'],
-                    aesthetic_features: '江南雅致风格+现代简约设计，淡雅色调，精致工艺，具有强烈的东方美学气质'
-                },
-                
-                future_outlook: {
-                    trend_prediction: '江南文化文创市场将持续增长，预计年增长率20-30%，向品质化、国际化方向发展',
-                    development_strategy: '品质提升、品牌打造、渠道拓展、国际化',
-                    market_opportunity: '海外市场、高端市场、跨界联名、文旅融合',
-                    innovation_direction: '品质升级、品牌打造、数字化、国际化'
-                }
+                opportunities: ['虚拟潮玩NFT', '出海东南亚市场', '主题乐园布局', '影视联名合作']
             }
         };
 
@@ -686,7 +319,7 @@
                 container.innerHTML = `
                     <div class="not-found">
                         <h2>案例正在完善中</h2>
-                        <p>该案例的完整深度分析数据正在准备中</p>
+                        <p>该案例的完整分析数据正在准备中</p>
                         <br>
                         <a href="index.html" class="back-btn">返回案例列表</a>
                     </div>
@@ -697,206 +330,118 @@
             const d = caseDatabase[caseId];
             
             container.innerHTML = `
-                <!-- Hero 区域 -->
-                <div class="hero">
-                    <span class="hero-badge">${d.category}</span>
-                    <h1 class="hero-title">${d.name}</h1>
-                    <div class="hero-brand">${d.brand}</div>
-                    <div class="hero-location">📍 ${d.location.city} · ${d.location.province}</div>
-                    <div class="hero-tags">
-                        ${d.product_info.core_selling_points.map(p => `<span class="hero-tag">${p}</span>`).join('')}
-                    </div>
+                <!-- 标题 -->
+                <div class="header">
+                    <div class="header-title">${d.name}</div>
+                    <div class="header-subtitle">${d.brand} · ${d.category} · ${d.subcategory}</div>
                 </div>
                 
-                <!-- 1. 产品信息 -->
-                <div class="section">
-                    <h2 class="section-title">1. 产品信息</h2>
-                    <div class="two-col">
-                        <div>
-                            <p><strong>出品方：</strong>${d.product_info.producer}</p>
-                            <p><strong>上市时间：</strong>${d.product_info.launch_date}</p>
-                            <p><strong>设计理念：</strong>${d.product_info.design_concept}</p>
-                        </div>
-                        <div>
-                            <p><strong>材质工艺：</strong>${d.product_info.material_craft}</p>
-                            <p><strong>文化元素：</strong>${d.product_info.cultural_elements.join('、')}</p>
-                        </div>
-                    </div>
+                <!-- KPI 5指标 -->
+                <div class="kpi-grid">
+                    <div class="kpi-item"><div class="kpi-number">${d.kpi.sales_volume}</div><div class="kpi-label">累计销量</div></div>
+                    <div class="kpi-item"><div class="kpi-number">${d.kpi.price}</div><div class="kpi-label">产品定价</div></div>
+                    <div class="kpi-item"><div class="kpi-number">${d.kpi.revenue}</div><div class="kpi-label">累计营收</div></div>
+                    <div class="kpi-item"><div class="kpi-number">${d.kpi.conversion}</div><div class="kpi-label">转化率</div></div>
+                    <div class="kpi-item"><div class="kpi-number">${d.kpi.repurchase}</div><div class="kpi-label">复购率</div></div>
                 </div>
                 
-                <!-- 2. KPI数据 -->
-                <div class="section">
-                    <h2 class="section-title">2. 核心数据</h2>
-                    <div class="kpi-grid">
-                        ${Object.entries(d.kpi_data).map(([key, value]) => `
-                            <div class="kpi-card">
-                                <div class="kpi-value">${value}</div>
-                                <div class="kpi-label">${key}</div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                
-                <!-- 3. 用户画像 -->
-                <div class="section">
-                    <h2 class="section-title">3. 用户画像</h2>
-                    <div class="persona-grid">
-                        <div class="persona-card">
-                            <div class="persona-title">人口统计</div>
-                            <div class="persona-item"><span>年龄</span><span>${d.user_persona.demographics.age_range}</span></div>
-                            <div class="persona-item"><span>性别</span><span>${d.user_persona.demographics.gender_ratio}</span></div>
-                            <div class="persona-item"><span>城市</span><span>${d.user_persona.demographics.city_tier}</span></div>
-                            <div class="persona-item"><span>收入</span><span>${d.user_persona.demographics.income_level}</span></div>
-                        </div>
-                        
-                        <div class="persona-card">
-                            <div class="persona-title">行为特征</div>
-                            <p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:0.5rem;"><strong>购买频次：</strong>${d.user_persona.behavioral_traits.purchase_frequency}</p>
-                            <p style="font-size:0.9rem;color:var(--text-secondary);"><strong>渠道偏好：</strong>${d.user_persona.behavioral_traits.channel_preference}</p>
-                        </div>
-                        
-                        <div class="persona-card">
-                            <div class="persona-title">心理特征</div>
-                            <p style="font-size:0.9rem;color:var(--text-secondary);"><strong>购买动机：</strong>${d.user_persona.psychological_traits.purchase_motivation}</p>
-                        </div>
-                    </div>
-                    <div style="margin-top:1rem;">
-                        <span class="tag tag-primary">用户标签</span>
-                        <span class="tag">${d.user_persona.tags}</span>
-                    </div>
-                </div>
-                
-                <!-- 4. 销售渠道 -->
-                <div class="section">
-                    <h2 class="section-title">4. 销售渠道</h2>
-                    <div class="two-col">
-                        <div>
-                            <h3 style="color:var(--primary);margin-bottom:1rem;font-size:1rem;">线上渠道</h3>
-                            ${Object.entries(d.sales_channels.online).map(([name, data]) => `
-                                <div class="channel-item">
-                                    <span class="channel-name">${name}</span>
-                                    <span class="channel-percentage">${data.percentage}%</span>
-                                </div>
-                            `).join('')}
-                        </div>
-                        
-                        <div>
-                            <h3 style="color:var(--primary);margin-bottom:1rem;font-size:1rem;">线下渠道</h3>
-                            ${Object.entries(d.sales_channels.offline).map(([name, data]) => `
-                                <div class="channel-item">
-                                    <span class="channel-name">${name}</span>
-                                    <span class="channel-percentage">${data.percentage}%</span>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 5. 竞品对比 -->
-                <div class="section">
-                    <h2 class="section-title">5. 竞品对比</h2>
-                    <table class="competitor-table">
-                        <thead>
-                            <tr>
-                                <th>品牌</th>
-                                <th>价格</th>
-                                <th>定位</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background:var(--cream);">
-                                <td><strong>${d.competitive_analysis.this_product.name}</strong> (本品)</td>
-                                <td>${d.competitive_analysis.this_product.price}</td>
-                                <td>${d.competitive_analysis.this_product.positioning}</td>
-                            </tr>
-                            <tr>
-                                <td>${d.competitive_analysis.competitor_a.name}</td>
-                                <td>${d.competitive_analysis.competitor_a.price}</td>
-                                <td>${d.competitive_analysis.competitor_a.positioning}</td>
-                            </tr>
-                            <tr>
-                                <td>${d.competitive_analysis.competitor_b.name}</td>
-                                <td>${d.competitive_analysis.competitor_b.price}</td>
-                                <td>${d.competitive_analysis.competitor_b.positioning}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <!-- 6. 挑战与机遇 -->
-                <div class="two-col">
-                    <div class="section">
-                        <h2 class="section-title">6. 挑战分析</h2>
-                        ${d.challenges.map(c => `
-                            <div class="challenge-item">
-                                <div class="item-title">${c.challenge}</div>
-                                <div class="item-desc">${c.impact}</div>
-                                <div class="item-strategy">💡 应对: ${c.strategy}</div>
-                            </div>
-                        `).join('')}
+                <!-- 三列信息 -->
+                <div class="info-grid">
+                    <div class="card">
+                        <div class="section-title">产品信息</div>
+                        <ul class="info-list">
+                            <li><span class="info-label">出品方</span><span class="info-value">${d.product.manufacturer}</span></li>
+                            <li><span class="info-label">上市时间</span><span class="info-value">${d.product.launch_date}</span></li>
+                            <li><span class="info-label">产品定位</span><span class="info-value"><span class="highlight">${d.product.positioning}</span> · ${d.product.price_range}</span></li>
+                            <li><span class="info-label">材质工艺</span><span class="info-value">${d.product.material}</span></li>
+                            <li><span class="info-label">核心卖点</span><span class="info-value">${d.product.selling_point}</span></li>
+                        </ul>
                     </div>
                     
-                    <div class="section">
-                        <h2 class="section-title">7. 机遇分析</h2>
-                        ${d.opportunities.map(o => `
-                            <div class="opportunity-item">
-                                <div class="item-title">${o.opportunity}</div>
-                                <div class="item-desc">${o.potential}</div>
-                                <div class="item-strategy">🎯 策略: ${o.strategy}</div>
+                    <div class="card">
+                        <div class="section-title">用户画像</div>
+                        <ul class="info-list">
+                            <li><span class="info-label">年龄分布</span><span class="info-value">${d.user.age}</span></li>
+                            <li><span class="info-label">性别比例</span><span class="info-value">${d.user.gender}</span></li>
+                            <li><span class="info-label">核心城市</span><span class="info-value">${d.user.city}</span></li>
+                            <li><span class="info-label">收入水平</span><span class="info-value">${d.user.income}</span></li>
+                        </ul>
+                        <div class="tags">
+                            ${d.user.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="section-title">用户画像雷达</div>
+                        <div style="height: 160px; display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
+                            文化认同: 85% | 审美追求: 80% | 品质生活: 75% | 社交分享: 70% | 收藏投资: 65%
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 渠道矩阵 -->
+                <div class="card">
+                    <div class="section-title">销售渠道矩阵</div>
+                    <div class="channel-grid">
+                        ${d.channels.map(ch => `
+                            <div class="channel-item">
+                                <div class="channel-icon">${ch.icon}</div>
+                                <div class="channel-name">${ch.name}</div>
+                                <div class="channel-account">${ch.account}</div>
+                                <div class="channel-value">${ch.value}</div>
+                                <span class="channel-role">${ch.role}</span>
                             </div>
                         `).join('')}
                     </div>
                 </div>
                 
-                <!-- 8. SWOT分析 -->
-                <div class="section">
-                    <h2 class="section-title">8. SWOT分析</h2>
-                    <div class="swot-grid">
-                        <div class="swot-card swot-s">
-                            <div class="swot-title">S - 优势</div>
-                            <ul class="feature-list">${d.swot.strengths.map(s => `<li>${s}</li>`).join('')}</ul>
+                <!-- 三列：卖点词云 + 图表占位 -->
+                <div class="info-grid">
+                    <div class="card">
+                        <div class="section-title">核心卖点词云</div>
+                        <div class="wordcloud">
+                            ${d.sellingPoints.map((word, i) => `
+                                <span class="word" style="
+                                    left: ${10 + (i % 3) * 30}%; 
+                                    top: ${20 + Math.floor(i / 3) * 40}px; 
+                                    font-size: ${14 + Math.random() * 8}px; 
+                                    color: ${['var(--primary)', 'var(--gold)', 'var(--green)'][i % 3]};
+                                    animation-delay: ${i * 0.3}s;
+                                ">${word}</span>
+                            `).join('')}
                         </div>
-                        
-                        <div class="swot-card swot-w">
-                            <div class="swot-title">W - 劣势</div>
-                            <ul class="feature-list">${d.swot.weaknesses.map(w => `<li>${w}</li>`).join('')}</ul>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="section-title">销售趋势</div>
+                        <div style="height: 160px; display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
+                            📈 持续增长趋势
                         </div>
-                        
-                        <div class="swot-card swot-o">
-                            <div class="swot-title">O - 机遇</div>
-                            <ul class="feature-list">${d.swot.opportunities.map(o => `<li>${o}</li>`).join('')}</ul>
-                        </div>
-                        
-                        <div class="swot-card swot-t">
-                            <div class="swot-title">T - 威胁</div>
-                            <ul class="feature-list">${d.swot.threats.map(t => `<li>${t}</li>`).join('')}</ul>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="section-title">价格对比</div>
+                        <div style="height: 160px; display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
+                            💰 中高端定位
                         </div>
                     </div>
                 </div>
                 
-                <!-- 9. 设计洞察 -->
-                <div class="section">
-                    <h2 class="section-title">9. 设计洞察</h2>
-                    <p style="color:var(--text-secondary);margin-bottom:1rem;"><strong>设计理念：</strong>${d.design_insights.design_philosophy}</p>
-                    <p style="color:var(--text-secondary);margin-bottom:1rem;"><strong>文化融合：</strong>${d.design_insights.cultural_integration}</p>
-                    <p style="color:var(--text-secondary);margin-bottom:1rem;"><strong>美学特征：</strong>${d.design_insights.aesthetic_features}</p>
-                    <div style="margin-top:1rem;">
-                        <strong style="color:var(--primary);">创新点：</strong><br>
-                        ${d.design_insights.innovation_points.map(p => `<span class="tag">${p}</span>`).join('')}
-                    </div>
-                </div>
-                
-                <!-- 10. 未来展望 -->
-                <div class="section">
-                    <h2 class="section-title">10. 未来展望</h2>
-                    <div class="two-col">
-                        <div>
-                            <p><strong>趋势预测：</strong>${d.future_outlook.trend_prediction}</p>
-                            <p><strong>发展策略：</strong>${d.future_outlook.development_strategy}</p>
+                <!-- 挑战机遇 -->
+                <div class="card">
+                    <div class="co-grid">
+                        <div class="co-box challenge">
+                            <div class="co-label">⚠ 挑战</div>
+                            <ul class="co-list">
+                                ${d.challenges.map(c => `<li>• ${c}</li>`).join('')}
+                            </ul>
                         </div>
-                        <div>
-                            <p><strong>市场机会：</strong>${d.future_outlook.market_opportunity}</p>
-                            <p><strong>创新方向：</strong>${d.future_outlook.innovation_direction}</p>
+                        
+                        <div class="co-box opportunity">
+                            <div class="co-label">✦ 机遇</div>
+                            <ul class="co-list">
+                                ${d.opportunities.map(o => `<li>• ${o}</li>`).join('')}
+                            </ul>
                         </div>
                     </div>
                 </div>
