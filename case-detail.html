@@ -9,22 +9,18 @@
         :root {
             --primary: #8B1E1E;
             --gold: #C89B3C;
-            --green: #2D5A4A;
             --cream: #F5F0E6;
             --paper: #FDF8F0;
             --text: #2C1810;
             --text-secondary: #6B5B4F;
         }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
             font-family: 'Noto Serif SC', serif;
             background: var(--paper);
             color: var(--text);
             line-height: 1.8;
         }
-        
         nav {
             background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
             padding: 1rem 2rem;
@@ -32,7 +28,6 @@
             top: 0; left: 0; right: 0;
             z-index: 100;
         }
-        
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -40,167 +35,42 @@
             justify-content: space-between;
             align-items: center;
         }
-        
-        .logo {
-            color: white;
-            text-decoration: none;
-            font-size: 1.25rem;
-            font-weight: bold;
+        .logo { color: white; text-decoration: none; font-size: 1.25rem; font-weight: bold; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 2rem; opacity: 0.9; }
+        .nav-links a:hover { opacity: 1; color: var(--gold); }
+        main { padding-top: 80px; max-width: 1000px; margin: 0 auto; padding: 100px 2rem 4rem; }
+        .back-btn {
+            display: inline-block; margin-bottom: 2rem; color: var(--primary);
+            text-decoration: none; padding: 0.5rem 1rem;
+            border: 1px solid var(--primary); border-radius: 6px;
         }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 2rem;
-            opacity: 0.9;
-        }
-        
-        .nav-links a:hover {
-            opacity: 1;
-            color: var(--gold);
-        }
-        
-        main {
-            padding-top: 80px;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 100px 2rem 4rem;
-        }
-        
-        .loading, .error, .not-found {
-            text-align: center;
-            padding: 4rem;
-        }
-        
-        .loading { color: var(--text-secondary); }
-        .error { color: var(--primary); }
-        .not-found { color: var(--text-secondary); }
-        
+        .back-btn:hover { background: var(--primary); color: white; }
         .case-header {
             background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
-            color: white;
-            padding: 3rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
+            color: white; padding: 3rem; border-radius: 12px; margin-bottom: 2rem;
         }
-        
         .case-category {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--text);
-            padding: 0.25rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
+            display: inline-block; background: var(--gold); color: var(--text);
+            padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.875rem; margin-bottom: 1rem;
         }
-        
-        .case-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .case-brand {
-            font-size: 1.25rem;
-            opacity: 0.9;
-        }
-        
-        .case-location {
-            margin-top: 1rem;
-            opacity: 0.8;
-        }
-        
+        .case-title { font-size: 2.5rem; margin-bottom: 1rem; }
+        .case-brand { font-size: 1.25rem; opacity: 0.9; }
+        .case-location { margin-top: 1rem; opacity: 0.8; }
         .section {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: white; padding: 2rem; border-radius: 12px;
+            margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        
         .section-title {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--gold);
+            color: var(--primary); font-size: 1.5rem; margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem; border-bottom: 2px solid var(--gold);
         }
-        
-        .section-content {
-            color: var(--text-secondary);
-        }
-        
-        .section-content p {
-            margin-bottom: 1rem;
-        }
-        
-        .kpi-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .kpi-item {
-            background: var(--cream);
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .kpi-value {
-            font-size: 2rem;
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        .kpi-label {
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-        }
-        
-        .feature-list {
-            list-style: none;
-        }
-        
-        .feature-list li {
-            padding: 0.75rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            border-bottom: 1px solid var(--cream);
-        }
-        
-        .feature-list li:before {
-            content: "◆";
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-        }
-        
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 2rem;
-            color: var(--primary);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--primary);
-            border-radius: 6px;
-            transition: all 0.3s;
-        }
-        
-        .back-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
         .tag {
-            display: inline-block;
-            background: var(--cream);
-            color: var(--text-secondary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.875rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
+            display: inline-block; background: var(--cream); color: var(--text-secondary);
+            padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.875rem;
+            margin-right: 0.5rem; margin-bottom: 0.5rem;
         }
+        .error { text-align: center; padding: 4rem; color: var(--primary); }
+        .not-found { text-align: center; padding: 4rem; color: var(--text-secondary); }
     </style>
 </head>
 <body>
@@ -210,70 +80,105 @@
             <div class="nav-links">
                 <a href="index.html">首页</a>
                 <a href="wcfx-test-cases.html">案例库</a>
-                <a href="china-map.html">地图</a>
             </div>
         </div>
     </nav>
     
     <main>
-        <a href="javascript:history.back()" class="back-btn">← 返回</a>
-        
-        <div id="case-content">
-            <div class="loading">加载中...</div>
-        </div>
+        <a href="index.html" class="back-btn">← 返回首页</a>
+        <div id="case-content"></div>
     </main>
-    
+
     <script>
-        // 本地案例数据（与首页一致）
-        const localCases = [
-            { id: 'gugong', name: '故宫淘宝', category: '博物馆文创', feature: '宫廷风', desc: '以故宫文化为核心，打造年轻化、时尚化的文创产品', brand: '故宫博物院', province: '北京市', city: '东城区' },
-            { id: 'popmart', name: '泡泡玛特', category: '潮玩盲盒', feature: '潮流IP', desc: '潮流文化娱乐品牌，通过设计师IP和盲盒模式连接艺术家与粉丝', brand: '泡泡玛特', province: '北京市', city: '朝阳区' },
-            { id: 'sanxingdui', name: '三星堆博物馆', category: '博物馆文创', feature: '神秘古蜀', desc: '以三星堆文物为灵感，打造神秘古蜀风格的文创产品', brand: '三星堆博物馆', province: '四川省', city: '德阳市' },
-            { id: 'gansumuseum', name: '甘肃省博物馆', category: '博物馆文创', feature: '绿马玩偶', desc: '以铜奔马为原型开发的绿马玩偶走红网络', brand: '甘肃省博物馆', province: '甘肃省', city: '兰州市' },
-            { id: 'henanmuseum', name: '河南博物院', category: '博物馆文创', feature: '考古盲盒', desc: '考古盲盒销量破百万，开创博物馆文创新模式', brand: '河南博物院', province: '河南省', city: '郑州市' },
-            { id: 'suzhoumuseum', name: '苏州博物馆', category: '博物馆文创', feature: '江南文化', desc: '江南文化主题，年营收超5000万元', brand: '苏州博物馆', province: '江苏省', city: '苏州市' }
-        ];
-        
-        // 获取 URL 参数
+        // 案例数据库
+        const caseDatabase = {
+            'gugong': {
+                name: '故宫淘宝',
+                category: '博物馆文创',
+                brand: '故宫博物院',
+                feature: '宫廷风',
+                desc: '以故宫文化为核心，打造年轻化、时尚化的文创产品。故宫淘宝是故宫博物院官方文创品牌，通过将传统文化元素与现代设计相结合，开发了一系列深受年轻人喜爱的文创产品。',
+                province: '北京市',
+                city: '东城区',
+                highlights: ['年销售额超15亿', '文创产品超10000种', '社交媒体粉丝超千万']
+            },
+            'popmart': {
+                name: '泡泡玛特',
+                category: '潮玩盲盒',
+                brand: '泡泡玛特',
+                feature: '潮流IP',
+                desc: '潮流文化娱乐品牌，通过设计师IP和盲盒模式连接艺术家与粉丝。泡泡玛特是中国领先的潮流文化娱乐公司，以Molly、Dimoo等知名IP为核心，开创了盲盒营销模式。',
+                province: '北京市',
+                city: '朝阳区',
+                highlights: ['港股上市', '年营收超50亿', '会员超1500万']
+            },
+            'sanxingdui': {
+                name: '三星堆博物馆',
+                category: '博物馆文创',
+                brand: '三星堆博物馆',
+                feature: '神秘古蜀',
+                desc: '以三星堆文物为灵感，打造神秘古蜀风格的文创产品。三星堆博物馆以神秘的古蜀文明为主题，开发了一系列深受欢迎的文创产品，让文物活起来。',
+                province: '四川省',
+                city: '广汉市',
+                highlights: ['考古盲盒爆款', '文创雪糕出圈', '年轻游客增长300%']
+            },
+            'gansumuseum': {
+                name: '甘肃省博物馆',
+                category: '博物馆文创',
+                brand: '甘肃省博物馆',
+                feature: '绿马玩偶',
+                desc: '以铜奔马为原型开发的绿马玩偶走红网络。甘肃省博物馆以丝路文化为特色，开发的绿马玩偶成为现象级文创产品。',
+                province: '甘肃省',
+                city: '兰州市',
+                highlights: ['绿马玩偶爆款', '丝路文化特色', '社交媒体热门']
+            },
+            'henanmuseum': {
+                name: '河南博物院',
+                category: '博物馆文创',
+                brand: '河南博物院',
+                feature: '考古盲盒',
+                desc: '考古盲盒销量破百万，开创博物馆文创新模式。河南博物院推出的考古盲盒让消费者体验考古发掘的乐趣，成为现象级文创产品。',
+                province: '河南省',
+                city: '郑州市',
+                highlights: ['月销量超10万', '话题阅读量超10亿', '博物馆文创标杆']
+            },
+            'suzhoumuseum': {
+                name: '苏州博物馆',
+                category: '博物馆文创',
+                brand: '苏州博物馆',
+                feature: '江南文化',
+                desc: '江南文化主题，年营收超5000万元。苏州博物馆以江南文化为特色，开发了系列精美文创产品，展现吴地文化魅力。',
+                province: '江苏省',
+                city: '苏州市',
+                highlights: ['文徵明主题系列', '销售额年增50%', '设计大奖多项']
+            }
+        };
+
         function getUrlParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
-        
-        // 渲染案例详情
-        async function renderCaseDetail() {
+
+        function renderCaseDetail() {
             const caseId = getUrlParam('id');
             const container = document.getElementById('case-content');
             
+            console.log('URL id参数:', caseId);
+            console.log('数据库keys:', Object.keys(caseDatabase));
+            
             if (!caseId) {
-                container.innerHTML = '<div class="error">错误：未指定案例ID</div>';
+                container.innerHTML = '<div class="error"><h2>错误</h2><p>未指定案例ID</p></div>';
                 return;
             }
             
-            console.log('查找案例:', caseId);
-            
-            // 先尝试从本地数据查找
-            let caseData = localCases.find(c => c.id === caseId);
-            
-            // 如果本地找不到，尝试从 data/cases.json 加载
-            if (!caseData) {
-                try {
-                    const response = await fetch('./data/cases.json');
-                    if (response.ok) {
-                        const cases = await response.json();
-                        caseData = cases.find(c => c.id === caseId);
-                    }
-                } catch (e) {
-                    console.log('加载外部数据失败:', e);
-                }
-            }
+            const caseData = caseDatabase[caseId];
             
             if (!caseData) {
                 container.innerHTML = `
                     <div class="not-found">
                         <h2>未找到案例</h2>
                         <p>案例ID: ${caseId}</p>
-                        <p>该案例可能尚未收录或ID不正确</p>
+                        <p>该案例可能尚未收录</p>
                         <br>
                         <a href="index.html" class="back-btn">返回首页</a>
                     </div>
@@ -281,59 +186,35 @@
                 return;
             }
             
-            console.log('找到案例:', caseData);
-            
-            // 渲染详情
             container.innerHTML = `
                 <div class="case-header">
                     <span class="case-category">${caseData.category}</span>
                     <h1 class="case-title">${caseData.name}</h1>
-                    <div class="case-brand">${caseData.brand || caseData.name}</div>
-                    <div class="case-location">📍 ${caseData.city || caseData.province || '未知'}</div>
+                    <div class="case-brand">${caseData.brand}</div>
+                    <div class="case-location">📍 ${caseData.city} · ${caseData.province}</div>
                 </div>
                 
                 <div class="section">
                     <h2 class="section-title">产品描述</h2>
-                    <div class="section-content">
-                        <p>${caseData.desc || caseData.description || '暂无描述'}</p>
-                    </div>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">${caseData.desc}</p>
                 </div>
                 
-                ${caseData.feature ? `
                 <div class="section">
-                    <h2 class="section-title">核心特色</h2>
-                    <div class="section-content">
+                    <h2 class="section-title">核心亮点</h2>
+                    <div>
                         <span class="tag">${caseData.feature}</span>
-                        ${caseData.highlights ? caseData.highlights.map(h => `<span class="tag">${h}</span>`).join('') : ''}
+                        ${caseData.highlights.map(h => `<span class="tag">${h}</span>`).join('')}
                     </div>
                 </div>
-                ` : ''}
-                
-                ${caseData.kpi ? `
-                <div class="section">
-                    <h2 class="section-title">关键数据</h2>
-                    <div class="kpi-grid">
-                        ${Object.entries(caseData.kpi).map(([key, value]) => `
-                            <div class="kpi-item">
-                                <div class="kpi-value">${value}</div>
-                                <div class="kpi-label">${key}</div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                ` : ''}
                 
                 <div class="section">
                     <h2 class="section-title">位置信息</h2>
-                    <div class="section-content">
-                        <p><strong>省份：</strong>${caseData.province || '未知'}</p>
-                        <p><strong>城市：</strong>${caseData.city || '未知'}</p>
-                    </div>
+                    <p style="color: var(--text-secondary);"><strong>省份：</strong>${caseData.province}</p>
+                    <p style="color: var(--text-secondary);"><strong>城市：</strong>${caseData.city}</p>
                 </div>
             `;
         }
-        
-        // 页面加载完成后渲染
+
         document.addEventListener('DOMContentLoaded', renderCaseDetail);
     </script>
 </body>
