@@ -267,14 +267,13 @@ async function renderPolicies(containerId, options = {}) {
 // 显示案例详情
 function showCaseDetail(caseId) {
     console.log('查看案例详情:', caseId);
-    // 可以跳转到详情页或显示弹窗
-    // window.location.href = `case-detail.html?id=${caseId}`;
+    window.location.href = `case-detail.html?id=${caseId}`;
 }
 
 // 显示深度分析案例详情
 function showDeepCaseDetail(caseId) {
     console.log('查看深度分析案例:', caseId);
-    // window.location.href = `deep-case-detail.html?id=${caseId}`;
+    window.location.href = `case-detail.html?id=${caseId}`;
 }
 
 // 初始化

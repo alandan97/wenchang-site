@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例详情 - 文创指南</title>
+    <script src="github-data-loader.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B1E1E;
+            --gold: #C89B3C;
+            --green: #2D5A4A;
+            --cream: #F5F0E6;
+            --paper: #FDF8F0;
+            --text: #2C1810;
+            --text-secondary: #6B5B4F;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--paper);
+            color: var(--text);
+            line-height: 1.8;
+        }
+        
+        /* 导航 */
+        nav {
+            background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            opacity: 0.9;
+        }
+        
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+        }
+        
+        /* 主内容 */
+        main {
+            padding-top: 80px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 2rem 4rem;
+        }
+        
+        /* 加载状态 */
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-secondary);
+        }
+        
+        .error {
+            text-align: center;
+            padding: 4rem;
+            color: var(--primary);
+        }
+        
+        /* 案例头部 */
+        .case-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        
+        .case-category {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--text);
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .case-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .case-brand {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        
+        .case-location {
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+        
+        /* 内容区块 */
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        .section-content {
+            color: var(--text-secondary);
+        }
+        
+        /* KPI 网格 */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .kpi-item {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .kpi-value {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .kpi-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        /* 列表样式 */
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            border-bottom: 1px solid var(--cream);
+        }
+        
+        .feature-list li:before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+        
+        /* 返回按钮 */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--primary);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* 标签 */
+        .tag {
+            display: inline-block;
+            background: var(--cream);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🏛️ 文创指南</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="wcfx-test-cases.html">案例库</a>
+                <a href="china-map.html">地图</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <a href="javascript:history.back()" class="back-btn">← 返回</a>
+        
+        <div id="case-content">
+            <div class="loading">加载中...</div>
+        </div>
+    </main>
+    
+    <script>
+        // 获取 URL 参数
+        function getUrlParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        
+        // 渲染案例详情
+        async function renderCaseDetail() {
+            const caseId = getUrlParam('id');
+            const container = document.getElementById('case-content');
+            
+            if (!caseId) {
+                container.innerHTML = '<div class="error">错误：未指定案例ID</div>';
+                return;
+            }
+            
+            try {
+                // 加载案例数据
+                const cases = await WenChangData.fetchCases();
+                const caseData = cases.find(c => c.id === caseId);
+                
+                if (!caseData) {
+                    container.innerHTML = '<div class="error">错误：未找到案例</div>';
+                    return;
+                }
+                
+                // 渲染详情
+                container.innerHTML = `
+                    <div class="case-header">
+                        <span class="case-category">${caseData.category}</span>
+                        <h1 class="case-title">${caseData.name}</h1>
+                        <div class="case-brand">${caseData.brand}</div>
+                        <div class="case-location">📍 ${caseData.city || caseData.province}</div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="section-title">产品描述</h2>
+                        <div class="section-content">
+                            <p>${caseData.description}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="section-title">核心亮点</h2>
+                        <ul class="feature-list">
+                            ${caseData.highlights ? caseData.highlights.map(h => `<li>${h}</li>`).join('') : '<li>暂无数据</li>'}
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="section-title">关键数据</h2>
+                        <div class="kpi-grid">
+                            ${caseData.kpi ? Object.entries(caseData.kpi).map(([key, value]) => `
+                                <div class="kpi-item">
+                                    <div class="kpi-value">${value}</div>
+                                    <div class="kpi-label">${key}</div>
+                                </div>
+                            `).join('') : '<div class="kpi-item"><div class="kpi-value">-</div><div class="kpi-label">暂无数据</div></div>'}
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="section-title">位置信息</h2>
+                        <div class="section-content">
+                            <p><strong>省份：</strong>${caseData.province || '未知'}</p>
+                            <p><strong>城市：</strong>${caseData.city || '未知'}</p>
+                        </div>
+                    </div>
+                `;
+                
+            } catch (error) {
+                console.error('加载案例失败:', error);
+                container.innerHTML = '<div class="error">加载失败，请刷新重试</div>';
+            }
+        }
+        
+        // 页面加载完成后渲染
+        document.addEventListener('DOMContentLoaded', renderCaseDetail);
+    </script>
+</body>
+</html>
