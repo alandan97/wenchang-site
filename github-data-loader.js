@@ -1,35 +1,33 @@
-// 动态加载 GitHub 数据 - 深度分析版 V3.0
-// 支持从 GitHub API 直接加载所有案例（分页加载确保稳定）
+// 文创指南数据加载器 V4.0
+// 从 GitHub 加载所有案例和政策数据
 
 const CONFIG = {
     githubRepo: 'alandan97/wenchang-data',
     githubApiBase: 'https://api.github.com/repos/alandan97/wenchang-data',
     githubRawBase: 'https://raw.githubusercontent.com/alandan97/wenchang-data/main',
-    pageSize: 50,  // 每页加载50个案例，确保稳定
-    maxConcurrent: 3  // 最大并发请求数
+    pageSize: 100,
+    maxConcurrent: 5
 };
 
-// 缓存机制
+// 缓存
 let dataCache = {
     cases: null,
     policies: null,
     stats: null,
-    caseDetails: {},
-    policyDetails: {}
+    timestamp: 0
 };
-const CACHE_DURATION = 5 * 60 * 1000; // 5分钟缓存
+const CACHE_DURATION = 5 * 60 * 1000; // 5分钟
 
 // 延迟函数
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 // 带重试的 fetch
-async function fetchWithRetry(url, options = {}, maxRetries = 3) {
+async function fetchWithRetry(url, maxRetries = 3) {
     for (let i = 0; i < maxRetries; i++) {
         try {
-            const response = await fetch(url, { ...options, timeout: 30000 });
+            const response = await fetch(url);
             if (response.ok) return response;
             if (response.status === 403) {
-                // API 限流，等待后重试
                 await delay(1000 * (i + 1));
                 continue;
             }
@@ -41,14 +39,13 @@ async function fetchWithRetry(url, options = {}, maxRetries = 3) {
     }
 }
 
-// 获取本地 JSON 数据（备用）
+// 获取本地 JSON
 async function fetchLocalJson(filename) {
     try {
         const response = await fetch(`./data/${filename}`);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        if (!response.ok) return null;
         return await response.json();
-    } catch (error) {
-        console.warn(`本地数据获取失败: ${filename}`, error);
+    } catch {
         return null;
     }
 }
@@ -60,7 +57,7 @@ async function fetchDirectoryContents(path, page = 1, perPage = 100) {
     return await response.json();
 }
 
-// 获取单个文件内容
+// 获取单个文件
 async function fetchFileContent(downloadUrl) {
     const response = await fetchWithRetry(downloadUrl);
     return await response.json();
@@ -68,12 +65,6 @@ async function fetchFileContent(downloadUrl) {
 
 // 获取所有案例文件列表
 async function fetchAllCaseFiles() {
-    const cacheKey = 'caseFiles';
-    const cached = sessionStorage.getItem(cacheKey);
-    if (cached) {
-        return JSON.parse(cached);
-    }
-    
     const files = [];
     let page = 1;
     
@@ -93,50 +84,43 @@ async function fetchAllCaseFiles() {
         if (page % 5 === 0) await delay(1000);
     }
     
-    // 缓存到 sessionStorage
-    sessionStorage.setItem(cacheKey, JSON.stringify(files));
     return files;
 }
 
-// 批量下载案例（带并发控制）
+// 批量下载案例
 async function downloadCasesBatch(files, startIndex, batchSize) {
     const batch = files.slice(startIndex, startIndex + batchSize);
     const cases = [];
     
-    // 使用 Promise.all 控制并发
-    const promises = batch.map(async (file, index) => {
+    for (let i = 0; i < batch.length; i++) {
         try {
-            await delay(index * 100); // 错开请求时间
-            const caseData = await fetchFileContent(file.download_url);
-            return caseData;
+            await delay(i * 50); // 错开请求
+            const caseData = await fetchFileContent(batch[i].download_url);
+            cases.push(caseData);
         } catch (error) {
-            console.warn(`下载案例失败: ${file.name}`, error);
-            return null;
+            console.warn(`下载案例失败: ${batch[i].name}`, error);
         }
-    });
+    }
     
-    const results = await Promise.all(promises);
-    return results.filter(r => r !== null);
+    return cases;
 }
 
-// 获取所有案例（分页加载）
+// 获取所有案例
 async function fetchAllCases(onProgress = null) {
     // 检查缓存
-    if (dataCache.cases && Date.now() - dataCache.cases.timestamp < CACHE_DURATION) {
+    if (dataCache.cases && Date.now() - dataCache.timestamp < CACHE_DURATION) {
         console.log('使用缓存的案例数据');
-        return dataCache.cases.data;
+        return dataCache.cases;
     }
     
     console.log('开始从 GitHub 加载所有案例...');
     
     try {
-        // 获取所有案例文件列表
         const files = await fetchAllCaseFiles();
         console.log(`找到 ${files.length} 个案例文件`);
         
         if (onProgress) onProgress({ stage: 'listing', total: files.length, loaded: 0 });
         
-        // 分页下载
         const allCases = [];
         const batchSize = CONFIG.pageSize;
         const totalBatches = Math.ceil(files.length / batchSize);
@@ -158,12 +142,12 @@ async function fetchAllCases(onProgress = null) {
                 });
             }
             
-            // 批次间延迟，避免触发限流
-            if (i < totalBatches - 1) await delay(500);
+            if (i < totalBatches - 1) await delay(300);
         }
         
         // 缓存数据
-        dataCache.cases = { data: allCases, timestamp: Date.now() };
+        dataCache.cases = allCases;
+        dataCache.timestamp = Date.now();
         
         console.log(`成功加载 ${allCases.length} 个案例`);
         return allCases;
@@ -171,124 +155,157 @@ async function fetchAllCases(onProgress = null) {
     } catch (error) {
         console.error('从 GitHub 加载案例失败:', error);
         // 降级到本地数据
-        console.log('尝试加载本地数据...');
-        return await fetchLocalJson('cases.json') || [];
+        const localCases = await fetchLocalJson('cases.json') || [];
+        console.log(`使用本地数据: ${localCases.length} 个案例`);
+        return localCases;
     }
 }
 
-// 获取案例详情（带缓存）
-async function fetchCaseDetail(caseId) {
-    // 检查内存缓存
-    if (dataCache.caseDetails[caseId]) {
-        return dataCache.caseDetails[caseId];
+// 获取所有政策文件
+async function fetchAllPolicyFiles() {
+    const allFiles = [];
+    
+    // 国家级政策
+    console.log('获取国家级政策...');
+    let page = 1;
+    while (true) {
+        const files = await fetchDirectoryContents('policies/national', page, 100);
+        if (!Array.isArray(files) || files.length === 0) break;
+        allFiles.push(...files.filter(f => f.type === 'file'));
+        if (files.length < 100) break;
+        page++;
+    }
+    console.log(`  国家级: ${allFiles.length} 个`);
+    
+    // 省级政策
+    console.log('获取省级政策...');
+    const provincialDirs = await fetchDirectoryContents('policies/provincial');
+    if (Array.isArray(provincialDirs)) {
+        for (const d of provincialDirs) {
+            if (d.type === 'dir') {
+                const files = await fetchDirectoryContents(`policies/provincial/${d.name}`, 1, 100);
+                if (Array.isArray(files)) {
+                    allFiles.push(...files.filter(f => f.type === 'file'));
+                }
+            }
+        }
     }
     
-    // 检查 localStorage 缓存
-    const cached = localStorage.getItem(`case_${caseId}`);
-    if (cached) {
-        const data = JSON.parse(cached);
-        dataCache.caseDetails[caseId] = data;
-        return data;
+    // 市级政策
+    console.log('获取市级政策...');
+    const cityDirs = await fetchDirectoryContents('policies/city');
+    if (Array.isArray(cityDirs)) {
+        for (const d of cityDirs) {
+            if (d.type === 'dir') {
+                const files = await fetchDirectoryContents(`policies/city/${d.name}`, 1, 100);
+                if (Array.isArray(files)) {
+                    allFiles.push(...files.filter(f => f.type === 'file'));
+                }
+            }
+        }
     }
+    
+    console.log(`政策文件总计: ${allFiles.length} 个`);
+    return allFiles;
+}
+
+// 获取所有政策
+async function fetchAllPolicies(onProgress = null) {
+    // 检查缓存
+    if (dataCache.policies && Date.now() - dataCache.timestamp < CACHE_DURATION) {
+        console.log('使用缓存的政策数据');
+        return dataCache.policies;
+    }
+    
+    console.log('开始从 GitHub 加载所有政策...');
     
     try {
-        // 从所有案例中找到对应ID的案例
-        const allCases = await fetchAllCases();
-        const caseData = allCases.find(c => c.id === caseId);
+        const files = await fetchAllPolicyFiles();
         
-        if (caseData) {
-            // 缓存到 localStorage（永久缓存）
-            localStorage.setItem(`case_${caseId}`, JSON.stringify(caseData));
-            dataCache.caseDetails[caseId] = caseData;
+        if (onProgress) onProgress({ stage: 'listing', total: files.length, loaded: 0 });
+        
+        const allPolicies = [];
+        const batchSize = 50;
+        const totalBatches = Math.ceil(files.length / batchSize);
+        
+        for (let i = 0; i < totalBatches; i++) {
+            const startIndex = i * batchSize;
+            console.log(`下载第 ${i + 1}/${totalBatches} 批政策...`);
+            
+            const batch = files.slice(startIndex, startIndex + batchSize);
+            for (let j = 0; j < batch.length; j++) {
+                try {
+                    await delay(j * 30);
+                    const policyData = await fetchFileContent(batch[j].download_url);
+                    allPolicies.push(policyData);
+                } catch (error) {
+                    console.warn(`下载政策失败: ${batch[j].name}`, error);
+                }
+            }
+            
+            if (onProgress) {
+                onProgress({ 
+                    stage: 'downloading', 
+                    total: files.length, 
+                    loaded: allPolicies.length,
+                    batch: i + 1,
+                    totalBatches
+                });
+            }
+            
+            if (i < totalBatches - 1) await delay(200);
         }
         
-        return caseData;
+        // 缓存数据
+        dataCache.policies = allPolicies;
+        dataCache.timestamp = Date.now();
+        
+        console.log(`成功加载 ${allPolicies.length} 个政策`);
+        return allPolicies;
+        
     } catch (error) {
-        console.error(`获取案例详情失败: ${caseId}`, error);
-        return null;
+        console.error('从 GitHub 加载政策失败:', error);
+        // 降级到本地数据
+        const localPolicies = await fetchLocalJson('policies.json') || [];
+        console.log(`使用本地数据: ${localPolicies.length} 个政策`);
+        return localPolicies;
     }
 }
 
-// 获取汇总统计
+// 获取统计数据
 async function fetchStats() {
-    if (dataCache.stats && Date.now() - dataCache.stats.timestamp < CACHE_DURATION) {
-        return dataCache.stats.data;
+    if (dataCache.stats && Date.now() - dataCache.timestamp < CACHE_DURATION) {
+        return dataCache.stats;
     }
     
     try {
-        // 优先从 GitHub 获取
         const response = await fetchWithRetry(`${CONFIG.githubRawBase}/stats/progress.json`);
         const data = await response.json();
-        dataCache.stats = { data, timestamp: Date.now() };
+        dataCache.stats = data;
         return data;
     } catch (error) {
         console.warn('从 GitHub 获取统计失败，使用本地数据');
         return await fetchLocalJson('summary.json') || { 
-            total_cases: 968, 
-            total_policies: 277, 
+            total_cases: 1000, 
+            total_policies: 517, 
             total_brands: 156,
-            data_version: '3.0' 
+            data_version: '4.0' 
         };
     }
 }
 
-// 获取政策列表
-async function fetchPolicies() {
-    if (dataCache.policies && Date.now() - dataCache.policies.timestamp < CACHE_DURATION) {
-        return dataCache.policies.data;
-    }
-    
-    try {
-        // 从本地获取政策数据（政策数量较少）
-        const policies = await fetchLocalJson('policies.json') || [];
-        dataCache.policies = { data: policies, timestamp: Date.now() };
-        return policies;
-    } catch (error) {
-        console.error('获取政策失败:', error);
-        return [];
+// 格式化数字
+function formatNumber(num) {
+    if (num >= 100000000) {
+        return (num / 100000000).toFixed(1) + '亿';
+    } else if (num >= 10000) {
+        return (num / 10000).toFixed(0) + '万';
+    } else {
+        return num.toLocaleString();
     }
 }
 
-// 获取统计信息
-async function getStats() {
-    const stats = await fetchStats();
-    return {
-        totalCases: stats.total_cases || 0,
-        totalPolicies: stats.total_policies || 0,
-        totalBrands: stats.total_brands || 0,
-        progressPercent: Math.round((stats.total_cases || 0) / 1000 * 100),
-        dataVersion: stats.data_version || '3.0'
-    };
-}
-
-// 更新统计显示
-async function updateStatsDisplay() {
-    try {
-        const stats = await getStats();
-        
-        const elements = {
-            'stat-case-count': stats.totalCases.toLocaleString(),
-            'stat-policy-count': stats.totalPolicies.toLocaleString(),
-            'stat-brand-count': stats.totalBrands.toLocaleString(),
-            'stat-province-count': '34',
-            'data-version': `V${stats.dataVersion}`
-        };
-        
-        Object.entries(elements).forEach(([id, value]) => {
-            const el = document.getElementById(id);
-            if (el) {
-                el.textContent = value;
-                el.style.opacity = '1';
-            }
-        });
-        
-        console.log('统计数据已更新:', stats);
-    } catch (error) {
-        console.error('更新统计显示失败:', error);
-    }
-}
-
-// 渲染案例卡片（简化版）
+// 渲染案例卡片
 function renderCaseCard(caseData) {
     const { id, name, brand, category, location = {}, product_info = {}, kpi_data = {} } = caseData;
     const province = location.province || '未知';
@@ -323,28 +340,29 @@ function renderPolicyCard(policy) {
     const { id, title, level, region, category, tags = [], metadata = {} } = policy;
     
     const levelText = { 'national': '国家级', 'provincial': '省级', 'city': '市级' }[level] || level;
+    const levelClass = level || 'national';
     
     return `
         <div class="policy-card" data-id="${id}">
             <div class="policy-header">
                 <h3 class="policy-title">${title}</h3>
-                <span class="policy-level ${level}">${levelText}</span>
+                <span class="policy-level ${levelClass}">${levelText}</span>
             </div>
             <div class="policy-body">
                 <div class="policy-tags">
-                    ${tags.slice(0, 5).map(tag => `<span class="policy-tag">${tag}</span>`).join('')}
+                    ${(tags || []).slice(0, 5).map(tag => `<span class="policy-tag">${tag}</span>`).join('')}
                 </div>
                 <p class="policy-category">分类: ${category}</p>
             </div>
             <div class="policy-footer">
                 <span class="policy-region">📍 ${region}</span>
-                <span class="policy-date">📅 ${metadata.issue_date || ''}</span>
+                <span class="policy-date">📅 ${metadata?.issue_date || ''}</span>
             </div>
         </div>
     `;
 }
 
-// 渲染案例列表（支持分页）
+// 渲染案例列表
 async function renderCases(containerId, options = {}) {
     const container = document.getElementById(containerId);
     if (!container) {
@@ -352,31 +370,10 @@ async function renderCases(containerId, options = {}) {
         return;
     }
     
-    // 显示加载进度
-    container.innerHTML = `
-        <div class="loading-progress" style="text-align:center;padding:2rem;">
-            <div style="color:#8B1E1E;font-size:1.2rem;margin-bottom:1rem;">正在加载案例数据...</div>
-            <div class="progress-bar" style="width:200px;height:8px;background:#F5F0E6;border-radius:4px;margin:0 auto;overflow:hidden;">
-                <div class="progress-fill" style="width:0%;height:100%;background:#C89B3C;transition:width 0.3s;"></div>
-            </div>
-            <div class="progress-text" style="color:#6B5B4F;margin-top:0.5rem;font-size:0.9rem;">准备中...</div>
-        </div>
-    `;
-    
-    const progressFill = container.querySelector('.progress-fill');
-    const progressText = container.querySelector('.progress-text');
+    container.innerHTML = '<div class="loading" style="text-align:center;padding:2rem;color:#6B5B4F;">加载中...</div>';
     
     try {
-        // 加载所有案例（带进度回调）
-        const cases = await fetchAllCases((progress) => {
-            const percent = Math.round((progress.loaded / progress.total) * 100);
-            if (progressFill) progressFill.style.width = `${percent}%`;
-            if (progressText) {
-                progressText.textContent = progress.stage === 'listing' 
-                    ? `发现 ${progress.total} 个案例...`
-                    : `已加载 ${progress.loaded}/${progress.total} 个案例`;
-            }
-        });
+        const cases = await fetchAllCases();
         
         // 过滤
         let filtered = cases;
@@ -384,16 +381,10 @@ async function renderCases(containerId, options = {}) {
             filtered = filtered.filter(c => c.category === options.category);
         }
         if (options.province) {
-            filtered = filtered.filter(c => 
-                c.location?.province === options.province
-            );
+            filtered = filtered.filter(c => c.location?.province === options.province);
         }
-        if (options.search) {
-            const searchLower = options.search.toLowerCase();
-            filtered = filtered.filter(c => 
-                c.name?.toLowerCase().includes(searchLower) ||
-                c.brand?.toLowerCase().includes(searchLower)
-            );
+        if (options.limit) {
+            filtered = filtered.slice(0, options.limit);
         }
         
         if (filtered.length === 0) {
@@ -401,22 +392,8 @@ async function renderCases(containerId, options = {}) {
             return;
         }
         
-        // 分页显示
-        const pageSize = options.pageSize || 20;
-        const currentPage = options.page || 1;
-        const start = (currentPage - 1) * pageSize;
-        const paginatedCases = filtered.slice(start, start + pageSize);
-        
-        // 渲染
-        container.innerHTML = paginatedCases.map(renderCaseCard).join('');
-        
-        // 添加分页控件
-        const totalPages = Math.ceil(filtered.length / pageSize);
-        if (totalPages > 1) {
-            renderPagination(container, currentPage, totalPages, filtered.length, options);
-        }
-        
-        console.log(`渲染完成: ${paginatedCases.length}/${filtered.length} 个案例`);
+        container.innerHTML = filtered.map(renderCaseCard).join('');
+        console.log(`渲染完成: ${filtered.length} 个案例`);
         
     } catch (error) {
         console.error('渲染案例失败:', error);
@@ -424,54 +401,39 @@ async function renderCases(containerId, options = {}) {
     }
 }
 
-// 渲染分页控件
-function renderPagination(container, currentPage, totalPages, totalItems, options) {
-    const pagination = document.createElement('div');
-    pagination.className = 'pagination';
-    pagination.style.cssText = 'display:flex;justify-content:center;align-items:center;gap:0.5rem;margin-top:2rem;padding:1rem;';
-    
-    // 上一页
-    const prevBtn = document.createElement('button');
-    prevBtn.textContent = '← 上一页';
-    prevBtn.disabled = currentPage === 1;
-    prevBtn.onclick = () => renderCases(container.id, { ...options, page: currentPage - 1 });
-    pagination.appendChild(prevBtn);
-    
-    // 页码信息
-    const info = document.createElement('span');
-    info.textContent = `第 ${currentPage}/${totalPages} 页 (共 ${totalItems} 个)`;
-    info.style.cssText = 'color:#6B5B4F;padding:0 1rem;';
-    pagination.appendChild(info);
-    
-    // 下一页
-    const nextBtn = document.createElement('button');
-    nextBtn.textContent = '下一页 →';
-    nextBtn.disabled = currentPage === totalPages;
-    nextBtn.onclick = () => renderCases(container.id, { ...options, page: currentPage + 1 });
-    pagination.appendChild(nextBtn);
-    
-    container.parentNode.insertBefore(pagination, container.nextSibling);
-}
-
 // 渲染政策列表
 async function renderPolicies(containerId, options = {}) {
     const container = document.getElementById(containerId);
-    if (!container) return;
+    if (!container) {
+        console.error(`容器 #${containerId} 不存在`);
+        return;
+    }
     
     container.innerHTML = '<div class="loading" style="text-align:center;padding:2rem;color:#6B5B4F;">加载中...</div>';
     
     try {
-        const policies = await fetchPolicies();
+        const policies = await fetchAllPolicies();
         
+        // 过滤
         let filtered = policies;
-        if (options.level) filtered = filtered.filter(p => p.level === options.level);
-        if (options.category) filtered = filtered.filter(p => p.category === options.category);
-        if (options.limit) filtered = filtered.slice(0, options.limit);
+        if (options.level) {
+            filtered = filtered.filter(p => p.level === options.level);
+        }
+        if (options.category) {
+            filtered = filtered.filter(p => p.category === options.category);
+        }
+        if (options.limit) {
+            filtered = filtered.slice(0, options.limit);
+        }
         
-        container.innerHTML = filtered.length > 0 
-            ? filtered.map(renderPolicyCard).join('')
-            : '<div class="empty" style="text-align:center;padding:2rem;color:#6B5B4F;">暂无政策</div>';
-            
+        if (filtered.length === 0) {
+            container.innerHTML = '<div class="empty" style="text-align:center;padding:2rem;color:#6B5B4F;">暂无政策</div>';
+            return;
+        }
+        
+        container.innerHTML = filtered.map(renderPolicyCard).join('');
+        console.log(`渲染完成: ${filtered.length} 个政策`);
+        
     } catch (error) {
         console.error('渲染政策失败:', error);
         container.innerHTML = '<div class="error" style="text-align:center;padding:2rem;color:#E74C3C;">加载失败</div>';
@@ -479,21 +441,41 @@ async function renderPolicies(containerId, options = {}) {
 }
 
 // 显示案例详情
-async function showCaseDetail(caseId) {
+function showCaseDetail(caseId) {
     console.log('查看案例详情:', caseId);
-    
-    // 预加载案例详情到缓存
-    const caseData = await fetchCaseDetail(caseId);
-    if (caseData) {
-        console.log('案例详情已缓存:', caseData.name);
-    }
-    
     window.location.href = `case-detail.html?id=${caseId}`;
+}
+
+// 更新统计显示
+async function updateStatsDisplay() {
+    try {
+        const stats = await fetchStats();
+        
+        const elements = {
+            'stat-case-count': (stats.total_cases || 0).toLocaleString(),
+            'stat-policy-count': (stats.total_policies || 0).toLocaleString(),
+            'stat-brand-count': (stats.total_brands || 0).toLocaleString(),
+            'stat-province-count': '34',
+            'data-version': `V${stats.data_version || '4.0'}`
+        };
+        
+        Object.entries(elements).forEach(([id, value]) => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.textContent = value;
+                el.style.opacity = '1';
+            }
+        });
+        
+        console.log('统计数据已更新:', stats);
+    } catch (error) {
+        console.error('更新统计显示失败:', error);
+    }
 }
 
 // 初始化
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('数据加载器 V3.0 已初始化 - 支持从 GitHub 加载所有案例');
+    console.log('数据加载器 V4.0 已初始化');
     
     // 更新统计数字
     updateStatsDisplay();
@@ -504,9 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const options = {
             category: container.dataset.category,
             province: container.dataset.province,
-            search: container.dataset.search,
-            pageSize: parseInt(container.dataset.pageSize) || 20,
-            page: parseInt(container.dataset.page) || 1
+            limit: parseInt(container.dataset.limit) || undefined
         };
         renderCases(container.id, options);
     });
@@ -527,14 +507,13 @@ document.addEventListener('DOMContentLoaded', () => {
 window.WenChangData = {
     fetchStats,
     fetchAllCases,
-    fetchCaseDetail,
-    fetchPolicies,
-    getStats,
+    fetchAllPolicies,
     updateStatsDisplay,
     renderCases,
     renderPolicies,
     renderCaseCard,
     renderPolicyCard,
     showCaseDetail,
+    formatNumber,
     CONFIG
 };
