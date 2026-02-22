@@ -7,6 +7,7 @@
     <!-- GSAP for smooth animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="github-data-loader.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -424,7 +425,52 @@
                     ease: 'back.out(1.7)'
                 });
             });
+            
+            // 动态加载数据
+            loadDynamicData();
         });
+        
+        // 动态加载数据
+        async function loadDynamicData() {
+            try {
+                if (typeof WenChangData === 'undefined') {
+                    console.log('GitHub 数据加载器未加载');
+                    return;
+                }
+                
+                // 更新统计数据
+                const stats = await WenChangData.getStats();
+                document.querySelector('.stat-value').textContent = Object.keys(stats.provinceStats).length;
+                
+                // 更新省份案例数
+                const caseCountEl = document.querySelectorAll('.stat-value')[2];
+                if (caseCountEl) caseCountEl.textContent = stats.totalCases;
+                
+                // 动态更新省份卡片
+                await updateProvinceCards(stats.provinceStats);
+                
+            } catch (error) {
+                console.error('动态加载数据失败:', error);
+            }
+        }
+        
+        // 更新省份卡片
+        async function updateProvinceCards(provinceStats) {
+            const cards = document.querySelectorAll('.province-card');
+            cards.forEach(card => {
+                const nameEl = card.querySelector('.province-name');
+                if (nameEl) {
+                    const province = nameEl.textContent.trim();
+                    const count = provinceStats[province];
+                    if (count) {
+                        const descEl = card.querySelector('.province-desc');
+                        if (descEl) {
+                            descEl.textContent = `收录 ${count} 个文创案例`;
+                        }
+                    }
+                }
+            });
+        }
     </script>
 </body>
 </html>

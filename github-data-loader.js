@@ -293,13 +293,160 @@ document.addEventListener('DOMContentLoaded', () => {
     updateStatsDisplay();
 });
 
+// 按省份分组案例
+async function getCasesByProvince() {
+    const { cases } = await loadAllData();
+    const grouped = {};
+    
+    cases.forEach(c => {
+        const province = c.location?.province || '未知';
+        if (!grouped[province]) {
+            grouped[province] = [];
+        }
+        grouped[province].push(c);
+    });
+    
+    return grouped;
+}
+
+// 按类别分组案例
+async function getCasesByCategory() {
+    const { cases } = await loadAllData();
+    const grouped = {};
+    
+    cases.forEach(c => {
+        const category = c.category || '其他';
+        if (!grouped[category]) {
+            grouped[category] = [];
+        }
+        grouped[category].push(c);
+    });
+    
+    return grouped;
+}
+
+// 获取品牌列表（去重）
+async function getUniqueBrands() {
+    const { cases } = await loadAllData();
+    const brands = new Set();
+    
+    cases.forEach(c => {
+        if (c.brand) brands.add(c.brand);
+    });
+    
+    return Array.from(brands).sort();
+}
+
+// 搜索案例
+async function searchCases(keyword) {
+    const { cases } = await loadAllData();
+    const lowerKeyword = keyword.toLowerCase();
+    
+    return cases.filter(c => {
+        return (c.name && c.name.toLowerCase().includes(lowerKeyword)) ||
+               (c.brand && c.brand.toLowerCase().includes(lowerKeyword)) ||
+               (c.description && c.description.toLowerCase().includes(lowerKeyword)) ||
+               (c.category && c.category.toLowerCase().includes(lowerKeyword));
+    });
+}
+
+// 渲染省份卡片
+async function renderProvinceCards(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    container.innerHTML = '<div class="loading">加载中...</div>';
+    
+    try {
+        const grouped = await getCasesByProvince();
+        const provinces = Object.keys(grouped).sort();
+        
+        if (provinces.length === 0) {
+            container.innerHTML = '<div class="empty">暂无数据</div>';
+            return;
+        }
+        
+        // 省份图标映射
+        const provinceIcons = {
+            '北京市': '🏛️', '上海市': '🏙️', '四川省': '🐼', '甘肃省': '🐴',
+            '河南省': '🏺', '江苏省': '🎋', '浙江省': '🌊', '陕西省': '🏔️',
+            '广东省': '🌺', '山东省': '🏔️', '湖南省': '🌶️', '湖北省': '🏯',
+            '云南省': '🌸', '贵州省': '🏔️', '西藏自治区': '🏔️', '新疆维吾尔自治区': '🏜️',
+            '内蒙古自治区': '🌿', '广西壮族自治区': '🌴', '宁夏回族自治区': '🏜️',
+            '青海省': '🏔️', '黑龙江省': '❄️', '吉林省': '🌲', '辽宁省': '🏭',
+            '河北省': '🏔️', '山西省': '🏔️', '安徽省': '🏔️', '福建省': '🌊',
+            '江西省': '🏔️', '海南省': '🌴', '重庆市': '🌉', '天津市': '⚓'
+        };
+        
+        container.innerHTML = provinces.map(province => {
+            const cases = grouped[province];
+            const firstCase = cases[0];
+            const icon = provinceIcons[province] || '📍';
+            
+            return `
+                <div class="province-card" onclick="showProvinceCases('${province}')">
+                    <div class="province-header">
+                        <div class="province-icon">${icon}</div>
+                        <div class="province-name">${province}</div>
+                    </div>
+                    <div class="province-desc">
+                        ${firstCase ? firstCase.brand + ' - ' + (firstCase.description?.substring(0, 50) || '') + '...' : '暂无描述'}
+                    </div>
+                    <span class="case-tag">${cases.length} 个案例</span>
+                </div>
+            `;
+        }).join('');
+        
+    } catch (error) {
+        console.error('渲染省份卡片失败:', error);
+        container.innerHTML = '<div class="error">加载失败</div>';
+    }
+}
+
+// 渲染案例卡片（新格式）
+function renderCaseCardV2(caseData) {
+    const { id, name, brand, category, location, description, highlights = [], images = [] } = caseData;
+    
+    return `
+        <div class="case-card" data-id="${id}" onclick="showCaseDetail('${id}')">
+            <div class="case-image">
+                ${images.length > 0 ? `<img src="${images[0]}" alt="${name}" loading="lazy">` : '<div class="case-image-placeholder">🏛️</div>'}
+            </div>
+            <div class="case-content">
+                <div class="case-header">
+                    <h3 class="case-title">${name}</h3>
+                    <span class="case-brand">${brand}</span>
+                </div>
+                <div class="case-body">
+                    <p class="case-description">${description ? description.substring(0, 80) + '...' : '暂无描述'}</p>
+                    ${highlights.length > 0 ? `
+                        <div class="case-highlights">
+                            ${highlights.slice(0, 3).map(h => `<span class="highlight-tag">${h}</span>`).join('')}
+                        </div>
+                    ` : ''}
+                </div>
+                <div class="case-footer">
+                    <span class="case-location">📍 ${location?.city || location?.province || '未知'}</span>
+                    <span class="case-category">${category}</span>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
 // 导出 API
 window.WenChangData = {
     loadAllData,
     fetchAllCases,
     fetchAllPolicies,
     renderCases,
+    renderProvinceCards,
     getStats,
+    getCasesByProvince,
+    getCasesByCategory,
+    getUniqueBrands,
+    searchCases,
     updateStatsDisplay,
+    renderCaseCard: renderCaseCardV2,
     CONFIG
 };

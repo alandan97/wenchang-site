@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>测试案例 - 文创产品分析师</title>
     <script src="wcfx-test-cases.js"></script>
+    <script src="github-data-loader.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -733,7 +734,48 @@
         // 初始化
         document.addEventListener('DOMContentLoaded', function() {
             renderCasesList();
+            loadGitHubCases();
         });
+        
+        // 动态加载 GitHub 案例
+        async function loadGitHubCases() {
+            try {
+                if (typeof WenChangData === 'undefined') {
+                    console.log('GitHub 数据加载器未加载');
+                    return;
+                }
+                
+                const { cases } = await WenChangData.loadAllData();
+                
+                // 转换格式并添加到案例列表
+                const githubCases = cases.map(c => ({
+                    id: c.id,
+                    name: c.name,
+                    brand: c.brand,
+                    category: c.category,
+                    description: c.description,
+                    priceRange: c.price_range || '¥50-200',
+                    targetAudience: c.target_audience || '文创爱好者',
+                    marketPerformance: {
+                        sales: '数据收集中',
+                        growth: '数据收集中'
+                    },
+                    highlights: c.highlights || [],
+                    tags: [c.category, c.brand]
+                }));
+                
+                // 合并到现有案例
+                testCases.push(...githubCases);
+                
+                // 重新渲染
+                renderCasesList();
+                
+                console.log(`已加载 ${githubCases.length} 个 GitHub 案例`);
+                
+            } catch (error) {
+                console.error('加载 GitHub 案例失败:', error);
+            }
+        }
     </script>
     <script>
         // GSAP 动画
