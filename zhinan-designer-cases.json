@@ -1,0 +1,2442 @@
+[
+  {
+    "id": "case_designer_001",
+    "name": "漳州市文创品牌",
+    "category": "文创空间",
+    "location": "福建省漳州市",
+    "founding_year": 2023,
+    "scale": "大型",
+    "brand": {
+      "core_values": "传承漳州市文化，创新生活方式",
+      "brand_story": "以漳州市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合漳州市传统元素与现代设计语言",
+      "slogan": "来自漳州市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "咖啡",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "展览",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "零售",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "活动",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        }
+      ],
+      "materials": [
+        "陶瓷",
+        "丝绸",
+        "金属"
+      ],
+      "craftsmanship": [
+        "雕刻",
+        "编织",
+        "印染"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "线下体验",
+          "会员系统"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 4,
+        "unit": "万元",
+        "growth": "+24%"
+      },
+      "customer_count": {
+        "value": 194,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 96,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "深厚的文化底蕴和品牌故事",
+        "独特的文化IP资源，不可复制",
+        "强大的设计研发团队"
+      ],
+      "weaknesses": [
+        "库存管理复杂，SKU众多",
+        "季节性波动明显",
+        "部分产品价格偏高，受众受限"
+      ],
+      "opportunities": [
+        "文旅融合政策大力支持",
+        "Z世代消费能力提升",
+        "数字化营销手段日益丰富"
+      ],
+      "threats": [
+        "政策环境变化不确定性",
+        "市场竞争加剧，竞品模仿速度快",
+        "消费者审美疲劳风险"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_002",
+    "name": "襄阳市文创品牌",
+    "category": "文创空间",
+    "location": "湖北省襄阳市",
+    "founding_year": 2016,
+    "scale": "大型",
+    "brand": {
+      "core_values": "传承襄阳市文化，创新生活方式",
+      "brand_story": "以襄阳市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合襄阳市传统元素与现代设计语言",
+      "slogan": "来自襄阳市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "咖啡",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "展览",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "零售",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "活动",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        }
+      ],
+      "materials": [
+        "竹木",
+        "布艺",
+        "丝绸"
+      ],
+      "craftsmanship": [
+        "刺绣",
+        "印染",
+        "雕刻"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "线下体验",
+          "会员系统"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 1,
+        "unit": "万元",
+        "growth": "+35%"
+      },
+      "customer_count": {
+        "value": 149,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 90,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "成熟的供应链和渠道体系",
+        "强大的设计研发团队",
+        "高品牌认知度和用户忠诚度"
+      ],
+      "weaknesses": [
+        "季节性波动明显",
+        "库存管理复杂，SKU众多",
+        "部分产品价格偏高，受众受限"
+      ],
+      "opportunities": [
+        "文旅融合政策大力支持",
+        "Z世代消费能力提升",
+        "国潮文化持续升温，市场扩大"
+      ],
+      "threats": [
+        "原材料和人工成本上涨",
+        "经济下行影响消费意愿",
+        "市场竞争加剧，竞品模仿速度快"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_003",
+    "name": "遵义市文创品牌",
+    "category": "文创空间",
+    "location": "贵州省遵义市",
+    "founding_year": 2021,
+    "scale": "成长",
+    "brand": {
+      "core_values": "传承遵义市文化，创新生活方式",
+      "brand_story": "以遵义市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合遵义市传统元素与现代设计语言",
+      "slogan": "来自遵义市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "咖啡",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "展览",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "零售",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "活动",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        }
+      ],
+      "materials": [
+        "竹木",
+        "丝绸",
+        "金属"
+      ],
+      "craftsmanship": [
+        "编织",
+        "烧制",
+        "印染"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "线下体验",
+          "会员系统"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 12,
+        "unit": "万元",
+        "growth": "+39%"
+      },
+      "customer_count": {
+        "value": 358,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 94,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "独特的文化IP资源，不可复制",
+        "高品牌认知度和用户忠诚度",
+        "深厚的文化底蕴和品牌故事"
+      ],
+      "weaknesses": [
+        "对核心设计师依赖度高",
+        "季节性波动明显",
+        "部分产品价格偏高，受众受限"
+      ],
+      "opportunities": [
+        "国潮文化持续升温，市场扩大",
+        "数字化营销手段日益丰富",
+        "海外市场拓展空间广阔"
+      ],
+      "threats": [
+        "消费者审美疲劳风险",
+        "政策环境变化不确定性",
+        "原材料和人工成本上涨"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_004",
+    "name": "张家界市文创品牌",
+    "category": "文创IP",
+    "location": "湖南省张家界市",
+    "founding_year": 2015,
+    "scale": "初创",
+    "brand": {
+      "core_values": "传承张家界市文化，创新生活方式",
+      "brand_story": "以张家界市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合张家界市传统元素与现代设计语言",
+      "slogan": "来自张家界市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "盲盒",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        },
+        {
+          "name": "手办",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        },
+        {
+          "name": "文具",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        },
+        {
+          "name": "服饰",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        }
+      ],
+      "materials": [
+        "丝绸",
+        "金属",
+        "竹木"
+      ],
+      "craftsmanship": [
+        "烧制",
+        "雕刻",
+        "印染"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "天猫",
+          "微信小程序"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 8,
+        "unit": "万元",
+        "growth": "+21%"
+      },
+      "customer_count": {
+        "value": 166,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 90,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "成熟的供应链和渠道体系",
+        "深厚的文化底蕴和品牌故事",
+        "独特的文化IP资源，不可复制"
+      ],
+      "weaknesses": [
+        "对核心设计师依赖度高",
+        "库存管理复杂，SKU众多",
+        "产品创新压力大，需持续出新"
+      ],
+      "opportunities": [
+        "数字化营销手段日益丰富",
+        "文旅融合政策大力支持",
+        "海外市场拓展空间广阔"
+      ],
+      "threats": [
+        "消费者审美疲劳风险",
+        "市场竞争加剧，竞品模仿速度快",
+        "原材料和人工成本上涨"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_005",
+    "name": "岳阳市文创品牌",
+    "category": "非遗活化",
+    "location": "湖南省岳阳市",
+    "founding_year": 2021,
+    "scale": "成熟",
+    "brand": {
+      "core_values": "传承岳阳市文化，创新生活方式",
+      "brand_story": "以岳阳市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合岳阳市传统元素与现代设计语言",
+      "slogan": "来自岳阳市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "工艺品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "家居",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "饰品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "礼品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        }
+      ],
+      "materials": [
+        "布艺",
+        "竹木",
+        "纸张"
+      ],
+      "craftsmanship": [
+        "编织",
+        "印染",
+        "雕刻"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "博物馆商店",
+          "电商平台"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 29,
+        "unit": "万元",
+        "growth": "+18%"
+      },
+      "customer_count": {
+        "value": 140,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 92,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "深厚的文化底蕴和品牌故事",
+        "独特的文化IP资源，不可复制",
+        "高品牌认知度和用户忠诚度"
+      ],
+      "weaknesses": [
+        "季节性波动明显",
+        "部分产品价格偏高，受众受限",
+        "产品创新压力大，需持续出新"
+      ],
+      "opportunities": [
+        "数字化营销手段日益丰富",
+        "国潮文化持续升温，市场扩大",
+        "海外市场拓展空间广阔"
+      ],
+      "threats": [
+        "原材料和人工成本上涨",
+        "经济下行影响消费意愿",
+        "政策环境变化不确定性"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_006",
+    "name": "福州市文创品牌",
+    "category": "文创空间",
+    "location": "福建省福州市",
+    "founding_year": 2018,
+    "scale": "初创",
+    "brand": {
+      "core_values": "传承福州市文化，创新生活方式",
+      "brand_story": "以福州市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合福州市传统元素与现代设计语言",
+      "slogan": "来自福州市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "咖啡",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "展览",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "零售",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "活动",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        }
+      ],
+      "materials": [
+        "竹木",
+        "丝绸",
+        "纸张"
+      ],
+      "craftsmanship": [
+        "刺绣",
+        "烧制",
+        "印染"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "线下体验",
+          "会员系统"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 45,
+        "unit": "万元",
+        "growth": "+32%"
+      },
+      "customer_count": {
+        "value": 385,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 92,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "强大的设计研发团队",
+        "成熟的供应链和渠道体系",
+        "高品牌认知度和用户忠诚度"
+      ],
+      "weaknesses": [
+        "季节性波动明显",
+        "库存管理复杂，SKU众多",
+        "部分产品价格偏高，受众受限"
+      ],
+      "opportunities": [
+        "海外市场拓展空间广阔",
+        "国潮文化持续升温，市场扩大",
+        "Z世代消费能力提升"
+      ],
+      "threats": [
+        "消费者审美疲劳风险",
+        "原材料和人工成本上涨",
+        "市场竞争加剧，竞品模仿速度快"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_007",
+    "name": "眉山市文创品牌",
+    "category": "文创空间",
+    "location": "四川省眉山市",
+    "founding_year": 2022,
+    "scale": "大型",
+    "brand": {
+      "core_values": "传承眉山市文化，创新生活方式",
+      "brand_story": "以眉山市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合眉山市传统元素与现代设计语言",
+      "slogan": "来自眉山市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "咖啡",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "展览",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "零售",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        },
+        {
+          "name": "活动",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "消费50-500元"
+        }
+      ],
+      "materials": [
+        "纸张",
+        "竹木",
+        "金属"
+      ],
+      "craftsmanship": [
+        "刺绣",
+        "编织",
+        "印染"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "线下体验",
+          "会员系统"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 9,
+        "unit": "万元",
+        "growth": "+12%"
+      },
+      "customer_count": {
+        "value": 155,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 92,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "高品牌认知度和用户忠诚度",
+        "深厚的文化底蕴和品牌故事",
+        "独特的文化IP资源，不可复制"
+      ],
+      "weaknesses": [
+        "部分产品价格偏高，受众受限",
+        "库存管理复杂，SKU众多",
+        "产品创新压力大，需持续出新"
+      ],
+      "opportunities": [
+        "海外市场拓展空间广阔",
+        "Z世代消费能力提升",
+        "国潮文化持续升温，市场扩大"
+      ],
+      "threats": [
+        "市场竞争加剧，竞品模仿速度快",
+        "政策环境变化不确定性",
+        "消费者审美疲劳风险"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_008",
+    "name": "西双版纳文创品牌",
+    "category": "数字文创",
+    "location": "云南省西双版纳",
+    "founding_year": 2018,
+    "scale": "成熟",
+    "brand": {
+      "core_values": "传承西双版纳文化，创新生活方式",
+      "brand_story": "以西双版纳独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合西双版纳传统元素与现代设计语言",
+      "slogan": "来自西双版纳的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "数字藏品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "9.9-999元"
+        },
+        {
+          "name": "虚拟形象",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "9.9-999元"
+        },
+        {
+          "name": "游戏道具",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "9.9-999元"
+        },
+        {
+          "name": "AR体验",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "9.9-999元"
+        }
+      ],
+      "materials": [
+        "丝绸",
+        "竹木",
+        "金属"
+      ],
+      "craftsmanship": [
+        "雕刻",
+        "烧制",
+        "刺绣"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "数藏平台",
+          "元宇宙空间"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 6,
+        "unit": "万元",
+        "growth": "+23%"
+      },
+      "customer_count": {
+        "value": 380,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 94,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "深厚的文化底蕴和品牌故事",
+        "成熟的供应链和渠道体系",
+        "强大的设计研发团队"
+      ],
+      "weaknesses": [
+        "库存管理复杂，SKU众多",
+        "产品创新压力大，需持续出新",
+        "对核心设计师依赖度高"
+      ],
+      "opportunities": [
+        "Z世代消费能力提升",
+        "海外市场拓展空间广阔",
+        "文旅融合政策大力支持"
+      ],
+      "threats": [
+        "市场竞争加剧，竞品模仿速度快",
+        "经济下行影响消费意愿",
+        "消费者审美疲劳风险"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_009",
+    "name": "西双版纳文创品牌",
+    "category": "非遗活化",
+    "location": "云南省西双版纳",
+    "founding_year": 2021,
+    "scale": "初创",
+    "brand": {
+      "core_values": "传承西双版纳文化，创新生活方式",
+      "brand_story": "以西双版纳独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合西双版纳传统元素与现代设计语言",
+      "slogan": "来自西双版纳的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "工艺品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "家居",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "饰品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "礼品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        }
+      ],
+      "materials": [
+        "竹木",
+        "丝绸",
+        "金属"
+      ],
+      "craftsmanship": [
+        "刺绣",
+        "编织",
+        "烧制"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "博物馆商店",
+          "电商平台"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 41,
+        "unit": "万元",
+        "growth": "+21%"
+      },
+      "customer_count": {
+        "value": 270,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 85,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "成熟的供应链和渠道体系",
+        "强大的设计研发团队",
+        "高品牌认知度和用户忠诚度"
+      ],
+      "weaknesses": [
+        "部分产品价格偏高，受众受限",
+        "季节性波动明显",
+        "对核心设计师依赖度高"
+      ],
+      "opportunities": [
+        "国潮文化持续升温，市场扩大",
+        "文旅融合政策大力支持",
+        "海外市场拓展空间广阔"
+      ],
+      "threats": [
+        "经济下行影响消费意愿",
+        "原材料和人工成本上涨",
+        "政策环境变化不确定性"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_010",
+    "name": "温州市文创品牌",
+    "category": "非遗活化",
+    "location": "浙江省温州市",
+    "founding_year": 2016,
+    "scale": "大型",
+    "brand": {
+      "core_values": "传承温州市文化，创新生活方式",
+      "brand_story": "以温州市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合温州市传统元素与现代设计语言",
+      "slogan": "来自温州市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "工艺品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "家居",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "饰品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "礼品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        }
+      ],
+      "materials": [
+        "陶瓷",
+        "金属",
+        "纸张"
+      ],
+      "craftsmanship": [
+        "雕刻",
+        "印染",
+        "编织"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "博物馆商店",
+          "电商平台"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 12,
+        "unit": "万元",
+        "growth": "+18%"
+      },
+      "customer_count": {
+        "value": 165,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 98,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "成熟的供应链和渠道体系",
+        "高品牌认知度和用户忠诚度",
+        "独特的文化IP资源，不可复制"
+      ],
+      "weaknesses": [
+        "季节性波动明显",
+        "库存管理复杂，SKU众多",
+        "对核心设计师依赖度高"
+      ],
+      "opportunities": [
+        "数字化营销手段日益丰富",
+        "海外市场拓展空间广阔",
+        "文旅融合政策大力支持"
+      ],
+      "threats": [
+        "原材料和人工成本上涨",
+        "经济下行影响消费意愿",
+        "消费者审美疲劳风险"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_011",
+    "name": "海淀区文创品牌",
+    "category": "文旅综合体",
+    "location": "北京市海淀区",
+    "founding_year": 2021,
+    "scale": "初创",
+    "brand": {
+      "core_values": "传承海淀区文化，创新生活方式",
+      "brand_story": "以海淀区独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合海淀区传统元素与现代设计语言",
+      "slogan": "来自海淀区的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "演艺",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "门票80-280元"
+        },
+        {
+          "name": "餐饮",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "门票80-280元"
+        },
+        {
+          "name": "零售",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "门票80-280元"
+        },
+        {
+          "name": "体验",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "门票80-280元"
+        }
+      ],
+      "materials": [
+        "丝绸",
+        "布艺",
+        "纸张"
+      ],
+      "craftsmanship": [
+        "雕刻",
+        "刺绣",
+        "印染"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "OTA平台",
+          "官方小程序"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 45,
+        "unit": "万元",
+        "growth": "+37%"
+      },
+      "customer_count": {
+        "value": 247,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 88,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "独特的文化IP资源，不可复制",
+        "高品牌认知度和用户忠诚度",
+        "深厚的文化底蕴和品牌故事"
+      ],
+      "weaknesses": [
+        "季节性波动明显",
+        "产品创新压力大，需持续出新",
+        "部分产品价格偏高，受众受限"
+      ],
+      "opportunities": [
+        "数字化营销手段日益丰富",
+        "Z世代消费能力提升",
+        "国潮文化持续升温，市场扩大"
+      ],
+      "threats": [
+        "经济下行影响消费意愿",
+        "市场竞争加剧，竞品模仿速度快",
+        "政策环境变化不确定性"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_012",
+    "name": "安顺市文创品牌",
+    "category": "文创IP",
+    "location": "贵州省安顺市",
+    "founding_year": 2016,
+    "scale": "成熟",
+    "brand": {
+      "core_values": "传承安顺市文化，创新生活方式",
+      "brand_story": "以安顺市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合安顺市传统元素与现代设计语言",
+      "slogan": "来自安顺市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "盲盒",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        },
+        {
+          "name": "手办",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        },
+        {
+          "name": "文具",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        },
+        {
+          "name": "服饰",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        }
+      ],
+      "materials": [
+        "竹木",
+        "丝绸",
+        "陶瓷"
+      ],
+      "craftsmanship": [
+        "印染",
+        "编织",
+        "烧制"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "天猫",
+          "微信小程序"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 28,
+        "unit": "万元",
+        "growth": "+38%"
+      },
+      "customer_count": {
+        "value": 416,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 90,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "深厚的文化底蕴和品牌故事",
+        "独特的文化IP资源，不可复制",
+        "成熟的供应链和渠道体系"
+      ],
+      "weaknesses": [
+        "对核心设计师依赖度高",
+        "库存管理复杂，SKU众多",
+        "部分产品价格偏高，受众受限"
+      ],
+      "opportunities": [
+        "文旅融合政策大力支持",
+        "海外市场拓展空间广阔",
+        "国潮文化持续升温，市场扩大"
+      ],
+      "threats": [
+        "政策环境变化不确定性",
+        "市场竞争加剧，竞品模仿速度快",
+        "经济下行影响消费意愿"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_013",
+    "name": "成都市文创品牌",
+    "category": "数字文创",
+    "location": "四川省成都市",
+    "founding_year": 2015,
+    "scale": "成长",
+    "brand": {
+      "core_values": "传承成都市文化，创新生活方式",
+      "brand_story": "以成都市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合成都市传统元素与现代设计语言",
+      "slogan": "来自成都市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "数字藏品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "9.9-999元"
+        },
+        {
+          "name": "虚拟形象",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "9.9-999元"
+        },
+        {
+          "name": "游戏道具",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "9.9-999元"
+        },
+        {
+          "name": "AR体验",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "9.9-999元"
+        }
+      ],
+      "materials": [
+        "金属",
+        "丝绸",
+        "纸张"
+      ],
+      "craftsmanship": [
+        "刺绣",
+        "编织",
+        "印染"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "数藏平台",
+          "元宇宙空间"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 3,
+        "unit": "万元",
+        "growth": "+26%"
+      },
+      "customer_count": {
+        "value": 261,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 88,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "深厚的文化底蕴和品牌故事",
+        "高品牌认知度和用户忠诚度",
+        "成熟的供应链和渠道体系"
+      ],
+      "weaknesses": [
+        "部分产品价格偏高，受众受限",
+        "季节性波动明显",
+        "对核心设计师依赖度高"
+      ],
+      "opportunities": [
+        "海外市场拓展空间广阔",
+        "Z世代消费能力提升",
+        "国潮文化持续升温，市场扩大"
+      ],
+      "threats": [
+        "市场竞争加剧，竞品模仿速度快",
+        "政策环境变化不确定性",
+        "消费者审美疲劳风险"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_014",
+    "name": "苏州市文创品牌",
+    "category": "文旅综合体",
+    "location": "江苏省苏州市",
+    "founding_year": 2020,
+    "scale": "成长",
+    "brand": {
+      "core_values": "传承苏州市文化，创新生活方式",
+      "brand_story": "以苏州市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合苏州市传统元素与现代设计语言",
+      "slogan": "来自苏州市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "演艺",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "门票80-280元"
+        },
+        {
+          "name": "餐饮",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "门票80-280元"
+        },
+        {
+          "name": "零售",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "门票80-280元"
+        },
+        {
+          "name": "体验",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "门票80-280元"
+        }
+      ],
+      "materials": [
+        "金属",
+        "竹木",
+        "纸张"
+      ],
+      "craftsmanship": [
+        "刺绣",
+        "雕刻",
+        "编织"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "OTA平台",
+          "官方小程序"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 45,
+        "unit": "万元",
+        "growth": "+20%"
+      },
+      "customer_count": {
+        "value": 432,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 94,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "成熟的供应链和渠道体系",
+        "高品牌认知度和用户忠诚度",
+        "强大的设计研发团队"
+      ],
+      "weaknesses": [
+        "对核心设计师依赖度高",
+        "产品创新压力大，需持续出新",
+        "库存管理复杂，SKU众多"
+      ],
+      "opportunities": [
+        "数字化营销手段日益丰富",
+        "国潮文化持续升温，市场扩大",
+        "海外市场拓展空间广阔"
+      ],
+      "threats": [
+        "消费者审美疲劳风险",
+        "经济下行影响消费意愿",
+        "原材料和人工成本上涨"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_015",
+    "name": "静安区文创品牌",
+    "category": "非遗活化",
+    "location": "上海市静安区",
+    "founding_year": 2018,
+    "scale": "成长",
+    "brand": {
+      "core_values": "传承静安区文化，创新生活方式",
+      "brand_story": "以静安区独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合静安区传统元素与现代设计语言",
+      "slogan": "来自静安区的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "工艺品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "家居",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "饰品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "礼品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        }
+      ],
+      "materials": [
+        "陶瓷",
+        "纸张",
+        "布艺"
+      ],
+      "craftsmanship": [
+        "印染",
+        "编织",
+        "烧制"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "博物馆商店",
+          "电商平台"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 16,
+        "unit": "万元",
+        "growth": "+16%"
+      },
+      "customer_count": {
+        "value": 474,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 96,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "成熟的供应链和渠道体系",
+        "强大的设计研发团队",
+        "独特的文化IP资源，不可复制"
+      ],
+      "weaknesses": [
+        "对核心设计师依赖度高",
+        "产品创新压力大，需持续出新",
+        "库存管理复杂，SKU众多"
+      ],
+      "opportunities": [
+        "文旅融合政策大力支持",
+        "数字化营销手段日益丰富",
+        "Z世代消费能力提升"
+      ],
+      "threats": [
+        "原材料和人工成本上涨",
+        "市场竞争加剧，竞品模仿速度快",
+        "消费者审美疲劳风险"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_016",
+    "name": "开封市文创品牌",
+    "category": "文创IP",
+    "location": "河南省开封市",
+    "founding_year": 2015,
+    "scale": "成长",
+    "brand": {
+      "core_values": "传承开封市文化，创新生活方式",
+      "brand_story": "以开封市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合开封市传统元素与现代设计语言",
+      "slogan": "来自开封市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "盲盒",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        },
+        {
+          "name": "手办",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        },
+        {
+          "name": "文具",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        },
+        {
+          "name": "服饰",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        }
+      ],
+      "materials": [
+        "布艺",
+        "陶瓷",
+        "纸张"
+      ],
+      "craftsmanship": [
+        "烧制",
+        "雕刻",
+        "印染"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "天猫",
+          "微信小程序"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 22,
+        "unit": "万元",
+        "growth": "+27%"
+      },
+      "customer_count": {
+        "value": 468,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 98,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "高品牌认知度和用户忠诚度",
+        "强大的设计研发团队",
+        "独特的文化IP资源，不可复制"
+      ],
+      "weaknesses": [
+        "对核心设计师依赖度高",
+        "产品创新压力大，需持续出新",
+        "部分产品价格偏高，受众受限"
+      ],
+      "opportunities": [
+        "Z世代消费能力提升",
+        "国潮文化持续升温，市场扩大",
+        "文旅融合政策大力支持"
+      ],
+      "threats": [
+        "政策环境变化不确定性",
+        "经济下行影响消费意愿",
+        "消费者审美疲劳风险"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_017",
+    "name": "扬州市文创品牌",
+    "category": "非遗活化",
+    "location": "江苏省扬州市",
+    "founding_year": 2017,
+    "scale": "成长",
+    "brand": {
+      "core_values": "传承扬州市文化，创新生活方式",
+      "brand_story": "以扬州市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合扬州市传统元素与现代设计语言",
+      "slogan": "来自扬州市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "工艺品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "家居",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "饰品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "礼品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        }
+      ],
+      "materials": [
+        "陶瓷",
+        "布艺",
+        "丝绸"
+      ],
+      "craftsmanship": [
+        "刺绣",
+        "编织",
+        "烧制"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "博物馆商店",
+          "电商平台"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 47,
+        "unit": "万元",
+        "growth": "+32%"
+      },
+      "customer_count": {
+        "value": 331,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 94,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "深厚的文化底蕴和品牌故事",
+        "强大的设计研发团队",
+        "独特的文化IP资源，不可复制"
+      ],
+      "weaknesses": [
+        "对核心设计师依赖度高",
+        "部分产品价格偏高，受众受限",
+        "产品创新压力大，需持续出新"
+      ],
+      "opportunities": [
+        "海外市场拓展空间广阔",
+        "国潮文化持续升温，市场扩大",
+        "Z世代消费能力提升"
+      ],
+      "threats": [
+        "市场竞争加剧，竞品模仿速度快",
+        "原材料和人工成本上涨",
+        "政策环境变化不确定性"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_018",
+    "name": "南京市文创品牌",
+    "category": "文创IP",
+    "location": "江苏省南京市",
+    "founding_year": 2017,
+    "scale": "成熟",
+    "brand": {
+      "core_values": "传承南京市文化，创新生活方式",
+      "brand_story": "以南京市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合南京市传统元素与现代设计语言",
+      "slogan": "来自南京市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "盲盒",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        },
+        {
+          "name": "手办",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        },
+        {
+          "name": "文具",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        },
+        {
+          "name": "服饰",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "59-599元"
+        }
+      ],
+      "materials": [
+        "竹木",
+        "布艺",
+        "纸张"
+      ],
+      "craftsmanship": [
+        "印染",
+        "刺绣",
+        "编织"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "天猫",
+          "微信小程序"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 13,
+        "unit": "万元",
+        "growth": "+18%"
+      },
+      "customer_count": {
+        "value": 496,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 92,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "深厚的文化底蕴和品牌故事",
+        "高品牌认知度和用户忠诚度",
+        "独特的文化IP资源，不可复制"
+      ],
+      "weaknesses": [
+        "产品创新压力大，需持续出新",
+        "部分产品价格偏高，受众受限",
+        "库存管理复杂，SKU众多"
+      ],
+      "opportunities": [
+        "Z世代消费能力提升",
+        "文旅融合政策大力支持",
+        "数字化营销手段日益丰富"
+      ],
+      "threats": [
+        "市场竞争加剧，竞品模仿速度快",
+        "经济下行影响消费意愿",
+        "消费者审美疲劳风险"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_019",
+    "name": "安阳市文创品牌",
+    "category": "数字文创",
+    "location": "河南省安阳市",
+    "founding_year": 2020,
+    "scale": "初创",
+    "brand": {
+      "core_values": "传承安阳市文化，创新生活方式",
+      "brand_story": "以安阳市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合安阳市传统元素与现代设计语言",
+      "slogan": "来自安阳市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "数字藏品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "9.9-999元"
+        },
+        {
+          "name": "虚拟形象",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "9.9-999元"
+        },
+        {
+          "name": "游戏道具",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "9.9-999元"
+        },
+        {
+          "name": "AR体验",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "9.9-999元"
+        }
+      ],
+      "materials": [
+        "陶瓷",
+        "纸张",
+        "丝绸"
+      ],
+      "craftsmanship": [
+        "烧制",
+        "雕刻",
+        "编织"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "数藏平台",
+          "元宇宙空间"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 33,
+        "unit": "万元",
+        "growth": "+25%"
+      },
+      "customer_count": {
+        "value": 478,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 95,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "高品牌认知度和用户忠诚度",
+        "独特的文化IP资源，不可复制",
+        "深厚的文化底蕴和品牌故事"
+      ],
+      "weaknesses": [
+        "季节性波动明显",
+        "产品创新压力大，需持续出新",
+        "对核心设计师依赖度高"
+      ],
+      "opportunities": [
+        "文旅融合政策大力支持",
+        "数字化营销手段日益丰富",
+        "国潮文化持续升温，市场扩大"
+      ],
+      "threats": [
+        "原材料和人工成本上涨",
+        "经济下行影响消费意愿",
+        "消费者审美疲劳风险"
+      ]
+    }
+  },
+  {
+    "id": "case_designer_020",
+    "name": "遵义市文创品牌",
+    "category": "非遗活化",
+    "location": "贵州省遵义市",
+    "founding_year": 2020,
+    "scale": "大型",
+    "brand": {
+      "core_values": "传承遵义市文化，创新生活方式",
+      "brand_story": "以遵义市独特的地域文化为灵感，打造具有地方特色的文创品牌",
+      "visual_identity": "融合遵义市传统元素与现代设计语言",
+      "slogan": "来自遵义市的礼物"
+    },
+    "product": {
+      "lines": [
+        {
+          "name": "工艺品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "家居",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "饰品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        },
+        {
+          "name": "礼品",
+          "items": [
+            "系列A",
+            "系列B"
+          ],
+          "price": "128-2880元"
+        }
+      ],
+      "materials": [
+        "丝绸",
+        "布艺",
+        "纸张"
+      ],
+      "craftsmanship": [
+        "编织",
+        "烧制",
+        "雕刻"
+      ]
+    },
+    "market": {
+      "target_audience": {
+        "age": "18-35岁",
+        "gender": "女性为主(65%)",
+        "income": "月收入6000-15000元",
+        "education": "本科及以上学历"
+      },
+      "competitive_advantage": "独特的地域文化IP，差异化定位"
+    },
+    "channel": {
+      "online": {
+        "platforms": [
+          "博物馆商店",
+          "电商平台"
+        ],
+        "revenue_share": "60%"
+      },
+      "offline": {
+        "locations": [
+          "景区店",
+          "商场店"
+        ],
+        "revenue_share": "40%"
+      }
+    },
+    "data": {
+      "revenue": {
+        "value": 37,
+        "unit": "万元",
+        "growth": "+17%"
+      },
+      "customer_count": {
+        "value": 494,
+        "unit": "万"
+      },
+      "satisfaction": {
+        "value": 86,
+        "unit": "%"
+      }
+    },
+    "swot": {
+      "strengths": [
+        "独特的文化IP资源，不可复制",
+        "强大的设计研发团队",
+        "成熟的供应链和渠道体系"
+      ],
+      "weaknesses": [
+        "部分产品价格偏高，受众受限",
+        "季节性波动明显",
+        "库存管理复杂，SKU众多"
+      ],
+      "opportunities": [
+        "Z世代消费能力提升",
+        "数字化营销手段日益丰富",
+        "国潮文化持续升温，市场扩大"
+      ],
+      "threats": [
+        "政策环境变化不确定性",
+        "原材料和人工成本上涨",
+        "市场竞争加剧，竞品模仿速度快"
+      ]
+    }
+  }
+]

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文创产品形态脑图 - 文创地图</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #8B1E1E;
+            --gold: #C89B3C;
+            --green: #2D5A4A;
+            --cream: #F5F0E6;
+            --paper: #FDF8F0;
+            --text: #2C1810;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, var(--paper) 0%, #EDE4D8 100%);
+            min-height: 100vh;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+        
+        /* 导航 */
+        nav {
+            background: rgba(26, 54, 93, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 0 2rem;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        .nav-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        main { padding-top: 60px; }
+        
+        /* 面包屑 */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(200,155,60,0.1);
+            border-radius: 8px;
+        }
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .breadcrumb .current {
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--gold);
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 产品卡片 - 带图片 */
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(139,30,30,0.1);
+            border: 1px solid rgba(200,155,60,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(139,30,30,0.2);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--paper) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-image-placeholder {
+            color: var(--gold);
+            font-size: 1rem;
+            text-align: center;
+            padding: 1rem;
+        }
+        .product-info {
+            padding: 1.5rem;
+        }
+        .product-category {
+            font-size: 0.75rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .product-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        /* 分类标题 */
+        .category-section {
+            margin-bottom: 3rem;
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gold);
+        }
+        .category-icon {
+            font-size: 2rem;
+        }
+        .category-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .category-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-left: auto;
+        }
+        
+        /* 网格布局 */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        /* 子分类标签 */
+        .subcategory-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .subcategory-tab {
+            padding: 0.5rem 1rem;
+            background: rgba(200,155,60,0.1);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .subcategory-tab:hover,
+        .subcategory-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* 图片绑定提示 */
+        .image-bind-hint {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(139,30,30,0.9);
+            color: white;
+            padding: 0.5rem;
+            font-size: 0.75rem;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover .image-bind-hint {
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🏛️ 文创指南</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="index.html#policies">政策库</a>
+                <a href="index.html#cases">案例库</a>
+                <a href="index.html#china">中国文旅</a>
+                <a href="mindmap.html">文创地图</a>
+                <a href="index.html#assistant">指南助手</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- 面包屑 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a>
+                <span>/</span>
+                <span class="current">文创地图</span>
+            </div>
+            
+            <div class="header">
+                <h1>🗺️ 文创产品形态脑图</h1>
+                <p style="color: var(--text-secondary);">基于《文创产品形态大全》构建，关键词与图片绑定展示</p>
+            </div>
+            
+            <!-- 一、饰品 -->
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">💎</span>
+                    <span class="category-title">一、饰品</span>
+                    <span class="category-subtitle">头部饰品 · 耳部饰品</span>
+                </div>
+                
+                <div class="subcategory-tabs">
+                    <span class="subcategory-tab active">全部</span>
+                    <span class="subcategory-tab">头部饰品</span>
+                    <span class="subcategory-tab">耳部饰品</span>
+                </div>
+                
+                <div class="product-grid">
+                    <!-- 发簪 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                📷 发簪
+                                <br><small>图片绑定: 发簪.jpg</small>
+                            </div>
+                            <div class="image-bind-hint">
+                                关键词: 发簪 | 绑定图片: 发簪.jpg
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">头部饰品</div>
+                            <div class="product-name">发簪</div>
+                            <div class="product-desc">传统头饰，现代设计，融合古典美学与时尚元素</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 抓夹 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                📷 抓夹
+                                <br><small>图片绑定: 抓夹.jpg</small>
+                            </div>
+                            <div class="image-bind-hint">
+                                关键词: 抓夹 | 绑定图片: 抓夹.jpg
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">头部饰品</div>
+                            <div class="product-name">抓夹</div>
+                            <div class="product-desc">实用与美观并重，日常佩戴的文创饰品</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 发夹 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                📷 发夹
+                                <br><small>图片绑定: 发夹.jpg</small>
+                            </div>
+                            <div class="image-bind-hint">
+                                关键词: 发夹 | 绑定图片: 发夹.jpg
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">头部饰品</div>
+                            <div class="product-name">发夹</div>
+                            <div class="product-desc">精致小巧，多种图案设计，展现个性风格</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 发圈 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                📷 发圈
+                                <br><small>图片绑定: 发圈.jpg</small>
+                            </div>
+                            <div class="image-bind-hint">
+                                关键词: 发圈 | 绑定图片: 发圈.jpg
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">头部饰品</div>
+                            <div class="product-name">发圈</div>
+                            <div class="product-desc">柔软舒适，图案精美，日常必备文创单品</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 耳钉 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                📷 耳钉
+                                <br><small>图片绑定: 耳钉.jpg</small>
+                            </div>
+                            <div class="image-bind-hint">
+                                关键词: 耳钉 | 绑定图片: 耳钉.jpg
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">耳部饰品</div>
+                            <div class="product-name">耳钉</div>
+                            <div class="product-desc">精致小巧，传统纹样设计，彰显文化品位</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 耳夹 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                📷 耳夹
+                                <br><small>图片绑定: 耳夹.jpg</small>
+                            </div>
+                            <div class="image-bind-hint">
+                                关键词: 耳夹 | 绑定图片: 耳夹.jpg
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">耳部饰品</div>
+                            <div class="product-name">耳夹</div>
+                            <div class="product-desc">无耳洞设计，舒适佩戴，文创美学</div>
+                        </div>
+                    </div>
+                    
+                    <!-- DIY刺绣耳环 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                📷 DIY刺绣耳环
+                                <br><small>图片绑定: DIY刺绣耳环.jpg</small>
+                            </div>
+                            <div class="image-bind-hint">
+                                关键词: DIY刺绣耳环 | 绑定图片: DIY刺绣耳环.jpg
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">耳部饰品</div>
+                            <div class="product-name">DIY刺绣耳环</div>
+                            <div class="product-desc">手工刺绣，独一无二，非遗技艺现代演绎</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- 二、博物馆文创 -->
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">🏛️</span>
+                    <span class="category-title">二、博物馆文创</span>
+                    <span class="category-subtitle">文具 · 家居 · 服饰 · 玩偶</span>
+                </div>
+                
+                <div class="product-grid">
+                    <!-- 故宫日历 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                📷 故宫日历
+                                <br><small>图片绑定: 故宫日历.jpg</small>
+                            </div>
+                            <div class="image-bind-hint">
+                                关键词: 故宫日历 | 绑定图片: 故宫日历.jpg
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">文具</div>
+                            <div class="product-name">故宫日历</div>
+                            <div class="product-desc">每年爆款，融合故宫藏品与日常生活</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 朕知道了胶带 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                📷 朕知道了胶带
+                                <br><small>图片绑定: 朕知道了胶带.jpg</small>
+                            </div>
+                            <div class="image-bind-hint">
+                                关键词: 朕知道了胶带 | 绑定图片: 朕知道了胶带.jpg
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">文具</div>
+                            <div class="product-name">朕知道了胶带</div>
+                            <div class="product-desc">网红爆款，销量超18万件</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 绿马玩偶 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                📷 绿马玩偶
+                                <br><small>图片绑定: 绿马玩偶.jpg</small>
+                            </div>
+                            <div class="image-bind-hint">
+                                关键词: 绿马玩偶 | 绑定图片: 绿马玩偶.jpg
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">玩偶</div>
+                            <div class="product-name">绿马玩偶</div>
+                            <div class="product-desc">甘肃省博物馆出品，现象级网红产品</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 考古盲盒 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                📷 考古盲盒
+                                <br><small>图片绑定: 考古盲盒.jpg</small>
+                            </div>
+                            <div class="image-bind-hint">
+                                关键词: 考古盲盒 | 绑定图片: 考古盲盒.jpg
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">玩具</div>
+                            <div class="product-name">考古盲盒</div>
+                            <div class="product-desc">河南博物院出品，销量破百万</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- 更多分类提示 -->
+            <div style="text-align: center; padding: 3rem; background: rgba(200,155,60,0.1); border-radius: 16px; margin-top: 3rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">📋</div>
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">更多产品分类</h3>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    潮玩手办、非遗文创、景区文创、美妆文创、食品文创、数码文创、IP衍生品、文具文创、家居文创、服饰文创等更多分类正在整理中...
+                </p>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: white; border-radius: 8px; display: inline-block;">
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
+                        💡 提示: 请将飞书文档中的图片下载后，按照"关键词.jpg"的命名方式放入 images/ 文件夹
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        // GSAP动画
+        document.addEventListener('DOMContentLoaded', function() {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            gsap.utils.toArray('.category-section').forEach((section, i) => {
+                gsap.from(section, {
+                    y: 40,
+                    opacity: 0,
+                    duration: 0.6,
+                    delay: i * 0.1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 90%'
+                    }
+                });
+            });
+            
+            gsap.utils.toArray('.product-card').forEach((card, i) => {
+                gsap.from(card, {
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.5,
+                    delay: i * 0.05,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 95%'
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

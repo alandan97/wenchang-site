@@ -2,35 +2,51 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>文创指南 - 文创文旅政策与案例平台</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600,700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="github-data-loader.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #FDF8F0 0%, #EDE4D8 100%);
-            min-height: 100vh;
-            color: #2C1810;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         :root {
-            --tang-red: #8B1E1E;
-            --tang-gold: #C89B3C;
-            --tang-green: #2D5A4A;
-            --tang-cream: #F5F0E6;
-            --tang-text: #2C1810;
-            --tang-text-secondary: #6B5B4F;
+            --primary: #8B1E1E;
+            --gold: #C89B3C;
+            --green: #2D5A4A;
+            --cream: #F5F0E6;
+            --paper: #FDF8F0;
+            --text: #2C1810;
+            --text-secondary: #6B5B4F;
         }
+        html { scroll-behavior: smooth; font-size: 14px; }
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, var(--paper) 0%, #EDE4D8 100%);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 1rem; }
+        
+        /* 导航 - 移动端优化 */
         nav {
-            background: linear-gradient(135deg, #1a365d 0%, #0d1b2a 100%);
+            background: rgba(26, 54, 93, 0.98);
+            backdrop-filter: blur(10px);
             color: white;
-            padding: 1rem 2rem;
+            padding: 0 0.75rem;
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
+            width: 100%;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -39,278 +55,851 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 1.25rem;
+            gap: 0.25rem;
+            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
+            text-decoration: none;
+            color: white;
         }
-        .logo-icon {
-            width: 36px; height: 36px;
-            background: var(--tang-gold);
-            border-radius: 8px;
+        .logo span:first-child { font-size: 1.25rem; }
+        
+        /* 底部导航栏 - 移动端 */
+        .mobile-nav {
             display: flex;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+            height: 60px;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .mobile-nav-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #1a365d;
-            font-weight: bold;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        .nav-links a {
-            color: white;
+            gap: 0.25rem;
+            color: var(--text-secondary);
             text-decoration: none;
-            cursor: pointer;
+            font-size: 0.65rem;
+            transition: all 0.2s ease;
+            padding: 0.5rem 0;
         }
-        .nav-links a:hover { color: var(--tang-gold); }
-        main { padding-top: 80px; }
-        .hero {
-            background: linear-gradient(135deg, var(--tang-red) 0%, #6B1515 100%);
-            margin: 1rem 2rem;
-            border-radius: 16px;
-            padding: 4rem 2rem;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(139, 30, 30, 0.3);
+        .mobile-nav-item.active {
+            color: var(--primary);
         }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .badge {
-            display: inline-block;
-            background: var(--tang-gold);
-            color: var(--tang-text);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            letter-spacing: 4px;
-        }
-        .hero p {
+        .mobile-nav-item .icon {
             font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+        
+        /* 桌面导航 - 默认隐藏 */
+        .desktop-nav { display: none; }
+        
+        main { padding-top: 50px; padding-bottom: 70px; }
+        
+        /* 面包屑 */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: rgba(200,155,60,0.1);
+            border-radius: 8px;
+            font-size: 0.85rem;
         }
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-bottom: 3rem;
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
         }
-        .stat-card {
-            background: linear-gradient(145deg, rgba(253, 248, 240, 0.95) 0%, rgba(245, 240, 230, 0.9) 100%);
-            border: 1px solid rgba(200, 155, 60, 0.25);
+        .breadcrumb .current {
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        /* 页面切换 */
+        .page { display: none; }
+        .page.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* 页面标题 */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .page-header h1 {
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+        
+        /* 卡片 */
+        .card {
+            background: white;
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1rem;
+            box-shadow: 0 2px 12px rgba(139,30,30,0.08);
+            border: 1px solid rgba(200,155,60,0.15);
+            margin-bottom: 1rem;
+        }
+        
+        /* 统计卡片 */
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.25rem 0.75rem;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(139, 30, 30, 0.08);
+            box-shadow: 0 2px 12px rgba(139,30,30,0.1);
         }
-        .stat-card::before {
-            content: '';
-            display: block;
-            height: 4px;
-            background: linear-gradient(90deg, var(--tang-red) 0%, var(--tang-gold) 50%, var(--tang-red) 100%);
-            border-radius: 2px;
-            margin: -1.5rem -1.5rem 1rem;
-        }
-        .stat-icon { font-size: 2rem; margin-bottom: 0.5rem; }
         .stat-value {
             font-size: 1.75rem;
             font-weight: bold;
-            color: var(--tang-red);
-            margin-bottom: 0.25rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .stat-label {
-            font-size: 0.875rem;
-            color: var(--tang-text-secondary);
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
         }
-        .loading {
-            text-align: center;
-            padding: 3rem;
-            color: var(--tang-text-secondary);
+        
+        /* 案例卡片 */
+        .case-card {
+            background: linear-gradient(145deg, rgba(253,248,240,0.95) 0%, rgba(245,240,230,0.9) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(200,155,60,0.25);
+            overflow: hidden;
+            transition: all 0.2s ease;
+            cursor: pointer;
         }
-        .error {
-            text-align: center;
-            padding: 3rem;
-            color: var(--tang-red);
+        .case-card:active {
+            transform: scale(0.98);
         }
-        footer {
-            background: linear-gradient(135deg, #1a365d 0%, #0d1b2a 100%);
-            color: white;
-            padding: 3rem 2rem 2rem;
-            margin-top: 4rem;
+        .case-header {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(200,155,60,0.15);
         }
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        .case-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .case-body {
+            padding: 1rem;
+        }
+        .case-desc {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .case-tag {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            background: rgba(139,30,30,0.1);
+            color: var(--primary);
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+            margin-right: 0.25rem;
+        }
+        
+        /* 网格布局 - 移动端 */
+        .grid-4, .grid-3, .grid-2 {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 2rem;
+            gap: 0.75rem;
         }
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 2rem auto 0;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+        .grid-4 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(1, 1fr); }
+        .grid-2 { grid-template-columns: repeat(1, 1fr); }
+        
+        /* 快捷入口卡片 */
+        .quick-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.25rem;
             text-align: center;
-            color: #9ca3af;
-            font-size: 0.875rem;
+            box-shadow: 0 2px 12px rgba(139,30,30,0.08);
+            border: 1px solid rgba(200,155,60,0.15);
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
-        @media (max-width: 768px) {
-            .stats { grid-template-columns: repeat(2, 1fr); }
-            .footer-content { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2rem; }
+        .quick-card:active {
+            transform: scale(0.98);
+            background: var(--cream);
+        }
+        .quick-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .quick-card h3 {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        .quick-card p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        /* 省份卡片 */
+        .province-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 2px 12px rgba(139,30,30,0.08);
+            border: 1px solid rgba(200,155,60,0.15);
+            cursor: pointer;
+        }
+        .province-card:active {
+            transform: scale(0.98);
+        }
+        .province-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .province-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        .province-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .province-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        /* 统计横幅 */
+        .stats-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
+            border-radius: 12px;
+            padding: 1.25rem 1rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            text-align: center;
+        }
+        .stats-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold);
+        }
+        .stats-label {
+            font-size: 0.65rem;
+            opacity: 0.9;
+            margin-top: 0.25rem;
+        }
+        
+        /* 产品卡片 */
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(139,30,30,0.08);
+            border: 1px solid rgba(200,155,60,0.15);
+        }
+        .product-image {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--paper) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        .product-info {
+            padding: 1rem;
+        }
+        .product-category {
+            font-size: 0.7rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .product-name {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        .product-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        
+        /* 分类标题 */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--gold);
+        }
+        .section-title .icon {
+            font-size: 1.25rem;
+        }
+        .section-title h2 {
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+        
+        /* 子分类标签 */
+        .subcategory-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            -webkit-overflow-scrolling: touch;
+        }
+        .subcategory-tab {
+            padding: 0.4rem 0.75rem;
+            background: rgba(200,155,60,0.1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .subcategory-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* 空状态 */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: rgba(200,155,60,0.05);
+            border-radius: 12px;
+        }
+        .empty-state .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .empty-state h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .empty-state p {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+        
+        /* 桌面端适配 */
+        @media (min-width: 768px) {
+            html { font-size: 16px; }
+            .container { padding: 2rem; }
+            nav { height: 60px; padding: 0 2rem; }
+            .logo { font-size: 1.25rem; gap: 0.5rem; }
+            .logo span:first-child { font-size: 1.5rem; }
+            .desktop-nav { display: flex; gap: 0.5rem; }
+            .desktop-nav a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+                font-size: 0.9rem;
+            }
+            .desktop-nav a:hover, .desktop-nav a.active {
+                background: rgba(255,255,255,0.2);
+            }
+            .mobile-nav { display: none; }
+            main { padding-top: 60px; padding-bottom: 2rem; }
+            .grid-4 { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+            .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+            .grid-2 { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .stat-value { font-size: 2.5rem; }
+            .page-header h1 { font-size: 1.75rem; }
+            .case-title { font-size: 1.1rem; }
+            .stats-value { font-size: 2rem; }
+        }
+        
+        /* 横屏手机适配 */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .mobile-nav { display: none; }
+            main { padding-bottom: 1rem; }
         }
     </style>
 </head>
 <body>
+    <!-- 顶部导航 -->
     <nav>
         <div class="nav-container">
-            <div class="logo" onclick="location.reload()">
-                <div class="logo-icon">文</div>
-                <span>文旅智库</span>
-            </div>
-            <div class="nav-links">
-                <a href="https://github.com/alandan97/wenchang-data" target="_blank">数据仓库</a>
-                <a href="https://github.com/alandan97/wenchang-data/tree/main/cases" target="_blank">案例库</a>
-                <a href="https://github.com/alandan97/wenchang-data/tree/main/policies" target="_blank">政策库</a>
+            <a href="#" class="logo" onclick="showPage('home'); return false;">
+                <span>🏛️</span>
+                <span>文创指南</span>
+            </a>
+            <div class="desktop-nav">
+                <a href="#" id="nav-home" class="active" onclick="showPage('home'); return false;">首页</a>
+                <a href="#" id="nav-policies" onclick="showPage('policies'); return false;">政策库</a>
+                <a href="#" id="nav-cases" onclick="showPage('cases'); return false;">案例库</a>
+                <a href="#" id="nav-china" onclick="showPage('china'); return false;">中国文旅</a>
+                <a href="#" id="nav-map" onclick="showPage('map'); return false;">文创地图</a>
             </div>
         </div>
     </nav>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <div class="badge">◆ 文创文旅政策与案例指南 ◆</div>
-                <h1>文创指南</h1>
-                <p>汇聚政策文件与成功案例，为文创文旅从业者提供专业决策支持</p>
-                <p style="font-size: 1rem; opacity: 0.8;">数据实时同步自 GitHub</p>
-            </div>
-        </section>
+    <!-- 底部导航 - 仅移动端显示 -->
+    <nav class="mobile-nav">
+        <a href="#" class="mobile-nav-item active" onclick="showPage('home'); return false;">
+            <span class="icon">🏠</span>
+            <span>首页</span>
+        </a>
+        <a href="#" class="mobile-nav-item" onclick="showPage('policies'); return false;">
+            <span class="icon">📋</span>
+            <span>政策</span>
+        </a>
+        <a href="#" class="mobile-nav-item" onclick="showPage('cases'); return false;">
+            <span class="icon">🏢</span>
+            <span>案例</span>
+        </a>
+        <a href="#" class="mobile-nav-item" onclick="showPage('china'); return false;">
+            <span class="icon">🏛️</span>
+            <span>文旅</span>
+        </a>
+        <a href="#" class="mobile-nav-item" onclick="showPage('map'); return false;">
+            <span class="icon">🗺️</span>
+            <span>地图</span>
+        </a>
+    </nav>
 
-        <div class="container">
-            <div id="stats-container">
-                <div class="loading">正在加载数据...</div>
+    <main>
+        <!-- 首页 -->
+        <div id="page-home" class="page active">
+            <div class="container">
+                <!-- 统计数据 -->
+                <div class="grid-4" style="margin-bottom: 1rem;">
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-case-count">--</div>
+                        <div class="stat-label">品牌案例</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-policy-count">--</div>
+                        <div class="stat-label">政策文件</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-province-count">--</div>
+                        <div class="stat-label">覆盖省份</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-category-count">--</div>
+                        <div class="stat-label">产品分类</div>
+                    </div>
+                </div>
+                
+                <!-- 快捷入口 -->
+                <div class="grid-3" style="margin-bottom: 1rem;">
+                    <div class="quick-card" onclick="showPage('china');">
+                        <div class="icon">🏛️</div>
+                        <h3>中国文旅</h3>
+                        <p>探索全国各地文旅融合示范项目</p>
+                    </div>
+                    <div class="quick-card" onclick="showPage('map');">
+                        <div class="icon">🗺️</div>
+                        <h3>文创地图</h3>
+                        <p>文创产品形态脑图大全</p>
+                    </div>
+                    <div class="quick-card" onclick="showPage('assistant');">
+                        <div class="icon">🚀</div>
+                        <h3>指南助手</h3>
+                        <p>文创创业完整指南</p>
+                    </div>
+                </div>
+                
+                <!-- 精选案例 -->
+                <div class="section-title">
+                    <span class="icon">⭐</span>
+                    <h2>精选品牌案例</h2>
+                </div>
+                
+                <div class="grid-1" id="featured-cases">
+                    <!-- 案例将通过JS动态生成 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 政策库 -->
+        <div id="page-policies" class="page">
+            <div class="container">
+                <div class="breadcrumb">
+                    <span class="current">📋 政策库</span>
+                </div>
+                
+                <div class="empty-state">
+                    <div class="icon">📋</div>
+                    <h3>政策数据收集中</h3>
+                    <p>严格验证模式下，政策必须从政府官网获取</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 案例库 -->
+        <div id="page-cases" class="page">
+            <div class="container">
+                <div class="breadcrumb">
+                    <span class="current">🏢 案例库</span>
+                </div>
+                
+                <div id="all-cases">
+                    <!-- 案例将通过JS动态生成 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 中国文旅 -->
+        <div id="page-china" class="page">
+            <div class="container">
+                <div class="breadcrumb">
+                    <span class="current">🏛️ 中国文旅</span>
+                </div>
+                
+                <!-- 统计横幅 -->
+                <div class="stats-banner">
+                    <div class="stats-grid">
+                        <div>
+                            <div class="stats-value">34</div>
+                            <div class="stats-label">省级行政区</div>
+                        </div>
+                        <div>
+                            <div class="stats-value">15</div>
+                            <div class="stats-label">已覆盖省份</div>
+                        </div>
+                        <div>
+                            <div class="stats-value">32</div>
+                            <div class="stats-label">收录品牌</div>
+                        </div>
+                        <div>
+                            <div class="stats-value">100+</div>
+                            <div class="stats-label">文旅案例</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 省份列表 -->
+                <div class="grid-1">
+                    <div class="province-card" onclick="showPage('cases');">
+                        <div class="province-header">
+                            <div class="province-icon">🏛️</div>
+                            <div class="province-name">北京市</div>
+                        </div>
+                        <div class="province-desc">故宫博物院 - 中国最大古代文化艺术博物馆，文创年销售额超15亿元</div>
+                        <span class="case-tag">博物馆文创</span>
+                    </div>
+                    
+                    <div class="province-card" onclick="showPage('cases');">
+                        <div class="province-header">
+                            <div class="province-icon">🏙️</div>
+                            <div class="province-name">上海市</div>
+                        </div>
+                        <div class="province-desc">上海博物馆 - 馆藏珍贵文物102万余件，文创产品深受市民喜爱</div>
+                        <span class="case-tag">博物馆文创</span>
+                    </div>
+                    
+                    <div class="province-card" onclick="showPage('cases');">
+                        <div class="province-header">
+                            <div class="province-icon">🐼</div>
+                            <div class="province-name">四川省</div>
+                        </div>
+                        <div class="province-desc">三星堆博物馆 - 神秘古蜀文明，青铜面具文创成为现象级网红产品</div>
+                        <span class="case-tag">博物馆文创</span>
+                    </div>
+                    
+                    <div class="province-card" onclick="showPage('cases');">
+                        <div class="province-header">
+                            <div class="province-icon">🐴</div>
+                            <div class="province-name">甘肃省</div>
+                        </div>
+                        <div class="province-desc">甘肃省博物馆 - 铜奔马"绿马"玩偶走红网络，成为现象级文创产品</div>
+                        <span class="case-tag">博物馆文创</span>
+                    </div>
+                    
+                    <div class="province-card" onclick="showPage('cases');">
+                        <div class="province-header">
+                            <div class="province-icon">🏺</div>
+                            <div class="province-name">河南省</div>
+                        </div>
+                        <div class="province-desc">河南博物院 - 考古盲盒销量破百万，开创博物馆文创新模式</div>
+                        <span class="case-tag">博物馆文创</span>
+                    </div>
+                    
+                    <div class="province-card" onclick="showPage('cases');">
+                        <div class="province-header">
+                            <div class="province-icon">🎋</div>
+                            <div class="province-name">江苏省</div>
+                        </div>
+                        <div class="province-desc">苏州博物馆 - 贝聿铭设计，江南文化主题，年营收超5000万元</div>
+                        <span class="case-tag">博物馆文创</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文创地图 -->
+        <div id="page-map" class="page">
+            <div class="container">
+                <div class="breadcrumb">
+                    <span class="current">🗺️ 文创地图</span>
+                </div>
+                
+                <!-- 统计 -->
+                <div class="card" style="text-align: center; padding: 1.5rem; margin-bottom: 1rem;">
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🧠</div>
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 1rem;">12大文创产品类别</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.8rem;">涵盖饰品、博物馆文创、潮玩手办、非遗文创等</p>
+                </div>
+                
+                <!-- 子分类标签 -->
+                <div class="subcategory-tabs">
+                    <span class="subcategory-tab active">全部</span>
+                    <span class="subcategory-tab">饰品</span>
+                    <span class="subcategory-tab">博物馆文创</span>
+                    <span class="subcategory-tab">潮玩手办</span>
+                    <span class="subcategory-tab">非遗文创</span>
+                </div>
+                
+                <!-- 产品列表 -->
+                <div class="grid-2" id="product-list">
+                    <div class="product-card">
+                        <div class="product-image">💎</div>
+                        <div class="product-info">
+                            <div class="product-category">头部饰品</div>
+                            <div class="product-name">发簪</div>
+                            <div class="product-desc">传统头饰，现代设计</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">💎</div>
+                        <div class="product-info">
+                            <div class="product-category">头部饰品</div>
+                            <div class="product-name">抓夹</div>
+                            <div class="product-desc">实用与美观并重</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🏛️</div>
+                        <div class="product-info">
+                            <div class="product-category">博物馆文创</div>
+                            <div class="product-name">故宫日历</div>
+                            <div class="product-desc">每年爆款文创产品</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🏛️</div>
+                        <div class="product-info">
+                            <div class="product-category">博物馆文创</div>
+                            <div class="product-name">绿马玩偶</div>
+                            <div class="product-desc">现象级网红产品</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 指南助手 -->
+        <div id="page-assistant" class="page">
+            <div class="container">
+                <div class="breadcrumb">
+                    <span class="current">🚀 指南助手</span>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="quick-card" onclick="showPage('cases');">
+                        <div class="icon">📋</div>
+                        <h3>政策申报</h3>
+                    </div>
+                    <div class="quick-card" onclick="showPage('map');">
+                        <div class="icon">💡</div>
+                        <h3>创意灵感</h3>
+                    </div>
+                    <div class="quick-card" onclick="showPage('china');">
+                        <div class="icon">📊</div>
+                        <h3>市场数据</h3>
+                    </div>
+                    <div class="quick-card" onclick="showPage('cases');">
+                        <div class="icon">🎯</div>
+                        <h3>产品诊断</h3>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div>
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                    <div class="logo-icon">文</div>
-                    <span style="font-size: 1.25rem; font-weight: bold;">文旅智库</span>
-                </div>
-                <p style="color: #9ca3af; font-size: 0.875rem;">为文创文旅从业者提供专业决策支持</p>
-            </div>
-            <div>
-                <h4 style="font-weight: 600; margin-bottom: 1rem;">数据</h4>
-                <ul style="list-style: none; color: #9ca3af; font-size: 0.875rem;">
-                    <li style="margin-bottom: 0.5rem;"><a href="https://github.com/alandan97/wenchang-data/tree/main/policies" style="color: #9ca3af; text-decoration: none;">政策库</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="https://github.com/alandan97/wenchang-data/tree/main/cases" style="color: #9ca3af; text-decoration: none;">案例库</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 文旅智库 | 数据更新于 <span id="update-time">加载中...</span></p>
-        </div>
-    </footer>
-
     <script>
-        // 从 GitHub API 获取数据
-        async function fetchStats() {
-            try {
-                // 获取统计数据
-                const statsResponse = await fetch('https://raw.githubusercontent.com/alandan97/wenchang-data/main/stats/progress.json');
-                const stats = await statsResponse.json();
-                
-                // 获取案例列表
-                const casesResponse = await fetch('https://api.github.com/repos/alandan97/wenchang-data/contents/cases');
-                const cases = await casesResponse.json();
-                
-                // 获取政策列表（简化版，只获取根目录）
-                const policiesResponse = await fetch('https://api.github.com/repos/alandan97/wenchang-data/contents/policies');
-                const policies = await policiesResponse.json();
-                
-                // 计算总数
-                const caseCount = Array.isArray(cases) ? cases.length : 0;
-                const policyCount = Array.isArray(policies) ? countPolicies(policies) : 0;
-                
-                // 渲染统计
-                renderStats({
-                    cases: caseCount,
-                    policies: policyCount,
-                    lastUpdate: stats.timestamp || new Date().toISOString()
-                });
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                document.getElementById('stats-container').innerHTML = `
-                    <div class="error">
-                        <p>数据加载失败，请直接访问 GitHub 仓库查看：</p>
-                        <p><a href="https://github.com/alandan97/wenchang-data" target="_blank">https://github.com/alandan97/wenchang-data</a></p>
-                    </div>
-                `;
+        // 品牌案例数据
+        const brandCases = [
+            { id: 'gugong', name: '故宫淘宝', category: '博物馆文创', feature: '宫廷风', desc: '以故宫文化为核心，打造年轻化、时尚化的文创产品' },
+            { id: 'popmart', name: '泡泡玛特', category: '潮玩盲盒', feature: '潮流IP', desc: '潮流文化娱乐品牌，通过设计师IP和盲盒模式连接艺术家与粉丝' },
+            { id: 'sanxingdui', name: '三星堆博物馆', category: '博物馆文创', feature: '神秘古蜀', desc: '以三星堆文物为灵感，打造神秘古蜀风格的文创产品' },
+            { id: 'gansumuseum', name: '甘肃省博物馆', category: '博物馆文创', feature: '绿马玩偶', desc: '以铜奔马为原型开发的绿马玩偶走红网络' },
+            { id: 'henanmuseum', name: '河南博物院', category: '博物馆文创', feature: '考古盲盒', desc: '考古盲盒销量破百万，开创博物馆文创新模式' },
+            { id: 'suzhoumuseum', name: '苏州博物馆', category: '博物馆文创', feature: '江南文化', desc: '江南文化主题，年营收超5000万元' }
+        ];
+        
+        // 页面切换
+        function showPage(pageName) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-' + pageName).classList.add('active');
+            
+            // 更新桌面导航
+            document.querySelectorAll('.desktop-nav a').forEach(a => a.classList.remove('active'));
+            if (document.getElementById('nav-' + pageName)) {
+                document.getElementById('nav-' + pageName).classList.add('active');
             }
+            
+            // 更新移动端导航
+            document.querySelectorAll('.mobile-nav-item').forEach(a => a.classList.remove('active'));
+            const navMap = { 'home': 0, 'policies': 1, 'cases': 2, 'china': 3, 'map': 4 };
+            const navIndex = navMap[pageName];
+            if (navIndex !== undefined) {
+                document.querySelectorAll('.mobile-nav-item')[navIndex].classList.add('active');
+            }
+            
+            window.scrollTo(0, 0);
         }
         
-        function countPolicies(policies) {
-            // 简化计算，实际应该递归遍历
-            return policies.length * 5; // 估算
-        }
-        
-        function renderStats(data) {
-            const container = document.getElementById('stats-container');
-            container.innerHTML = `
-                <div class="stats">
-                    <div class="stat-card">
-                        <div class="stat-icon">📜</div>
-                        <div class="stat-value">${data.policies}+</div>
-                        <div class="stat-label">政策文件</div>
+        // 生成案例卡片
+        function createCaseCard(caseData) {
+            return `
+                <div class="case-card" onclick="showPage('cases');" style="margin-bottom: 0.75rem;">
+                    <div class="case-header">
+                        <div class="case-title">${caseData.name}</div>
+                        <div style="margin-top: 0.25rem;">
+                            <span class="case-tag">${caseData.category}</span>
+                            <span class="case-tag">${caseData.feature}</span>
+                        </div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">🏆</div>
-                        <div class="stat-value">${data.cases}</div>
-                        <div class="stat-label">成功案例</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">🎨</div>
-                        <div class="stat-value">50+</div>
-                        <div class="stat-label">文创品牌</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">🗺️</div>
-                        <div class="stat-value">34</div>
-                        <div class="stat-label">覆盖省份</div>
+                    <div class="case-body">
+                        <div class="case-desc">${caseData.desc}</div>
                     </div>
                 </div>
             `;
-            
-            // 更新时间
-            const updateTime = new Date(data.lastUpdate).toLocaleString('zh-CN');
-            document.getElementById('update-time').textContent = updateTime;
         }
         
-        // 页面加载时获取数据
-        fetchStats();
+        // 渲染案例
+        function renderCases() {
+            const featuredContainer = document.getElementById('featured-cases');
+            const allCasesContainer = document.getElementById('all-cases');
+            
+            if (featuredContainer) {
+                featuredContainer.innerHTML = brandCases.slice(0, 6).map(createCaseCard).join('');
+            }
+            if (allCasesContainer) {
+                allCasesContainer.innerHTML = brandCases.map(createCaseCard).join('');
+            }
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCases();
+            showPage('home');
+            
+            // 动态加载 GitHub 数据
+            loadGitHubData();
+        });
+        
+        // 动态加载 GitHub 数据
+        async function loadGitHubData() {
+            try {
+                // 检查 WenChangData API 是否可用
+                if (typeof WenChangData === 'undefined') {
+                    console.log('GitHub 数据加载器未加载，使用本地数据');
+                    return;
+                }
+                
+                console.log('正在从 GitHub 加载数据...');
+                
+                // 获取统计数据
+                const stats = await WenChangData.getStats();
+                
+                // 更新首页统计数字
+                const caseCountEl = document.getElementById('stat-case-count');
+                const policyCountEl = document.getElementById('stat-policy-count');
+                const provinceCountEl = document.getElementById('stat-province-count');
+                const categoryCountEl = document.getElementById('stat-category-count');
+                
+                if (caseCountEl) caseCountEl.textContent = stats.totalCases;
+                if (policyCountEl) policyCountEl.textContent = stats.totalPolicies;
+                if (provinceCountEl) {
+                    const provinceCount = Object.keys(stats.provinceStats).length;
+                    provinceCountEl.textContent = provinceCount;
+                }
+                if (categoryCountEl) {
+                    const categoryCount = Object.keys(stats.categoryStats).length;
+                    categoryCountEl.textContent = categoryCount || 12;
+                }
+                
+                // 加载案例列表
+                await renderGitHubCases();
+                
+                console.log('GitHub 数据加载完成');
+                
+            } catch (error) {
+                console.error('加载 GitHub 数据失败:', error);
+            }
+        }
+        
+        // 渲染 GitHub 案例
+        async function renderGitHubCases() {
+            try {
+                const { cases } = await WenChangData.loadAllData();
+                
+                // 转换为本地格式
+                const githubCases = cases.map(c => ({
+                    id: c.id,
+                    name: c.name,
+                    brand: c.brand,
+                    category: c.category,
+                    feature: c.highlights && c.highlights[0] ? c.highlights[0] : c.category,
+                    desc: c.description ? c.description.substring(0, 100) + '...' : ''
+                }));
+                
+                // 合并到品牌案例列表
+                brandCases.length = 0;
+                brandCases.push(...githubCases.slice(0, 50)); // 最多显示50个
+                
+                // 重新渲染
+                renderCases();
+                
+            } catch (error) {
+                console.error('渲染 GitHub 案例失败:', error);
+            }
+        }
     </script>
 </body>
 </html>

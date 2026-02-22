@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国文旅地图 - 文创指南</title>
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #8B1E1E;
+            --gold: #C89B3C;
+            --green: #2D5A4A;
+            --cream: #F5F0E6;
+            --paper: #FDF8F0;
+            --text: #2C1810;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, var(--paper) 0%, #EDE4D8 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--gold);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        .header h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            color: var(--text);
+            opacity: 0.7;
+        }
+        
+        /* 省份卡片网格布局 */
+        .provinces-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .province-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(139,30,30,0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .province-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(139,30,30,0.2);
+            border-color: var(--gold);
+        }
+        
+        .province-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--gold) 100%);
+        }
+        
+        .province-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .province-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .province-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .province-case {
+            background: rgba(200,155,60,0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .case-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .case-desc {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .case-tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* 统计区域 */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            color: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--gold);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .provinces-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏛️ 中国文旅地图</h1>
+            <p>探索全国各地文旅融合示范项目</p>
+        </div>
+        
+        <!-- 统计区域 -->
+        <div class="stats-section">
+            <h2>📊 全国文旅数据概览</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">34</div>
+                    <div class="stat-label">省级行政区</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">15</div>
+                    <div class="stat-label">已覆盖省份</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">32</div>
+                    <div class="stat-label">收录品牌</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">100+</div>
+                    <div class="stat-label">文旅案例</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 省份卡片网格 -->
+        <div class="provinces-grid">
+            
+            <!-- 北京 -->
+            <div class="province-card" onclick="showDetail('beijing')">
+                <div class="province-header">
+                    <div class="province-icon">🏛️</div>
+                    <div class="province-name">北京市</div>
+                </div>
+                <div class="province-case">
+                    <div class="case-title">故宫博物院</div>
+                    <div class="case-desc">中国最大古代文化艺术博物馆，文创年销售额超15亿元</div>
+                    <span class="case-tag">博物馆文创</span>
+                </div>
+            </div>
+            
+            <!-- 上海 -->
+            <div class="province-card" onclick="showDetail('shanghai')">
+                <div class="province-header">
+                    <div class="province-icon">🏙️</div>
+                    <div class="province-name">上海市</div>
+                </div>
+                <div class="province-case">
+                    <div class="case-title">上海博物馆</div>
+                    <div class="case-desc">馆藏珍贵文物102万余件，文创产品深受市民喜爱</div>
+                    <span class="case-tag">博物馆文创</span>
+                </div>
+            </div>
+            
+            <!-- 广东 -->
+            <div class="province-card" onclick="showDetail('guangdong')">
+                <div class="province-header">
+                    <div class="province-icon">🌺</div>
+                    <div class="province-name">广东省</div>
+                </div>
+                <div class="province-case">
+                    <div class="case-title">广东省博物馆</div>
+                    <div class="case-desc">馆藏文物16.6万余件，文创融合岭南文化特色</div>
+                    <span class="case-tag">博物馆文创</span>
+                </div>
+            </div>
+            
+            <!-- 浙江 -->
+            <div class="province-card" onclick="showDetail('zhejiang')">
+                <div class="province-header">
+                    <div class="province-icon">🌊</div>
+                    <div class="province-name">浙江省</div>
+                </div>
+                <div class="province-case">
+                    <div class="case-title">浙江省博物馆</div>
+                    <div class="case-desc">馆藏文物10万余件，以良渚文化、越窑青瓷为主题</div>
+                    <span class="case-tag">博物馆文创</span>
+                </div>
+            </div>
+            
+            <!-- 江苏 -->
+            <div class="province-card" onclick="showDetail('jiangsu')">
+                <div class="province-header">
+                    <div class="province-icon">🎋</div>
+                    <div class="province-name">江苏省</div>
+                </div>
+                <div class="province-case">
+                    <div class="case-title">苏州博物馆</div>
+                    <div class="case-desc">贝聿铭设计，江南文化主题，年营收超5000万元</div>
+                    <span class="case-tag">博物馆文创</span>
+                </div>
+            </div>
+            
+            <!-- 四川 -->
+            <div class="province-card" onclick="showDetail('sichuan')">
+                <div class="province-header">
+                    <div class="province-icon">🐼</div>
+                    <div class="province-name">四川省</div>
+                </div>
+                <div class="province-case">
+                    <div class="case-title">三星堆博物馆</div>
+                    <div class="case-desc">神秘古蜀文明，青铜面具文创成为现象级网红产品</div>
+                    <span class="case-tag">博物馆文创</span>
+                </div>
+            </div>
+            
+            <!-- 陕西 -->
+            <div class="province-card" onclick="showDetail('shaanxi')">
+                <div class="province-header">
+                    <div class="province-icon">🏺</div>
+                    <div class="province-name">陕西省</div>
+                </div>
+                <div class="province-case">
+                    <div class="case-title">陕西历史博物馆</div>
+                    <div class="case-desc">馆藏文物171万余件，大唐文化主题，年营收超2000万</div>
+                    <span class="case-tag">博物馆文创</span>
+                </div>
+            </div>
+            
+            <!-- 甘肃 -->
+            <div class="province-card" onclick="showDetail('gansu')">
+                <div class="province-header">
+                    <div class="province-icon">🐴</div>
+                    <div class="province-name">甘肃省</div>
+                </div>
+                <div class="province-case">
+                    <div class="case-title">甘肃省博物馆</div>
+                    <div class="case-desc">铜奔马"绿马"玩偶走红网络，成为现象级文创产品</div>
+                    <span class="case-tag">博物馆文创</span>
+                </div>
+            </div>
+            
+            <!-- 河南 -->
+            <div class="province-card" onclick="showDetail('henan')">
+                <div class="province-header">
+                    <div class="province-icon">🏛️</div>
+                    <div class="province-name">河南省</div>
+                </div>
+                <div class="province-case">
+                    <div class="case-title">河南博物院</div>
+                    <div class="case-desc">考古盲盒销量破百万，开创博物馆文创新模式</div>
+                    <span class="case-tag">博物馆文创</span>
+                </div>
+            </div>
+            
+            <!-- 山东 -->
+            <div class="province-card" onclick="showDetail('shandong')">
+                <div class="province-header">
+                    <div class="province-icon">⛰️</div>
+                    <div class="province-name">山东省</div>
+                </div>
+                <div class="province-case">
+                    <div class="case-title">山东博物馆</div>
+                    <div class="case-desc">馆藏文物20万余件，齐鲁文化、孔子文化主题</div>
+                    <span class="case-tag">博物馆文创</span>
+                </div>
+            </div>
+            
+            <!-- 湖北 -->
+            <div class="province-card" onclick="showDetail('hubei')">
+                <div class="province-header">
+                    <div class="province-icon">🌉</div>
+                    <div class="province-name">湖北省</div>
+                </div>
+                <div class="province-case">
+                    <div class="case-title">湖北省博物馆</div>
+                    <div class="case-desc">曾侯乙编钟、越王勾践剑为镇馆之宝，文创深受喜爱</div>
+                    <span class="case-tag">博物馆文创</span>
+                </div>
+            </div>
+            
+            <!-- 湖南 -->
+            <div class="province-card" onclick="showDetail('hunan')">
+                <div class="province-header">
+                    <div class="province-icon">🌶️</div>
+                    <div class="province-name">湖南省</div>
+                </div>
+                <div class="province-case">
+                    <div class="case-title">湖南省博物馆</div>
+                    <div class="case-desc">马王堆汉墓文物为特色，融合楚汉文化元素</div>
+                    <span class="case-tag">博物馆文创</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script>
+        function showDetail(province) {
+            alert('省份详情页面开发中: ' + province);
+        }
+        
+        // GSAP 动画
+        document.addEventListener('DOMContentLoaded', function() {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // 标题动画
+            gsap.to('.header', {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: 'power2.out'
+            });
+            
+            // 统计区域动画
+            gsap.from('.stats-section', {
+                y: 30,
+                opacity: 0,
+                duration: 0.6,
+                delay: 0.2,
+                ease: 'power2.out'
+            });
+            
+            // 省份卡片动画
+            gsap.utils.toArray('.province-card').forEach((card, i) => {
+                gsap.from(card, {
+                    y: 40,
+                    opacity: 0,
+                    duration: 0.5,
+                    delay: 0.3 + i * 0.08,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 90%'
+                    }
+                });
+            });
+            
+            // 统计数字动画
+            gsap.utils.toArray('.stat-value').forEach((stat, i) => {
+                gsap.from(stat, {
+                    scale: 0,
+                    opacity: 0,
+                    duration: 0.5,
+                    delay: 0.5 + i * 0.1,
+                    ease: 'back.out(1.7)'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

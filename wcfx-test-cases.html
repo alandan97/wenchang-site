@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试案例 - 文创产品分析师</title>
+    <script src="wcfx-test-cases.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cinnabar: #8B1E1E;
+            --gold: #C89B3C;
+            --ink-green: #2D5A4A;
+            --cream: #FDF8F0;
+            --rice-paper: #F5F0E6;
+            --ink-black: #2C1810;
+            --warm-gray: #6B5B4F;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--cream);
+            color: var(--ink-black);
+            line-height: 1.8;
+        }
+        
+        /* 导航 */
+        nav {
+            background: linear-gradient(135deg, #1a365d 0%, #0d1b2a 100%);
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            height: 60px;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255,255,255,0.1);
+            color: var(--gold);
+        }
+        
+        /* 主内容 */
+        main {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--cinnabar) 0%, #6B1515 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--ink-black);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* 容器 */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* 案例卡片网格 */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        /* 案例卡片 */
+        .case-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(139, 30, 30, 0.08);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(200, 155, 60, 0.2);
+        }
+        
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(139, 30, 30, 0.15);
+        }
+        
+        .case-header {
+            background: linear-gradient(135deg, var(--cinnabar) 0%, #6B1515 100%);
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .case-header::after {
+            content: '◆ ◆ ◆';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-size: 8px;
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+        
+        .case-category {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .case-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .case-body {
+            padding: 1.5rem;
+        }
+        
+        .case-company {
+            color: var(--warm-gray);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* 数据展示 */
+        .case-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: var(--rice-paper);
+            border-radius: 8px;
+        }
+        
+        .stat-value {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cinnabar);
+        }
+        
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--warm-gray);
+            margin-top: 0.25rem;
+        }
+        
+        /* 标签 */
+        .case-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .case-tag {
+            background: rgba(139, 30, 30, 0.08);
+            color: var(--cinnabar);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+        }
+        
+        /* 按钮 */
+        .btn-primary {
+            display: inline-block;
+            background: var(--cinnabar);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .btn-primary:hover {
+            background: #6B1515;
+        }
+        
+        /* 详情页 */
+        .detail-page {
+            display: none;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        .detail-page.active {
+            display: block;
+        }
+        
+        .detail-header {
+            background: linear-gradient(135deg, var(--cinnabar) 0%, #6B1515 100%);
+            color: white;
+            padding: 3rem 2rem;
+            position: relative;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        
+        .back-btn:hover {
+            opacity: 1;
+        }
+        
+        .detail-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .detail-subtitle {
+            opacity: 0.9;
+            font-size: 1.125rem;
+        }
+        
+        /* 详情内容 */
+        .detail-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .detail-section {
+            margin-bottom: 3rem;
+        }
+        
+        .detail-section-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.5rem;
+            color: var(--cinnabar);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .detail-section-title::before {
+            content: '◆';
+            color: var(--gold);
+        }
+        
+        /* 信息网格 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .info-item {
+            background: var(--rice-paper);
+            padding: 1.25rem;
+            border-radius: 8px;
+        }
+        
+        .info-label {
+            font-size: 0.875rem;
+            color: var(--warm-gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-value {
+            font-weight: 500;
+            color: var(--ink-black);
+        }
+        
+        /* 数据卡片 */
+        .data-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .data-card {
+            background: linear-gradient(145deg, var(--cream) 0%, var(--rice-paper) 100%);
+            border: 1px solid rgba(200, 155, 60, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .data-card-value {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cinnabar);
+        }
+        
+        .data-card-unit {
+            font-size: 0.875rem;
+            color: var(--warm-gray);
+        }
+        
+        .data-card-label {
+            font-size: 0.875rem;
+            color: var(--warm-gray);
+            margin-top: 0.5rem;
+        }
+        
+        /* SWOT */
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .swot-item {
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        
+        .swot-s { background: #e8f5e9; border-left: 4px solid #4caf50; }
+        .swot-w { background: #ffebee; border-left: 4px solid #f44336; }
+        .swot-o { background: #e3f2fd; border-left: 4px solid #2196f3; }
+        .swot-t { background: #fff3e0; border-left: 4px solid #ff9800; }
+        
+        .swot-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        
+        .swot-s .swot-title { color: #2e7d32; }
+        .swot-w .swot-title { color: #c62828; }
+        .swot-o .swot-title { color: #1565c0; }
+        .swot-t .swot-title { color: #ef6c00; }
+        
+        .swot-list {
+            list-style: none;
+        }
+        
+        .swot-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            color: var(--warm-gray);
+        }
+        
+        .swot-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--ink-black);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .footer-text {
+            color: var(--warm-gray);
+            font-size: 0.875rem;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .data-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .swot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .case-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .data-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span>🏛️</span>
+                <span>文旅智库</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="index.html#cases">案例库</a>
+                <a href="index.html#policies">政策库</a>
+                <a href="wcfx-test-cases.html" class="active">测试案例</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 列表页 -->
+    <main id="list-page">
+        <section class="hero">
+            <div class="hero-badge">◆ 文创产品分析师 ◆</div>
+            <h1>测试案例</h1>
+            <p>基于文创产品分析师模板深度优化的四个典型案例，包含完整的市场分析、用户画像、SWOT分析和战略建议。</p>
+        </section>
+
+        <div class="container">
+            <div class="cases-grid" id="cases-container">
+                <!-- 案例卡片将通过JS动态生成 -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 详情页 -->
+    <div class="detail-page" id="detail-page">
+        <div class="detail-header">
+            <a href="#" class="back-btn" onclick="showList(); return false;">← 返回测试案例列表</a>
+            <div id="detail-header-content"></div>
+        </div>
+        <div class="detail-content" id="detail-content">
+            <!-- 详情内容将通过JS动态生成 -->
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p class="footer-text">© 2025 文旅智库 | 文创产品分析师测试案例</p>
+    </footer>
+
+    <script>
+        // 渲染案例列表
+        function renderCasesList() {
+            const container = document.getElementById('cases-container');
+            
+            container.innerHTML = TEST_CASES.map((caseItem, index) => `
+                <div class="case-card" onclick="showDetail(${index})">
+                    <div class="case-header">
+                        <div class="case-category">${caseItem.category}</div>
+                        <div class="case-name">${caseItem.name}</div>
+                    </div>
+                    <div class="case-body">
+                        <div class="case-company">${caseItem.company} · ${caseItem.location}</div>
+                        <div class="case-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">${formatNumber(caseItem.data.sales_volume.value)}</div>
+                                <div class="stat-label">${caseItem.data.sales_volume.label}</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">${formatNumber(caseItem.data.revenue.value)}</div>
+                                <div class="stat-label">${caseItem.data.revenue.label}</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">${caseItem.data.conversion_rate.value}%</div>
+                                <div class="stat-label">${caseItem.data.conversion_rate.label}</div>
+                            </div>
+                        </div>
+                        <div class="case-tags">
+                            ${caseItem.ip_analysis.cultural_elements.slice(0, 4).map(tag => `<span class="case-tag">${tag}</span>`).join('')}
+                        </div>
+                        <button class="btn-primary">查看完整分析</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // 显示详情
+        function showDetail(index) {
+            const caseItem = TEST_CASES[index];
+            
+            document.getElementById('list-page').style.display = 'none';
+            document.getElementById('detail-page').classList.add('active');
+            
+            // 渲染详情头部
+            document.getElementById('detail-header-content').innerHTML = `
+                <div class="case-category" style="display: inline-block; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.875rem; margin-bottom: 1rem;">${caseItem.category}</div>
+                <h1 class="detail-title">${caseItem.name}</h1>
+                <p class="detail-subtitle">${caseItem.brand.slogan}</p>
+            `;
+            
+            // 渲染详情内容
+            document.getElementById('detail-content').innerHTML = `
+                <!-- 核心数据 -->
+                <div class="detail-section">
+                    <h2 class="detail-section-title">核心数据</h2>
+                    <div class="data-cards">
+                        <div class="data-card">
+                            <div class="data-card-value">${formatNumber(caseItem.data.sales_volume.value)}</div>
+                            <div class="data-card-unit">${caseItem.data.sales_volume.unit}</div>
+                            <div class="data-card-label">${caseItem.data.sales_volume.label}</div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-card-value">${formatNumber(caseItem.data.revenue.value)}</div>
+                            <div class="data-card-unit">${caseItem.data.revenue.unit}</div>
+                            <div class="data-card-label">${caseItem.data.revenue.label}</div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-card-value">${caseItem.data.conversion_rate.value}</div>
+                            <div class="data-card-unit">${caseItem.data.conversion_rate.unit}</div>
+                            <div class="data-card-label">${caseItem.data.conversion_rate.label}</div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-card-value">${caseItem.data.repurchase_rate.value}</div>
+                            <div class="data-card-unit">${caseItem.data.repurchase_rate.unit}</div>
+                            <div class="data-card-label">${caseItem.data.repurchase_rate.label}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 品牌基因 -->
+                <div class="detail-section">
+                    <h2 class="detail-section-title">品牌基因</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">核心价值观</div>
+                            <div class="info-value">${caseItem.brand.core_values}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">品牌口号</div>
+                            <div class="info-value" style="color: var(--cinnabar); font-weight: 600;">${caseItem.brand.slogan}</div>
+                        </div>
+                    </div>
+                    <div class="info-item" style="margin-bottom: 1rem;">
+                        <div class="info-label">品牌故事</div>
+                        <div class="info-value">${caseItem.brand.brand_story}</div>
+                    </div>
+                    <div class="case-tags">
+                        ${caseItem.ip_analysis.cultural_elements.map(tag => `<span class="case-tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+                
+                <!-- 用户画像 -->
+                <div class="detail-section">
+                    <h2 class="detail-section-title">用户画像</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">年龄段</div>
+                            <div class="info-value">${caseItem.user_persona.age}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">性别分布</div>
+                            <div class="info-value">${caseItem.user_persona.gender}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">收入水平</div>
+                            <div class="info-value">${caseItem.user_persona.income}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">教育程度</div>
+                            <div class="info-value">${caseItem.user_persona.education}</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">消费动机</div>
+                        <div class="case-tags" style="margin-top: 0.5rem;">
+                            ${caseItem.user_persona.motivations.map(m => `<span class="case-tag">${m}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SWOT分析 -->
+                <div class="detail-section">
+                    <h2 class="detail-section-title">SWOT分析</h2>
+                    <div class="swot-grid">
+                        <div class="swot-item swot-s">
+                            <div class="swot-title">优势 Strengths</div>
+                            <ul class="swot-list">
+                                ${caseItem.swot.strengths.map(s => `<li>${s}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="swot-item swot-w">
+                            <div class="swot-title">劣势 Weaknesses</div>
+                            <ul class="swot-list">
+                                ${caseItem.swot.weaknesses.map(w => `<li>${w}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="swot-item swot-o">
+                            <div class="swot-title">机会 Opportunities</div>
+                            <ul class="swot-list">
+                                ${caseItem.swot.opportunities.map(o => `<li>${o}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="swot-item swot-t">
+                            <div class="swot-title">威胁 Threats</div>
+                            <ul class="swot-list">
+                                ${caseItem.swot.threats.map(t => `<li>${t}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 发展建议 -->
+                <div class="detail-section">
+                    <h2 class="detail-section-title">发展建议</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">短期建议（3-6个月）</div>
+                            <ul class="swot-list" style="margin-top: 0.5rem;">
+                                ${caseItem.recommendations.short_term.map(r => `<li>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">中期建议（6-12个月）</div>
+                            <ul class="swot-list" style="margin-top: 0.5rem;">
+                                ${caseItem.recommendations.medium_term.map(r => `<li>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">长期建议（1-2年）</div>
+                        <ul class="swot-list" style="margin-top: 0.5rem;">
+                            ${caseItem.recommendations.long_term.map(r => `<li>${r}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+            
+            window.scrollTo(0, 0);
+        }
+        
+        // 返回列表
+        function showList() {
+            document.getElementById('list-page').style.display = 'block';
+            document.getElementById('detail-page').classList.remove('active');
+            window.scrollTo(0, 0);
+        }
+        
+        // 格式化数字
+        function formatNumber(num) {
+            if (num >= 100000000) {
+                return (num / 100000000).toFixed(1) + '亿';
+            } else if (num >= 10000) {
+                return (num / 10000).toFixed(0) + '万';
+            } else {
+                return num.toLocaleString();
+            }
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCasesList();
+        });
+    </script>
+    <script>
+        // GSAP 动画
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof gsap === "undefined") return;
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // 页面元素动画
+            gsap.utils.toArray(".card, .section, .box, .item").forEach((el, i) => {
+                gsap.from(el, {
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.5,
+                    delay: i * 0.05,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 95%"
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

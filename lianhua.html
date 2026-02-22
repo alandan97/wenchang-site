@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>故宫日历2026 · 产品分析</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --tang-red: #8B1E1E;
+            --tang-gold: #C89B3C;
+            --tang-green: #2D5A4A;
+            --tang-cream: #F5F0E6;
+            --tang-paper: #FDF8F0;
+            --text: #2C1810;
+            --text-secondary: #6B5B4F;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, var(--tang-paper) 0%, #EDE4D8 100%);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 13px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        
+        .tang-card {
+            background: linear-gradient(145deg, rgba(253, 248, 240, 0.95) 0%, rgba(245, 240, 230, 0.9) 100%);
+            border-radius: 8px;
+            border: 1px solid rgba(200, 155, 60, 0.3);
+            box-shadow: 0 4px 20px rgba(139, 30, 30, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tang-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--tang-red) 0%, var(--tang-gold) 50%, var(--tang-red) 100%);
+        }
+
+        .tang-header {
+            background: linear-gradient(135deg, var(--tang-red) 0%, #6B1515 100%);
+            border-radius: 12px;
+            padding: 32px 40px;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(139, 30, 30, 0.3);
+        }
+        
+        .tang-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(200, 155, 60, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(200, 155, 60, 0.1) 0%, transparent 50%);
+        }
+        
+        .tang-header::after {
+            content: '◆ ◆ ◆';
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--tang-gold);
+            font-size: 10px;
+            letter-spacing: 16px;
+            opacity: 0.6;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-title-group {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .header-eyebrow {
+            font-size: 12px;
+            color: var(--tang-gold);
+            letter-spacing: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .header-main-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #FFF;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 8px;
+            letter-spacing: 4px;
+        }
+        
+        .header-subtitle {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 2px;
+        }
+        
+        .header-badge {
+            background: linear-gradient(135deg, var(--tang-gold) 0%, #B8942E 100%);
+            color: var(--tang-red);
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 700;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .kpi-section {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .kpi-item {
+            background: linear-gradient(145deg, var(--tang-cream) 0%, #EDE4D8 100%);
+            border-radius: 8px;
+            padding: 20px 12px;
+            text-align: center;
+            border: 1px solid rgba(200, 155, 60, 0.25);
+            position: relative;
+        }
+        
+        .kpi-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: var(--tang-gold);
+        }
+        
+        .kpi-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--tang-red);
+            margin-bottom: 4px;
+        }
+        
+        .kpi-label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+        }
+
+        .info-radar-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        
+        .section-card {
+            padding: 20px;
+        }
+        
+        .section-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--tang-red);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--tang-gold);
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+        
+        .info-list {
+            list-style: none;
+        }
+        
+        .info-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(139, 30, 30, 0.15);
+            font-size: 12px;
+        }
+        
+        .info-list li:last-child { border-bottom: none; }
+        .info-label { color: var(--text-secondary); font-weight: 500; }
+        .info-value { font-weight: 600; text-align: right; }
+        
+        .highlight {
+            background: linear-gradient(120deg, rgba(200, 155, 60, 0.25) 0%, rgba(200, 155, 60, 0.1) 100%);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            color: var(--tang-red);
+        }
+        
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .tag {
+            background: rgba(139, 30, 30, 0.08);
+            color: var(--tang-red);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            border: 1px solid rgba(139, 30, 30, 0.15);
+        }
+
+        .channel-section {
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(200, 155, 60, 0.3);
+        }
+        
+        .header-badges {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .tang-badge {
+            background: linear-gradient(135deg, var(--tang-gold) 0%, #B8942E 100%);
+            color: var(--tang-red);
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid rgba(139, 30, 30, 0.2);
+        }
+        
+        .channel-scroll {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .channel-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        
+        .scroll-item {
+            background: linear-gradient(180deg, #FFF 0%, var(--tang-cream) 100%);
+            border-radius: 4px;
+            padding: 12px 16px;
+            border: 1px solid rgba(200, 155, 60, 0.3);
+            box-shadow: 0 2px 8px rgba(139, 30, 30, 0.06);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+        }
+        
+        .scroll-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--tang-gold);
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .scroll-item.main::before {
+            background: var(--tang-red);
+        }
+        
+        .scroll-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            background: var(--tang-cream);
+            border: 2px solid var(--tang-gold);
+            flex-shrink: 0;
+        }
+        
+        .scroll-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .scroll-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2px;
+        }
+        
+        .scroll-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--tang-red);
+        }
+        
+        .scroll-role {
+            font-size: 9px;
+            padding: 1px 6px;
+            border-radius: 3px;
+            background: rgba(139, 30, 30, 0.1);
+            color: var(--tang-red);
+        }
+        
+        .scroll-account {
+            font-size: 10px;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .scroll-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--tang-gold);
+            white-space: nowrap;
+        }
+        
+        .scroll-value.main {
+            color: var(--tang-red);
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        
+        .chart-container {
+            padding: 20px;
+            height: 220px;
+        }
+        
+        .wordcloud-container {
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .word {
+            position: absolute;
+            font-weight: 600;
+            animation: float 3s ease-in-out infinite;
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* 动态词云挑战与机遇 */
+        .co-wordcloud-section {
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .co-clouds-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .co-cloud {
+            height: 220px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, var(--tang-cream) 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(200, 155, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(139, 30, 30, 0.08);
+        }
+        
+        .co-cloud::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+        
+        .co-cloud.challenge::before {
+            background: linear-gradient(90deg, var(--tang-red) 0%, #A03030 100%);
+        }
+        
+        .co-cloud.opportunity::before {
+            background: linear-gradient(90deg, var(--tang-green) 0%, #3D7A6A 100%);
+        }
+        
+        .co-cloud-label {
+            position: absolute;
+            top: 12px;
+            left: 16px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            z-index: 10;
+        }
+        
+        .co-cloud.challenge .co-cloud-label { color: var(--tang-red); }
+        .co-cloud.opportunity .co-cloud-label { color: var(--tang-green); }
+        
+        .co-word {
+            position: absolute;
+            font-weight: 600;
+            font-family: 'Noto Serif SC', serif;
+            animation: pulse 4s ease-in-out infinite;
+            cursor: default;
+            transition: all 0.3s ease;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .co-word:hover {
+            transform: scale(1.15);
+            z-index: 100;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        
+        /* 挑战词云 */
+        .co-cloud.challenge .co-word:nth-child(2) { font-size: 24px; color: var(--tang-red); left: 12%; top: 30%; animation-delay: 0s; }
+        .co-cloud.challenge .co-word:nth-child(3) { font-size: 16px; color: #A03030; left: 50%; top: 22%; animation-delay: 0.6s; }
+        .co-cloud.challenge .co-word:nth-child(4) { font-size: 14px; color: #B04040; left: 68%; top: 45%; animation-delay: 1.2s; }
+        .co-cloud.challenge .co-word:nth-child(5) { font-size: 19px; color: var(--tang-red); left: 22%; top: 55%; animation-delay: 1.8s; }
+        .co-cloud.challenge .co-word:nth-child(6) { font-size: 13px; color: #904040; left: 58%; top: 68%; animation-delay: 2.4s; }
+        .co-cloud.challenge .co-word:nth-child(7) { font-size: 21px; color: var(--tang-red); left: 5%; top: 72%; animation-delay: 3s; }
+        .co-cloud.challenge .co-word:nth-child(8) { font-size: 15px; color: #A54040; left: 72%; top: 28%; animation-delay: 0.3s; }
+        
+        /* 机遇词云 */
+        .co-cloud.opportunity .co-word:nth-child(2) { font-size: 22px; color: var(--tang-green); left: 8%; top: 28%; animation-delay: 0.4s; }
+        .co-cloud.opportunity .co-word:nth-child(3) { font-size: 18px; color: #3D7A6A; left: 48%; top: 18%; animation-delay: 1s; }
+        .co-cloud.opportunity .co-word:nth-child(4) { font-size: 14px; color: #4D8A7A; left: 62%; top: 42%; animation-delay: 1.6s; }
+        .co-cloud.opportunity .co-word:nth-child(5) { font-size: 20px; color: var(--tang-green); left: 28%; top: 52%; animation-delay: 2.2s; }
+        .co-cloud.opportunity .co-word:nth-child(6) { font-size: 13px; color: #3D6A5A; left: 68%; top: 65%; animation-delay: 2.8s; }
+        .co-cloud.opportunity .co-word:nth-child(7) { font-size: 23px; color: var(--tang-green); left: 3%; top: 70%; animation-delay: 0.2s; }
+        .co-cloud.opportunity .co-word:nth-child(8) { font-size: 17px; color: #4D7A6A; left: 52%; top: 78%; animation-delay: 1.4s; }
+
+        /* 中国古风时间轴 - 卷轴竹简风格 */
+        .ancient-timeline {
+            padding: 30px;
+            margin-bottom: 24px;
+            background: linear-gradient(180deg, 
+                rgba(139, 30, 30, 0.03) 0%,
+                rgba(200, 155, 60, 0.05) 50%,
+                rgba(139, 30, 30, 0.03) 100%);
+        }
+        
+        .timeline-bamboo {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        /* 竹简连接线 */
+        .timeline-bamboo::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 80px;
+            right: 80px;
+            height: 3px;
+            background: repeating-linear-gradient(90deg,
+                var(--tang-gold) 0px,
+                var(--tang-gold) 20px,
+                transparent 20px,
+                transparent 30px);
+            opacity: 0.6;
+        }
+        
+        .bamboo-slat {
+            width: 28%;
+            background: linear-gradient(180deg, 
+                #F5E6D3 0%,
+                #EDE4D8 5%,
+                #F5E6D3 10%,
+                #EDE4D8 15%,
+                #F5E6D3 20%,
+                #EDE4D8 25%,
+                #F5E6D3 30%,
+                #EDE4D8 28%,
+                #F5E6D3 40%,
+                #EDE4D8 45%,
+                #F5E6D3 50%,
+                #EDE4D8 55%,
+                #F5E6D3 60%,
+                #EDE4D8 65%,
+                #F5E6D3 70%,
+                #EDE4D8 75%,
+                #F5E6D3 80%,
+                #EDE4D8 85%,
+                #F5E6D3 90%,
+                #EDE4D8 95%,
+                #F5E6D3 100%);
+            border-radius: 4px;
+            padding: 20px 16px;
+            position: relative;
+            box-shadow: 
+                0 4px 12px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.5);
+            border-left: 4px solid var(--tang-red);
+            border-right: 4px solid var(--tang-red);
+        }
+        
+        .bamboo-slat:nth-child(2) {
+            margin-top: 30px;
+            border-left-color: var(--tang-gold);
+            border-right-color: var(--tang-gold);
+        }
+        
+        .bamboo-slat:nth-child(3) {
+            margin-top: 60px;
+            border-left-color: var(--tang-green);
+            border-right-color: var(--tang-green);
+        }
+        
+        /* 竹简绳结装饰 */
+        .bamboo-slat::before,
+        .bamboo-slat::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--tang-gold);
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .bamboo-slat::before {
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .bamboo-slat::after {
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* 印章装饰 */
+        .bamboo-seal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 36px;
+            height: 36px;
+            background: var(--tang-red);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFF;
+            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 2px 6px rgba(139, 30, 30, 0.3);
+        }
+        
+        .bamboo-slat:nth-child(2) .bamboo-seal {
+            background: var(--tang-gold);
+            color: var(--tang-red);
+        }
+        
+        .bamboo-slat:nth-child(3) .bamboo-seal {
+            background: var(--tang-green);
+        }
+        
+        .bamboo-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--tang-red);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed rgba(139, 30, 30, 0.3);
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        
+        .bamboo-list {
+            list-style: none;
+            font-size: 12px;
+        }
+        
+        .bamboo-list li {
+            padding: 6px 0;
+            padding-left: 16px;
+            position: relative;
+            color: var(--text);
+            border-bottom: 1px dotted rgba(139, 30, 30, 0.15);
+        }
+        
+        .bamboo-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .bamboo-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--tang-gold);
+            border-radius: 50%;
+        }
+
+        .tang-footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+        
+        .tang-footer::before {
+            content: '◆ ◆ ◆';
+            display: block;
+            margin-bottom: 12px;
+            color: var(--tang-gold);
+            letter-spacing: 8px;
+        }
+    </style>
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="tang-header">
+            <div class="header-content">
+                <div style="width: 80px;"></div>
+                <div class="header-title-group">
+                    <div class="header-eyebrow">文创产品分析报告</div>
+                    <div class="header-main-title">故宫日历 2026</div>
+                    <div class="header-subtitle">文创品牌 · 百年纪念版 · 书画版</div>
+                </div>
+                <div class="header-badge">IP价值 9.5</div>
+            </div>
+        </header>
+
+        <div class="kpi-section">
+            <div class="kpi-item"><div class="kpi-number">10万+</div><div class="kpi-label">累计销量</div></div>
+            <div class="kpi-item"><div class="kpi-number">¥68</div><div class="kpi-label">产品定价</div></div>
+            <div class="kpi-item"><div class="kpi-number">¥680万</div><div class="kpi-label">累计营收</div></div>
+            <div class="kpi-item"><div class="kpi-number">4.2%</div><div class="kpi-label">转化率</div></div>
+            <div class="kpi-item"><div class="kpi-number">28%</div><div class="kpi-label">复购率</div></div>
+        </div>
+
+        <div class="info-radar-grid">
+            <div class="tang-card section-card">
+                <div class="section-title">产品信息</div>
+                <ul class="info-list">
+                    <li><span class="info-label">出品方</span><span class="info-value">文创品牌</span></li>
+                    <li><span class="info-label">上市时间</span><span class="info-value">2025年9月</span></li>
+                    <li><span class="info-label">产品定位</span><span class="info-value"><span class="highlight">大众文创</span> · ¥68</span></li>
+                    <li><span class="info-label">核心卖点</span><span class="info-value">百年故宫 · 书画</span></li>
+                </ul>
+            </div>
+            
+            <div class="tang-card section-card">
+                <div class="section-title">用户画像</div>
+                <ul class="info-list">
+                    <li><span class="info-label">年龄</span><span class="info-value">25-45岁 · <span class="highlight">31-35岁占28%</span></span></li>
+                    <li><span class="info-label">性别</span><span class="info-value">女性60% · 男性40%</span></li>
+                    <li><span class="info-label">城市</span><span class="info-value">北上广深杭</span></li>
+                    <li><span class="info-label">收入</span><span class="info-value">中高收入</span></li>
+                </ul>
+                <div class="tag-cloud">
+                    <span class="tag">送礼</span><span class="tag">收藏</span><span class="tag">自用</span><span class="tag">文化</span>
+                </div>
+            </div>
+            
+            <div class="tang-card section-card">
+                <div class="section-title">用户画像雷达</div>
+                <div style="height: 180px;">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="tang-card channel-section">
+            <div class="section-header">
+                <div class="section-title" style="margin-bottom:0;">销售渠道 & 关联账号矩阵</div>
+                <div class="header-badges">
+                    <span class="tang-badge">🌐 线上 85%</span>
+                    <span class="tang-badge">🏪 线下 15%</span>
+                </div>
+            </div>
+            
+            <div class="channel-scroll">
+                <div class="channel-row">
+                    <div class="scroll-item main">
+                        <div class="scroll-icon">🛒</div>
+                        <div class="scroll-content"><div class="scroll-header"><span class="scroll-name">淘宝</span><span class="scroll-role">主要销售</span></div><div class="scroll-account">@故宫淘宝</div></div>
+                        <div class="scroll-value main">40%</div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="scroll-icon">🐱</div>
+                        <div class="scroll-content"><div class="scroll-header"><span class="scroll-name">天猫</span><span class="scroll-role">官方旗舰</span></div><div class="scroll-account">@文创品牌文创旗舰店</div></div>
+                        <div class="scroll-value">25%</div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="scroll-icon">💬</div>
+                        <div class="scroll-content"><div class="scroll-header"><span class="scroll-name">微信小程序</span><span class="scroll-role">私域流量</span></div><div class="scroll-account">@故宫文创官方商城</div></div>
+                        <div class="scroll-value">20%</div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="scroll-icon">🏛️</div>
+                        <div class="scroll-content"><div class="scroll-header"><span class="scroll-name">故宫线下店</span><span class="scroll-role">品牌体验</span></div><div class="scroll-account">实体门店</div></div>
+                        <div class="scroll-value">10%</div>
+                    </div>
+                </div>
+                
+                <div class="channel-row">
+                    <div class="scroll-item">
+                        <div class="scroll-icon">📢</div>
+                        <div class="scroll-content"><div class="scroll-header"><span class="scroll-name">微博</span><span class="scroll-role">品牌传播</span></div><div class="scroll-account">@文创品牌</div></div>
+                        <div class="scroll-value">980万</div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="scroll-icon">🎵</div>
+                        <div class="scroll-content"><div class="scroll-header"><span class="scroll-name">抖音</span><span class="scroll-role">内容种草</span></div><div class="scroll-account">@文创品牌</div></div>
+                        <div class="scroll-value">120万</div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="scroll-icon">📕</div>
+                        <div class="scroll-content"><div class="scroll-header"><span class="scroll-name">小红书</span><span class="scroll-role">种草分享</span></div><div class="scroll-account">@故宫文创</div></div>
+                        <div class="scroll-value">85万</div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="scroll-icon">🏪</div>
+                        <div class="scroll-content"><div class="scroll-header"><span class="scroll-name">文创集合店</span><span class="scroll-role">渠道拓展</span></div><div class="scroll-account">第三方渠道</div></div>
+                        <div class="scroll-value">5%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="tang-card chart-container">
+                <div class="wordcloud-container">
+                    <span class="word">精美</span><span class="word">值得收藏</span><span class="word">送礼首选</span>
+                    <span class="word">品质好</span><span class="word">有文化内涵</span><span class="word">百年纪念</span>
+                    <span class="word">印刷清晰</span><span class="word">故宫出品</span><span class="word">有面子</span><span class="word">每年都会买</span>
+                </div>
+            </div>
+            <div class="tang-card chart-container"><canvas id="salesChart"></canvas></div>
+            <div class="tang-card chart-container"><canvas id="priceChart"></canvas></div>
+        </div>
+
+        <!-- 动态词云挑战与机遇 -->
+        <div class="tang-card co-wordcloud-section">
+            <div class="co-clouds-container">
+                <div class="co-cloud challenge">
+                    <div class="co-cloud-label">⚠ 挑战</div>
+                    <span class="co-word">销售周期短</span>
+                    <span class="co-word">Q4集中</span>
+                    <span class="co-word">使用场景有限</span>
+                    <span class="co-word">库存压力</span>
+                    <span class="co-word">数字化替代</span>
+                    <span class="co-word">价格敏感</span>
+                    <span class="co-word">产能受限</span>
+                </div>
+                
+                <div class="co-cloud opportunity">
+                    <div class="co-cloud-label">✦ 机遇</div>
+                    <span class="co-word">国潮趋势</span>
+                    <span class="co-word">礼品市场增长</span>
+                    <span class="co-word">企业团购</span>
+                    <span class="co-word">文化消费升级</span>
+                    <span class="co-word">数字化延伸</span>
+                    <span class="co-word">收藏市场活跃</span>
+                    <span class="co-word">出海机会</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 中国古风竹简时间轴 -->
+        <div class="tang-card ancient-timeline">
+            <div class="section-title">未来展望</div>
+            
+            <div class="timeline-bamboo">
+                <div class="bamboo-slat">
+                    <div class="bamboo-seal">短</div>
+                    <div class="bamboo-title">近期 · 3-6个月</div>
+                    <ul class="bamboo-list">
+                        <li>提前预售，锁定订单</li>
+                        <li>优化详情页文化故事</li>
+                        <li>建立企业团购渠道</li>
+                        <li>扩充产能，解决断货</li>
+                    </ul>
+                </div>
+                
+                <div class="bamboo-slat">
+                    <div class="bamboo-seal">中</div>
+                    <div class="bamboo-title">中期 · 6-12个月</div>
+                    <ul class="bamboo-list">
+                        <li>开发系列化日历产品</li>
+                        <li>拓展文创集合店渠道</li>
+                        <li>建立用户社群运营</li>
+                        <li>探索品牌跨界联名</li>
+                    </ul>
+                </div>
+                
+                <div class="bamboo-slat">
+                    <div class="bamboo-seal">长</div>
+                    <div class="bamboo-title">远期 · 1-2年</div>
+                    <ul class="bamboo-list">
+                        <li>打造日历IP矩阵</li>
+                        <li>布局海外市场</li>
+                        <li>数字化日历APP</li>
+                        <li>输出中国文化</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer class="tang-footer">文创产品分析报告 · 2026.02.20 · 文创产品分析师</footer>
+    </div>
+
+    <script>
+        const colors = { primary: '#8B1E1E', secondary: '#C89B3C', accent: '#2D5A4A' };
+        
+        new Chart(document.getElementById('radarChart'), {
+            type: 'radar',
+            data: { labels: ['购买力', '文化认同', '品牌忠诚', '社交分享', '复购意愿'], datasets: [{ data: [85, 90, 75, 70, 80], borderColor: colors.primary, backgroundColor: 'rgba(139, 30, 30, 0.2)', pointBackgroundColor: colors.secondary, pointBorderColor: colors.primary, pointRadius: 3 }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { r: { beginAtZero: true, max: 100, ticks: { display: false }, grid: { color: 'rgba(139, 30, 30, 0.1)' }, pointLabels: { font: { size: 10, family: 'Noto Serif SC' }, color: '#6B5B4F' } } } }
+        });
+        
+        new Chart(document.getElementById('salesChart'), {
+            type: 'line',
+            data: { labels: ['9月', '10月', '11月', '12月'], datasets: [{ data: [120000, 150000, 180000, 50000], borderColor: colors.primary, backgroundColor: 'rgba(139, 30, 30, 0.1)', fill: true, tension: 0.4, pointRadius: 4, pointBackgroundColor: colors.secondary }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: true, text: '月度销售趋势', font: { size: 13, weight: '600', family: 'Noto Serif SC' }, color: colors.primary }, legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 11, family: 'Noto Serif SC' }, color: '#6B5B4F' } }, y: { grid: { color: 'rgba(139, 30, 30, 0.08)' }, ticks: { font: { size: 10, family: 'Noto Serif SC' }, color: '#6B5B4F' } } } }
+        });
+        
+        new Chart(document.getElementById('priceChart'), {
+            type: 'bar',
+            data: { labels: ['故宫', '国博', '敦煌'], datasets: [{ data: [98, 88, 98], backgroundColor: [colors.primary, colors.secondary, colors.accent], borderRadius: 6, barThickness: 35 }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: true, text: '竞品价格对比', font: { size: 13, weight: '600', family: 'Noto Serif SC' }, color: colors.primary }, legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 11, family: 'Noto Serif SC' }, color: '#6B5B4F' } }, y: { grid: { color: 'rgba(139, 30, 30, 0.08)' }, ticks: { font: { size: 10, family: 'Noto Serif SC' }, color: '#6B5B4F' } } } }
+        });
+    </script>
+    <script>
+        // GSAP 动画
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof gsap === "undefined") return;
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // 页面元素动画
+            gsap.utils.toArray(".card, .section, .box, .item").forEach((el, i) => {
+                gsap.from(el, {
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.5,
+                    delay: i * 0.05,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 95%"
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

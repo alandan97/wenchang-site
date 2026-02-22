@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文创创业指南 - 指南助手</title>
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #8B1E1E;
+            --gold: #C89B3C;
+            --green: #2D5A4A;
+            --cream: #F5F0E6;
+            --paper: #FDF8F0;
+            --text: #2C1810;
+            --text-secondary: #6B5B4F;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, var(--paper) 0%, #EDE4D8 100%);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
+            color: white;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            opacity: 0.9;
+        }
+        
+        /* 导航标签 */
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid rgba(200,155,60,0.3);
+            overflow-x: auto;
+        }
+        .nav-tab {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: 1rem;
+            cursor: pointer;
+            white-space: nowrap;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-tab:hover {
+            color: var(--primary);
+        }
+        .nav-tab.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        /* 内容区域 */
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* 卡片样式 */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(139,30,30,0.08);
+            border: 1px solid rgba(200,155,60,0.2);
+        }
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        /* 步骤样式 */
+        .step-list {
+            counter-reset: step;
+        }
+        .step-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(200,155,60,0.05);
+            border-radius: 8px;
+        }
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .step-content h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* 工具卡片 */
+        .tool-card {
+            background: linear-gradient(145deg, rgba(253,248,240,0.95) 0%, rgba(245,240,230,0.9) 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(200,155,60,0.3);
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(139,30,30,0.15);
+        }
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .tool-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .tool-card p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-top: 0.75rem;
+        }
+        
+        /* 检查清单 */
+        .checklist {
+            list-style: none;
+        }
+        .checklist li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(200,155,60,0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+        .check-box {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--gold);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .check-box:hover {
+            background: rgba(200,155,60,0.2);
+        }
+        .check-box.checked {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+        .check-box.checked::after {
+            content: '✓';
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        /* 资源链接 */
+        .resource-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(200,155,60,0.05);
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+        .resource-link:hover {
+            background: rgba(200,155,60,0.15);
+            transform: translateX(5px);
+        }
+        .resource-icon {
+            font-size: 1.5rem;
+        }
+        .resource-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        .resource-info p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        
+        /* 提示框 */
+        .tip-box {
+            background: linear-gradient(135deg, rgba(139,30,30,0.1) 0%, rgba(200,155,60,0.1) 100%);
+            border-left: 4px solid var(--gold);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .tip-box strong {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>🚀 文创创业指南</h1>
+            <p>从零开始的文创创业完整指南，涵盖创意、生产、营销全链路</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- 导航标签 -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('startup')">🚀 创业起步</button>
+            <button class="nav-tab" onclick="showTab('creative')">💡 创意开发</button>
+            <button class="nav-tab" onclick="showTab('production')">🏭 生产供应链</button>
+            <button class="nav-tab" onclick="showTab('marketing')">📢 营销推广</button>
+            <button class="nav-tab" onclick="showTab('policy')">📋 政策申报</button>
+            <button class="nav-tab" onclick="showTab('tools')">🛠️ 工具资源</button>
+        </div>
+        
+        <!-- 创业起步 -->
+        <div id="startup" class="content-section active">
+            <div class="card">
+                <h3>📍 创业前的自我评估</h3>
+                <ul class="checklist">
+                    <li><span class="check-box" onclick="toggleCheck(this)"></span> 你是否对文创行业有深入的了解和热情？</li>
+                    <li><span class="check-box" onclick="toggleCheck(this)"></span> 你是否具备一定的设计或文化背景？</li>
+                    <li><span class="check-box" onclick="toggleCheck(this)"></span> 你是否有足够的启动资金（建议10-50万）？</li>
+                    <li><span class="check-box" onclick="toggleCheck(this)"></span> 你是否了解目标用户群体？</li>
+                    <li><span class="check-box" onclick="toggleCheck(this)"></span> 你是否有稳定的供应链资源？</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>🎯 创业启动步骤</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>市场调研与定位</h4>
+                            <p>分析目标市场，确定产品定位，找到差异化竞争点。建议从细分领域切入，如博物馆文创、非遗文创、IP衍生品等。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>商业计划书撰写</h4>
+                            <p>明确商业模式、盈利模式、市场策略、财务预测。这是融资和申请政策支持的重要文档。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>公司注册与资质办理</div>
+                            <p>注册公司、办理营业执照、申请商标、了解行业相关资质要求。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>团队组建</h4>
+                            <p>招募设计师、运营、供应链管理等核心岗位。初期可采用合伙人+外包模式降低成本。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>产品开发与测试</h4>
+                            <p>开发首批产品，进行小批量测试，收集用户反馈，迭代优化。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <strong>💡 创业提示：</strong> 文创创业建议从轻资产模式开始，可以先做设计服务或IP授权，积累经验和资源后再涉足生产环节。
+            </div>
+        </div>
+        
+        <!-- 创意开发 -->
+        <div id="creative" class="content-section">
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🎨 创意来源渠道</h3>
+                    <ul style="list-style: none;">
+                        <li style="padding: 0.5rem 0;">🏛️ 博物馆/美术馆藏品</li>
+                        <li style="padding: 0.5rem 0;">🎭 非物质文化遗产</li>
+                        <li style="padding: 0.5rem 0;">📚 历史文献与传统文化</li>
+                        <li style="padding: 0.5rem 0;">🌆 城市文化与地标</li>
+                        <li style="padding: 0.5rem 0;">🎨 当代艺术与设计</li>
+                        <li style="padding: 0.5rem 0;">📱 网络热点与流行文化</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>✨ 创意设计原则</h3>
+                    <ul style="list-style: none;">
+                        <li style="padding: 0.5rem 0;">✓ 文化内涵与美学价值并重</li>
+                        <li style="padding: 0.5rem 0;">✓ 实用性与收藏价值结合</li>
+                        <li style="padding: 0.5rem 0;">✓ 传统元素现代化演绎</li>
+                        <li style="padding: 0.5rem 0;">✓ 注重用户体验与细节</li>
+                        <li style="padding: 0.5rem 0;">✓ 保持品牌调性一致性</li>
+                        <li style="padding: 0.5rem 0;">✓ 考虑生产成本与可行性</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>🔄 产品开发流程</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>创意构思</h4>
+                            <p>头脑风暴、竞品分析、用户调研，确定产品概念和核心卖点。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>设计稿制作</h4>
+                            <p>手绘草图、3D建模、平面设计，制作完整的设计方案。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>样品制作</h4>
+                            <p>联系工厂打样，测试材质、工艺、成本，优化设计方案。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>用户测试</h4>
+                            <p>小范围测试，收集反馈，评估市场反应，决定是否量产。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>量产上市</h4>
+                            <p>确定生产计划，准备营销素材，选择销售渠道，正式上市。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 生产供应链 -->
+        <div id="production" class="content-section">
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🏭 主要生产基地</h3>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="border-bottom: 1px solid rgba(200,155,60,0.3);">
+                            <th style="text-align: left; padding: 0.75rem; color: var(--primary);">地区</th>
+                            <th style="text-align: left; padding: 0.75rem; color: var(--primary);">优势品类</th>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem;">广东（深圳/东莞）</td>
+                            <td style="padding: 0.75rem;">电子产品、玩具、包装</td>
+                        </tr>
+                        <tr style="background: rgba(200,155,60,0.05);">
+                            <td style="padding: 0.75rem;">浙江（义乌/杭州）</td>
+                            <td style="padding: 0.75rem;">小商品、文具、纺织品</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem;">福建（泉州/厦门）</td>
+                            <td style="padding: 0.75rem;">服装、鞋帽、陶瓷</td>
+                        </tr>
+                        <tr style="background: rgba(200,155,60,0.05);">
+                            <td style="padding: 0.75rem;">江苏（苏州/无锡）</td>
+                            <td style="padding: 0.75rem;">丝绸、刺绣、工艺品</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem;">江西（景德镇）</td>
+                            <td style="padding: 0.75rem;">陶瓷、瓷器</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="card">
+                    <h3>📋 供应商评估清单</h3>
+                    <ul class="checklist">
+                        <li><span class="check-box" onclick="toggleCheck(this)"></span> 工厂资质与生产能力</li>
+                        <li><span class="check-box" onclick="toggleCheck(this)"></span> 质量控制体系</li>
+                        <li><span class="check-box" onclick="toggleCheck(this)"></span> 交货周期与稳定性</li>
+                        <li><span class="check-box" onclick="toggleCheck(this)"></span> 价格竞争力</li>
+                        <li><span class="check-box" onclick="toggleCheck(this)"></span> 最小起订量（MOQ）</li>
+                        <li><span class="check-box" onclick="toggleCheck(this)"></span> 售后服务与返工政策</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 营销推广 -->
+        <div id="marketing" class="content-section">
+            <div class="card-grid">
+                <div class="card">
+                    <h3>📱 线上渠道</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">电商平台</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">天猫/淘宝、京东、拼多多、小红书商城</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">社交媒体</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">小红书、抖音、微博、B站、微信公众号</p>
+                    </div>
+                    <div>
+                        <strong style="color: var(--primary);">私域流量</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">微信社群、会员体系、邮件营销</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>🏪 线下渠道</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">博物馆/景区商店</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">与博物馆、景区合作开设专柜</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">文创集合店</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">入驻文创集合店、书店、礼品店</p>
+                    </div>
+                    <div>
+                        <strong style="color: var(--primary);">展会活动</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">参加文创展会、市集、快闪店</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>📢 内容营销策略</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>讲好文化故事</h4>
+                            <p>挖掘产品背后的文化内涵，用故事化的方式传达给用户，建立情感连接。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>KOL/KOC合作</h4>
+                            <p>寻找与品牌调性匹配的博主合作，通过真实体验分享带动销售。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>用户UGC激励</h4>
+                            <p>鼓励用户分享购买体验，通过晒单奖励、抽奖活动提升口碑传播。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>跨界联名</h4>
+                            <p>与其他品牌、IP、博物馆进行联名合作，扩大品牌影响力。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 政策申报 -->
+        <div id="policy" class="content-section">
+            <div class="card">
+                <h3>💰 主要扶持政策类型</h3>
+                <div class="card-grid">
+                    <div style="padding: 1rem; background: rgba(139,30,30,0.05); border-radius: 8px;">
+                        <strong style="color: var(--primary);">🏆 文创产业专项资金</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">各级政府的文创产业发展专项资金，用于项目扶持、企业奖励等。</p>
+                    </div>
+                    
+                    <div style="padding: 1rem; background: rgba(139,30,30,0.05); border-radius: 8px;">
+                        <strong style="color: var(--primary);">🎨 非遗保护资金</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">针对非遗文创项目的专项扶持资金，支持传统技艺的现代化转型。</p>
+                    </div>
+                    
+                    <div style="padding: 1rem; background: rgba(139,30,30,0.05); border-radius: 8px;">
+                        <strong style="color: var(--primary);">🏢 创业孵化支持</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">创业孵化器提供的场地支持、导师辅导、投融资对接等服务。</p>
+                    </div>
+                    
+                    <div style="padding: 1rem; background: rgba(139,30,30,0.05); border-radius: 8px;">
+                        <strong style="color: var(--primary);">💵 税收优惠</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">高新技术企业认定、小微企业税收减免等优惠政策。</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="card">
+                <h3>📝 申报流程</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>政策信息收集</h4>
+                            <p>关注文旅部、发改委、各地文旅局官网，订阅政策推送，及时了解申报信息。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>申报材料准备</h4>
+                            <p>准备营业执照、财务报表、项目计划书、知识产权证明等必要材料。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>在线申报提交</h4>
+                            <p>通过政府指定的申报系统提交材料，注意申报截止时间。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>评审与公示</h4>
+                            <p>等待专家评审，通过后进行公示，公示期结束后拨付资金。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 工具资源 -->
+        <div id="tools" class="content-section">
+            <div class="card-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🎨</div>
+                    <h4>设计工具</h4>
+                    <p>Adobe Creative Suite、Figma、Sketch、Canva等设计软件</p>
+                    <span class="tool-tag">必备</span>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">📊</div>
+                    <h4>数据分析</h4>
+                    <p>生意参谋、蝉妈妈、飞瓜数据等电商数据分析工具</p>
+                    <span class="tool-tag">推荐</span>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">📱</div>
+                    <h4>社媒管理</h4>
+                    <p>新榜、微小宝、壹伴等社交媒体管理工具</p>
+                    <span class="tool-tag">推荐</span>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">🏭</div>
+                    <h4>供应链平台</h4>
+                    <p>阿里巴巴1688、慧聪网、中国制造网等B2B平台</p>
+                    <span class="tool-tag">必备</span>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">📦</div>
+                    <h4>物流管理</h4>
+                    <p>菜鸟裹裹、快递100、顺丰等物流管理工具</p>
+                    <span class="tool-tag">必备</span>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">💰</div>
+                    <h4>财务管理</h4>
+                    <p>用友、金蝶、随手记等财务管理软件</p>
+                    <span class="tool-tag">推荐</span>
+                </div>
+            </div>
+            
+            
+            <div class="card" style="margin-top: 2rem;">
+                <h3>📚 推荐学习资源</h3>
+                
+                <a href="#" class="resource-link">
+                    <span class="resource-icon">📖</span>
+                    <div class="resource-info">
+                        <h4>《文创产品设计与开发》</h4>
+                        <p>系统学习文创产品设计方法论</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="resource-link">
+                    <span class="resource-icon">🎓</span>
+                    <div class="resource-info">
+                        <h4>文创产业在线课程</h4>
+                        <p>网易云课堂、腾讯课堂相关课程</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="resource-link">
+                    <span class="resource-icon">🏛️</span>
+                    <div class="resource-info">
+                        <h4>博物馆文创联盟</h4>
+                        <p>行业交流、资源对接平台</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // 隐藏所有内容
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // 移除所有标签的active状态
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 显示选中的内容
+            document.getElementById(tabId).classList.add('active');
+            
+            // 设置标签为active
+            event.target.classList.add('active');
+        }
+        
+        function toggleCheck(element) {
+            element.classList.toggle('checked');
+        }
+    </script>
+    <script>
+        // GSAP 动画初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // 卡片动画
+            gsap.utils.toArray('.card').forEach((card, i) => {
+                gsap.from(card, {
+                    y: 40,
+                    opacity: 0,
+                    duration: 0.6,
+                    delay: i * 0.1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 90%',
+                        toggleActions: 'play none none reverse'
+                    }
+                });
+            });
+            
+            // 步骤动画
+            gsap.utils.toArray('.step-item').forEach((item, i) => {
+                gsap.from(item, {
+                    x: -30,
+                    opacity: 0,
+                    duration: 0.5,
+                    delay: i * 0.1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 90%',
+                        toggleActions: 'play none none reverse'
+                    }
+                });
+            });
+            
+            // 工具卡片动画
+            gsap.utils.toArray('.tool-card').forEach((card, i) => {
+                gsap.from(card, {
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.5,
+                    delay: i * 0.08,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 90%',
+                        toggleActions: 'play none none reverse'
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

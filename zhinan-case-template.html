@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文创设计师模板 - 案例详情</title>
+    <script src="zhinan-template.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* 唐风配色系统 */
+            --cinnabar: #8B1E1E;
+            --gold: #C89B3C;
+            --ink-green: #2D5A4A;
+            --cream: #FDF8F0;
+            --rice-paper: #F5F0E6;
+            --ink-black: #2C1810;
+            --warm-gray: #6B5B4F;
+            --light-gold: rgba(200, 155, 60, 0.1);
+            --light-cinnabar: rgba(139, 30, 30, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--cream);
+            color: var(--ink-black);
+            line-height: 1.8;
+        }
+        
+        /* 装饰边框 */
+        .tang-border {
+            border: 2px solid var(--gold);
+            position: relative;
+        }
+        
+        .tang-border::before,
+        .tang-border::after {
+            content: '◆';
+            position: absolute;
+            color: var(--cinnabar);
+            font-size: 12px;
+            background: var(--cream);
+            padding: 0 8px;
+        }
+        
+        .tang-border::before {
+            top: -10px;
+            left: 20px;
+        }
+        
+        .tang-border::after {
+            bottom: -10px;
+            right: 20px;
+        }
+        
+        /* 头部 */
+        header {
+            background: linear-gradient(135deg, var(--cinnabar) 0%, #6B1515 100%);
+            color: white;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(200, 155, 60, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 50%, rgba(200, 155, 60, 0.1) 0%, transparent 40%);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .case-meta-header {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-tag {
+            background: rgba(255,255,255,0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            border: 1px solid rgba(200, 155, 60, 0.3);
+        }
+        
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .subtitle {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        /* 主体布局 */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+        }
+        
+        /* 左侧导航 */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+        
+        .nav-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.25rem;
+            color: var(--cinnabar);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-title::before {
+            content: '◆';
+            color: var(--gold);
+        }
+        
+        .nav-menu {
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1rem;
+            color: var(--warm-gray);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-size: 0.9375rem;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: var(--light-gold);
+            color: var(--cinnabar);
+        }
+        
+        .nav-icon {
+            width: 24px;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        
+        /* 内容区域 */
+        .content {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(139, 30, 30, 0.08);
+            overflow: hidden;
+        }
+        
+        /* 章节样式 */
+        .section {
+            padding: 3rem;
+            border-bottom: 1px solid var(--rice-paper);
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--cinnabar) 0%, var(--gold) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+        
+        .section-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.75rem;
+            color: var(--cinnabar);
+            font-weight: 600;
+        }
+        
+        .section-subtitle {
+            color: var(--warm-gray);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* 数据卡片 */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .data-card {
+            background: var(--light-cinnabar);
+            border: 1px solid rgba(139, 30, 30, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .data-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--cinnabar), var(--gold));
+        }
+        
+        .data-value {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--cinnabar);
+            margin-bottom: 0.5rem;
+        }
+        
+        .data-unit {
+            font-size: 1rem;
+            color: var(--warm-gray);
+        }
+        
+        .data-label {
+            font-size: 0.875rem;
+            color: var(--warm-gray);
+            margin-top: 0.5rem;
+        }
+        
+        .data-growth {
+            display: inline-block;
+            background: var(--ink-green);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* 内容块 */
+        .content-block {
+            margin-bottom: 2rem;
+        }
+        
+        .block-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.125rem;
+            color: var(--cinnabar);
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--gold);
+        }
+        
+        .block-content {
+            color: var(--warm-gray);
+            line-height: 2;
+            padding-left: 1rem;
+        }
+        
+        /* 产品表格 */
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .product-table th {
+            background: var(--light-gold);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 500;
+            color: var(--cinnabar);
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        .product-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--rice-paper);
+            color: var(--warm-gray);
+        }
+        
+        .product-table tr:hover {
+            background: var(--light-gold);
+        }
+        
+        /* 标签 */
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .tag {
+            background: var(--light-gold);
+            color: var(--cinnabar);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            border: 1px solid rgba(200, 155, 60, 0.3);
+        }
+        
+        /* SWOT 矩阵 */
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .swot-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            position: relative;
+        }
+        
+        .swot-s {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 4px solid #4caf50;
+        }
+        
+        .swot-w {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left: 4px solid #f44336;
+        }
+        
+        .swot-o {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid #2196f3;
+        }
+        
+        .swot-t {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 4px solid #ff9800;
+        }
+        
+        .swot-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .swot-s .swot-title { color: #2e7d32; }
+        .swot-w .swot-title { color: #c62828; }
+        .swot-o .swot-title { color: #1565c0; }
+        .swot-t .swot-title { color: #ef6c00; }
+        
+        .swot-list {
+            list-style: none;
+        }
+        
+        .swot-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--warm-gray);
+        }
+        
+        .swot-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* 洞察卡片 */
+        .insight-card {
+            background: var(--light-gold);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(200, 155, 60, 0.2);
+        }
+        
+        .insight-title {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--cinnabar);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .insight-title::before {
+            content: '◆';
+            color: var(--gold);
+            font-size: 0.75rem;
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--ink-black);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-text {
+            color: var(--warm-gray);
+            font-size: 0.875rem;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                order: -1;
+            }
+            
+            .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .nav-item {
+                margin-bottom: 0;
+            }
+            
+            .data-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .swot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="header-content">
+            <div class="case-meta-header">
+                <span class="meta-tag">◆ 博物馆文创</span>
+                <span class="meta-tag">北京市东城区</span>
+                <span class="meta-tag">创立于2008年</span>
+            </div>
+            <h1>故宫文创</h1>
+            <p class="subtitle">让文物活起来，让传统文化走进现代生活。以故宫博物院186万件文物为灵感源泉，将皇家美学转化为当代设计语言。</p>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- 左侧导航 -->
+        <aside class="sidebar">
+            <div class="nav-title">案例目录</div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#overview" class="nav-link active"><span class="nav-icon">◆</span>项目概览</a></li>
+                <li class="nav-item"><a href="#brand" class="nav-link"><span class="nav-icon">◎</span>品牌基因</a></li>
+                <li class="nav-item"><a href="#product" class="nav-link"><span class="nav-icon">◈</span>产品体系</a></li>
+                <li class="nav-item"><a href="#market" class="nav-link"><span class="nav-icon">◉</span>市场定位</a></li>
+                <li class="nav-item"><a href="#channel" class="nav-link"><span class="nav-icon">◊</span>渠道策略</a></li>
+                <li class="nav-item"><a href="#marketing" class="nav-link"><span class="nav-icon">◐</span>营销传播</a></li>
+                <li class="nav-item"><a href="#data" class="nav-link"><span class="nav-icon">◑</span>核心数据</a></li>
+                <li class="nav-item"><a href="#swot" class="nav-link"><span class="nav-icon">◒</span>SWOT分析</a></li>
+                <li class="nav-item"><a href="#insight" class="nav-link"><span class="nav-icon">◓</span>设计洞察</a></li>
+                <li class="nav-item"><a href="#future" class="nav-link"><span class="nav-icon">◔</span>发展展望</a></li>
+            </ul>
+        </aside>
+
+        <!-- 内容区域 -->
+        <main class="content">
+            <!-- 项目概览 -->
+            <section class="section" id="overview">
+                <div class="section-header">
+                    <div class="section-icon">◆</div>
+                    <div>
+                        <h2 class="section-title">项目概览</h2>
+                        <p class="section-subtitle">Project Overview</p>
+                    </div>
+                </div>
+                
+                <div class="data-grid">
+                    <div class="data-card">
+                        <div class="data-value">15<span class="data-unit">亿元</span></div>
+                        <div class="data-label">年营收</div>
+                        <span class="data-growth">↑ 25%</span>
+                    </div>
+                    <div class="data-card">
+                        <div class="data-value">10000<span class="data-unit">+</span></div>
+                        <div class="data-label">产品SKU</div>
+                    </div>
+                    <div class="data-card">
+                        <div class="data-value">2500<span class="data-unit">万</span></div>
+                        <div class="data-label">线上粉丝</div>
+                    </div>
+                </div>
+                
+                <div class="content-block">
+                    <h3 class="block-title">品牌口号</h3>
+                    <p class="block-content" style="font-family: 'Noto Serif SC', serif; font-size: 1.5rem; color: var(--cinnabar);">"来自故宫的礼物"</p>
+                </div>
+            </section>
+
+            <!-- 品牌基因 -->
+            <section class="section" id="brand">
+                <div class="section-header">
+                    <div class="section-icon">◎</div>
+                    <div>
+                        <h2 class="section-title">品牌基因</h2>
+                        <p class="section-subtitle">Brand DNA</p>
+                    </div>
+                </div>
+                
+                <div class="content-block">
+                    <h3 class="block-title">核心价值观</h3>
+                    <p class="block-content">让文物活起来，让传统文化走进现代生活。以故宫博物院186万件文物为灵感源泉，将皇家美学转化为当代设计语言。</p>
+                </div>
+                
+                <div class="content-block">
+                    <h3 class="block-title">视觉识别系统</h3>
+                    <div class="tag-list">
+                        <span class="tag">朱红</span>
+                        <span class="tag">明黄</span>
+                        <span class="tag">石青</span>
+                        <span class="tag">祥云纹</span>
+                        <span class="tag">龙纹</span>
+                        <span class="tag">瑞兽</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 产品体系 -->
+            <section class="section" id="product">
+                <div class="section-header">
+                    <div class="section-icon">◈</div>
+                    <div>
+                        <h2 class="section-title">产品体系</h2>
+                        <p class="section-subtitle">Product Portfolio</p>
+                    </div>
+                </div>
+                
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>产品系列</th>
+                            <th>主要产品</th>
+                            <th>价格区间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>彩妆系列</td>
+                            <td>口红、眼影、腮红</td>
+                            <td>99-299元</td>
+                        </tr>
+                        <tr>
+                            <td>文具系列</td>
+                            <td>胶带、笔记本、书签</td>
+                            <td>15-128元</td>
+                        </tr>
+                        <tr>
+                            <td>饰品系列</td>
+                            <td>项链、耳环、手镯</td>
+                            <td>168-888元</td>
+                        </tr>
+                        <tr>
+                            <td>家居系列</td>
+                            <td>茶具、香薰、抱枕</td>
+                            <td>128-1680元</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="content-block" style="margin-top: 2rem;">
+                    <h3 class="block-title">工艺技术</h3>
+                    <div class="tag-list">
+                        <span class="tag">珐琅彩</span>
+                        <span class="tag">刺绣</span>
+                        <span class="tag">錾刻</span>
+                        <span class="tag">掐丝</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 市场定位 -->
+            <section class="section" id="market">
+                <div class="section-header">
+                    <div class="section-icon">◉</div>
+                    <div>
+                        <h2 class="section-title">市场定位</h2>
+                        <p class="section-subtitle">Market Positioning</p>
+                    </div>
+                </div>
+                
+                <div class="content-block">
+                    <h3 class="block-title">目标用户画像</h3>
+                    <div class="data-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="data-card">
+                            <div class="data-value" style="font-size: 1.5rem;">18-35岁</div>
+                            <div class="data-label">年龄段</div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-value" style="font-size: 1.5rem;">女性 68%</div>
+                            <div class="data-label">性别分布</div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-value" style="font-size: 1.5rem;">8K-20K</div>
+                            <div class="data-label">月收入</div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-value" style="font-size: 1.5rem;">本科+</div>
+                            <div class="data-label">教育程度</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-block">
+                    <h3 class="block-title">竞争优势</h3>
+                    <ul class="swot-list">
+                        <li>独家IP资源，不可复制</li>
+                        <li>品牌认知度极高，自带流量</li>
+                        <li>产品线丰富，覆盖多价位段</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 渠道策略 -->
+            <section class="section" id="channel">
+                <div class="section-header">
+                    <div class="section-icon">◊</div>
+                    <div>
+                        <h2 class="section-title">渠道策略</h2>
+                        <p class="section-subtitle">Channel Strategy</p>
+                    </div>
+                </div>
+                
+                <div class="data-grid">
+                    <div class="data-card">
+                        <div class="data-value" style="font-size: 2rem; color: var(--ink-green);">65%</div>
+                        <div class="data-label">线上渠道占比</div>
+                    </div>
+                    <div class="data-card">
+                        <div class="data-value" style="font-size: 2rem; color: var(--gold);">35%</div>
+                        <div class="data-label">线下渠道占比</div>
+                    </div>
+                </div>
+                
+                <div class="content-block">
+                    <h3 class="block-title">线上平台</h3>
+                    <div class="tag-list">
+                        <span class="tag">天猫旗舰店</span>
+                        <span class="tag">微信小程序</span>
+                        <span class="tag">抖音直播</span>
+                        <span class="tag">小红书</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 核心数据 -->
+            <section class="section" id="data">
+                <div class="section-header">
+                    <div class="section-icon">◑</div>
+                    <div>
+                        <h2 class="section-title">核心数据</h2>
+                        <p class="section-subtitle">Key Metrics</p>
+                    </div>
+                </div>
+                
+                <div class="data-grid">
+                    <div class="data-card">
+                        <div class="data-value">96%</div>
+                        <div class="data-label">客户满意度</div>
+                    </div>
+                    <div class="data-card">
+                        <div class="data-value">42%</div>
+                        <div class="data-label">复购率</div>
+                    </div>
+                    <div class="data-card">
+                        <div class="data-value">12<span class="data-unit">家</span></div>
+                        <div class="data-label">线下门店</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SWOT分析 -->
+            <section class="section" id="swot">
+                <div class="section-header">
+                    <div class="section-icon">◒</div>
+                    <div>
+                        <h2 class="section-title">SWOT分析</h2>
+                        <p class="section-subtitle">Strategic Analysis</p>
+                    </div>
+                </div>
+                
+                <div class="swot-grid">
+                    <div class="swot-card swot-s">
+                        <div class="swot-title">优势 Strengths</div>
+                        <ul class="swot-list">
+                            <li>独家文物IP资源，不可复制</li>
+                            <li>品牌认知度极高，自带流量</li>
+                            <li>产品线丰富，覆盖多价位段</li>
+                            <li>线上线下渠道成熟</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="swot-card swot-w">
+                        <div class="swot-title">劣势 Weaknesses</div>
+                        <ul class="swot-list">
+                            <li>产品创新压力大，需持续出新</li>
+                            <li>部分产品价格偏高，受众受限</li>
+                            <li>库存管理复杂，SKU众多</li>
+                            <li>对设计师依赖度高</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="swot-card swot-o">
+                        <div class="swot-title">机会 Opportunities</div>
+                        <ul class="swot-list">
+                            <li>国潮文化持续升温</li>
+                            <li>文旅融合政策支持</li>
+                            <li>数字化营销手段丰富</li>
+                            <li>海外市场拓展空间</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="swot-card swot-t">
+                        <div class="swot-title">威胁 Threats</div>
+                        <ul class="swot-list">
+                            <li>竞品模仿速度快</li>
+                            <li>消费者审美疲劳风险</li>
+                            <li>文物授权政策变化</li>
+                            <li>经济下行影响消费</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 设计洞察 -->
+            <section class="section" id="insight">
+                <div class="section-header">
+                    <div class="section-icon">◓</div>
+                    <div>
+                        <h2 class="section-title">设计洞察</h2>
+                        <p class="section-subtitle">Design Insights</p>
+                    </div>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-title">设计亮点</div>
+                    <p style="color: var(--warm-gray); line-height: 2;">将严肃文物转化为趣味化、生活化产品；传统色彩与现代审美的平衡；功能性与装饰性的统一。</p>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-title">文化元素提取</div>
+                    <p style="color: var(--warm-gray); line-height: 2;">提取文物核心视觉符号；重构传统吉祥图案；融入宫廷生活场景。</p>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-title">创新突破点</div>
+                    <p style="color: var(--warm-gray); line-height: 2;">首创博物馆文创模式；跨界联名破圈策略；数字化互动体验。</p>
+                </div>
+            </section>
+
+            <!-- 发展展望 -->
+            <section class="section" id="future">
+                <div class="section-header">
+                    <div class="section-icon">◔</div>
+                    <div>
+                        <h2 class="section-title">发展展望</h2>
+                        <p class="section-subtitle">Future Outlook</p>
+                    </div>
+                </div>
+                
+                <div class="content-block">
+                    <h3 class="block-title">扩张计划</h3>
+                    <p class="block-content">2025年门店覆盖主要省会城市，产品SKU突破15000。</p>
+                </div>
+                
+                <div class="content-block">
+                    <h3 class="block-title">数字化战略</h3>
+                    <p class="block-content">发展数字藏品、元宇宙展厅、AI设计工具。</p>
+                </div>
+                
+                <div class="content-block">
+                    <h3 class="block-title">可持续发展</h3>
+                    <p class="block-content">推进环保材料使用，建立文创产业生态联盟。</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">◆ 文创设计师模板</div>
+            <p class="footer-text">严格按照文创设计师专业规范设计 | 唐风配色系统 | 十维度分析框架</p>
+        </div>
+    </footer>
+
+    <script>
+        // 导航高亮
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+    <script>
+        // GSAP 动画
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof gsap === "undefined") return;
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // 页面元素动画
+            gsap.utils.toArray(".card, .section, .box, .item").forEach((el, i) => {
+                gsap.from(el, {
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.5,
+                    delay: i * 0.05,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 95%"
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
