@@ -796,7 +796,7 @@
         // 生成案例卡片
         function createCaseCard(caseData) {
             return `
-                <div class="case-card" onclick="showPage('cases');" style="margin-bottom: 0.75rem;">
+                <div class="case-card" onclick="openCaseDetail('${caseData.id}');" style="margin-bottom: 0.75rem; cursor: pointer;">
                     <div class="case-header">
                         <div class="case-title">${caseData.name}</div>
                         <div style="margin-top: 0.25rem;">
@@ -809,6 +809,11 @@
                     </div>
                 </div>
             `;
+        }
+        
+        // 打开案例详情页
+        function openCaseDetail(caseId) {
+            window.location.href = 'case-detail.html?id=' + caseId;
         }
         
         // 渲染案例
