@@ -144,7 +144,7 @@ function renderPolicyCard(policy) {
     ).join('');
     
     return `
-        <div class="policy-card" data-id="${id}">
+        <div class="policy-card" data-id="${id}" onclick="showPolicyDetail('${id}')" style="cursor:pointer;">
             <div class="policy-header">
                 <h3 class="policy-title">${title}</h3>
                 <span class="policy-level ${levelClass}">${levelText}</span>
@@ -160,6 +160,12 @@ function renderPolicyCard(policy) {
             </div>
         </div>
     `;
+}
+
+// 显示政策详情
+function showPolicyDetail(policyId) {
+    console.log('查看政策详情:', policyId);
+    window.location.href = `policy-detail.html?id=${policyId}`;
 }
 
 // 渲染案例列表

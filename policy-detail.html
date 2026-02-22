@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>政策详情 - 文创指南</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .policy-detail-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .policy-detail-header {
+            background: linear-gradient(135deg, #F5F1E8 0%, #EDE6D6 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #D4C4A8;
+        }
+        
+        .policy-detail-title {
+            font-size: 1.8rem;
+            color: #2C2C2C;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .policy-detail-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            color: #6B5B4F;
+            font-size: 0.95rem;
+        }
+        
+        .policy-detail-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .policy-level-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .policy-level-badge.national {
+            background: #E8D5C4;
+            color: #8B4513;
+        }
+        
+        .policy-level-badge.provincial {
+            background: #D4E8D4;
+            color: #2E7D32;
+        }
+        
+        .policy-level-badge.city {
+            background: #D4E5F7;
+            color: #1565C0;
+        }
+        
+        .policy-detail-section {
+            background: #FAFAFA;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #E0E0E0;
+        }
+        
+        .policy-detail-section h2 {
+            font-size: 1.3rem;
+            color: #2C2C2C;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #D4C4A8;
+        }
+        
+        .policy-detail-section p {
+            color: #4A4A4A;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+        
+        .policy-tags-detail {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .policy-tag-detail {
+            background: #F5F1E8;
+            color: #6B5B4F;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #6B5B4F;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #5A4A3F;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #6B5B4F;
+        }
+        
+        .error {
+            text-align: center;
+            padding: 3rem;
+            color: #E74C3C;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">文创指南</a>
+            <ul class="nav-menu">
+                <li><a href="index.html?page=cases">案例库</a></li>
+                <li><a href="index.html?page=policies">政策库</a></li>
+                <li><a href="index.html?page=map">中国文旅</a></li>
+                <li><a href="index.html?page=wenchang-map">文创地图</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="policy-detail-container">
+            <a href="index.html?page=policies" class="back-button">← 返回政策库</a>
+            
+            <div id="policy-detail-content">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="github-data-loader.js"></script>
+    <script>
+        // 获取URL参数
+        function getUrlParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        
+        // 渲染政策详情
+        async function renderPolicyDetail() {
+            const policyId = getUrlParam('id');
+            const container = document.getElementById('policy-detail-content');
+            
+            if (!policyId) {
+                container.innerHTML = '<div class="error">缺少政策ID</div>';
+                return;
+            }
+            
+            try {
+                const policies = await WenChangData.fetchAllPolicies();
+                const policy = policies.find(p => p.id === policyId);
+                
+                if (!policy) {
+                    container.innerHTML = '<div class="error">政策未找到</div>';
+                    return;
+                }
+                
+                const levelText = { 'national': '国家级', 'provincial': '省级', 'city': '市级' }[policy.level] || policy.level;
+                const tagsHtml = (policy.tags || []).map(tag => 
+                    `<span class="policy-tag-detail">${tag}</span>`
+                ).join('');
+                
+                container.innerHTML = `
+                    <div class="policy-detail-header">
+                        <h1 class="policy-detail-title">${policy.title}</h1>
+                        <div class="policy-detail-meta">
+                            <span class="policy-level-badge ${policy.level}">${levelText}</span>
+                            <span>📍 ${policy.region || '全国'}</span>
+                            <span>📅 ${policy.issue_date || ''}</span>
+                            <span>🏷️ ${policy.category || '其他'}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="policy-detail-section">
+                        <h2>政策摘要</h2>
+                        <p>${policy.summary || '暂无摘要'}</p>
+                        ${tagsHtml ? `<div class="policy-tags-detail">${tagsHtml}</div>` : ''}
+                    </div>
+                    
+                    <div class="policy-detail-section">
+                        <h2>政策详情</h2>
+                        <p>该政策旨在推动${policy.region || '全国'}文创产业发展，提供资金、税收、人才等多方面支持。</p>
+                        <p>政策编号: ${policy.id}</p>
+                    </div>
+                `;
+                
+            } catch (error) {
+                console.error('加载政策详情失败:', error);
+                container.innerHTML = '<div class="error">加载失败，请刷新重试</div>';
+            }
+        }
+        
+        // 页面加载时渲染
+        document.addEventListener('DOMContentLoaded', renderPolicyDetail);
+    </script>
+</body>
+</html>
