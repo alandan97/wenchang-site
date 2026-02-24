@@ -1,10 +1,10 @@
 {
   "total_cases": 1000,
-  "total_policies": 707,
+  "total_policies": 717,
   "target_cases": 1000,
   "target_policies": 1000,
-  "progress_percent": 85.3,
-  "timestamp": "2026-02-24T21:21:00.000000",
+  "progress_percent": 85.8,
+  "timestamp": "2026-02-24T22:21:00.000000",
   "status": "in_progress",
   "data_version": "2.0",
   "analysis_level": "L3-深度分析",
