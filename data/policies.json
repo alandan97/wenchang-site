@@ -2,12 +2,12 @@
   {
     "id": "policy_20260221_00107",
     "title": "上海市关于加快文化旅游深度融合的指导意见",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00553",
@@ -37,12 +37,12 @@
   {
     "id": "policy_20260221_00173",
     "title": "福建省关于加快文化旅游深度融合的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00574",
@@ -59,12 +59,12 @@
   {
     "id": "policy_20260221_00145",
     "title": "广东省关于加强文创人才队伍建设的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00794",
@@ -106,12 +106,12 @@
   {
     "id": "policy_20260221_00115",
     "title": "江苏省关于支持非遗保护传承实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00920",
@@ -140,22 +140,22 @@
   {
     "id": "policy_20260221_00036",
     "title": "福建省关于推进文创科技创新的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00153",
     "title": "山东省关于加快文化旅游深度融合的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00779",
@@ -184,12 +184,12 @@
   {
     "id": "policy_20260221_00259",
     "title": "山东省关于加强文创人才队伍建设的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00745",
@@ -232,22 +232,22 @@
   {
     "id": "policy_20260221_00243",
     "title": "湖北省关于加强文创人才队伍建设的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00085",
     "title": "江苏省关于加快文化旅游深度融合的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00938",
@@ -278,22 +278,22 @@
   {
     "id": "policy_20260221_00077",
     "title": "安徽省关于推进文创科技创新的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_0003",
     "title": "江苏省关于促进文创产业发展的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00763",
@@ -346,12 +346,12 @@
   {
     "id": "policy_20260221_00186",
     "title": "陕西省关于培育文创市场主体的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进培育文创市场主体发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00997",
@@ -369,12 +369,12 @@
   {
     "id": "policy_20260221_00157",
     "title": "湖南省关于推进文创科技创新的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00993",
@@ -441,12 +441,12 @@
   {
     "id": "policy_20260221_00031",
     "title": "湖南省关于培育文创市场主体的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进培育文创市场主体发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00875",
@@ -489,12 +489,12 @@
   {
     "id": "policy_20260221_00105",
     "title": "北京市关于加强文创人才队伍建设的指导意见",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00901",
@@ -524,12 +524,12 @@
   {
     "id": "policy_20260221_00203",
     "title": "湖北省关于支持非遗保护传承指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00956",
@@ -586,22 +586,22 @@
   {
     "id": "policy_20260221_00162",
     "title": "四川省关于推动数字文化产业管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业管理办法发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00222",
     "title": "山东省关于优化文创营商环境的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进优化文创营商环境发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00737",
@@ -656,12 +656,12 @@
   {
     "id": "policy_20260221_00006",
     "title": "云南省关于优化文创营商环境的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00710",
@@ -781,22 +781,22 @@
   {
     "id": "policy_20260221_00082",
     "title": "安徽省关于加强文创人才队伍建设的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00236",
     "title": "江苏省关于推进文创科技创新的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00848",
@@ -813,22 +813,22 @@
   {
     "id": "policy_20260221_00121",
     "title": "河南省关于推动数字文化产业管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业管理办法发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00210",
     "title": "河南省关于支持非遗保护传承指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00955",
@@ -857,32 +857,32 @@
   {
     "id": "policy_20260221_00266",
     "title": "江苏省关于推进文创科技创新的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_0000",
     "title": "浙江省关于促进文创产业发展的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00181",
     "title": "河南省关于推动数字文化产业行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业行动计划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00634",
@@ -998,12 +998,12 @@
   {
     "id": "policy_20260221_00088",
     "title": "四川省关于培育文创市场主体的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00660",
@@ -1020,32 +1020,32 @@
   {
     "id": "policy_20260221_00112",
     "title": "陕西省关于培育文创市场主体的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00242",
     "title": "贵州省关于优化文创营商环境的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "贵州省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00021",
     "title": "四川省关于培育文创市场主体的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进培育文创市场主体发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00777",
@@ -1074,12 +1074,12 @@
   {
     "id": "policy_20260221_00134",
     "title": "湖北省关于加强文创人才队伍建设的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00655",
@@ -1108,22 +1108,22 @@
   {
     "id": "policy_20260221_00219",
     "title": "湖南省关于培育文创市场主体的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00206",
     "title": "山东省关于培育文创市场主体的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进培育文创市场主体发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00999",
@@ -1166,22 +1166,22 @@
   {
     "id": "policy_20260221_00199",
     "title": "陕西省关于培育文创市场主体的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00130",
     "title": "山东省关于培育文创市场主体的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00532",
@@ -1212,12 +1212,12 @@
   {
     "id": "policy_20260221_00229",
     "title": "河南省关于加快文化旅游深度融合的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加快文化旅游深度融合发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00937",
@@ -1247,22 +1247,22 @@
   {
     "id": "policy_20260221_00240",
     "title": "福建省关于促进文创产业发展的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00253",
     "title": "河南省关于促进文创产业发展的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00909",
@@ -1280,22 +1280,22 @@
   {
     "id": "policy_20260221_00184",
     "title": "云南省关于推动数字文化产业实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业实施意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00223",
     "title": "湖北省关于优化文创营商环境的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00967",
@@ -1312,22 +1312,22 @@
   {
     "id": "policy_20260221_00140",
     "title": "云南省关于培育文创市场主体的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00104",
     "title": "上海市关于促进文创产业发展的行动计划",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00592",
@@ -1357,22 +1357,22 @@
   {
     "id": "policy_20260221_00013",
     "title": "陕西省关于加快文化旅游深度融合的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00098",
     "title": "安徽省关于推进文创科技创新的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00544",
@@ -1415,12 +1415,12 @@
   {
     "id": "policy_20260221_00191",
     "title": "浙江省关于推动数字文化产业实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业实施意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00518",
@@ -1449,22 +1449,22 @@
   {
     "id": "policy_20260221_00044",
     "title": "贵州省关于推进文创科技创新的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "贵州省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00072",
     "title": "福建省关于加强文创人才队伍建设的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00923",
@@ -1481,12 +1481,12 @@
   {
     "id": "policy_20260221_00228",
     "title": "陕西省关于培育文创市场主体的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00911",
@@ -1528,12 +1528,12 @@
   {
     "id": "policy_20260221_00265",
     "title": "江苏省关于促进文创产业发展的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00697",
@@ -1550,12 +1550,12 @@
   {
     "id": "policy_20260221_00161",
     "title": "福建省关于促进文创产业发展的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00908",
@@ -1596,12 +1596,12 @@
   {
     "id": "policy_20260221_00042",
     "title": "贵州省关于推动数字文化产业指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "贵州省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业指导意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00948",
@@ -1644,22 +1644,22 @@
   {
     "id": "policy_20260221_00022",
     "title": "北京市关于优化文创营商环境的扶持政策",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进优化文创营商环境发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00142",
     "title": "北京市关于加强文创人才队伍建设的扶持政策",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00597",
@@ -1677,12 +1677,12 @@
   {
     "id": "policy_20260221_00176",
     "title": "江苏省关于促进文创产业发展的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00818",
@@ -1749,12 +1749,12 @@
   {
     "id": "policy_20260221_00146",
     "title": "河南省关于推动数字文化产业行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业行动计划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00525",
@@ -1771,12 +1771,12 @@
   {
     "id": "policy_20260221_00045",
     "title": "四川省关于培育文创市场主体的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00970",
@@ -1793,12 +1793,12 @@
   {
     "id": "policy_20260221_00254",
     "title": "湖南省关于优化文创营商环境的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00864",
@@ -1815,22 +1815,22 @@
   {
     "id": "policy_20260221_00231",
     "title": "浙江省关于推进文创科技创新的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00183",
     "title": "江苏省关于培育文创市场主体的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00526",
@@ -1861,52 +1861,52 @@
   {
     "id": "policy_20260221_00065",
     "title": "广东省关于培育文创市场主体的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00067",
     "title": "北京市关于促进文创产业发展的发展规划",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00246",
     "title": "湖南省关于支持非遗保护传承扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00008",
     "title": "四川省关于促进文创产业发展的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00118",
     "title": "浙江省关于推进文创科技创新的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00798",
@@ -1961,22 +1961,22 @@
   {
     "id": "policy_20260221_00133",
     "title": "江苏省关于推动数字文化产业发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业发展规划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00056",
     "title": "河南省关于支持非遗保护传承管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00537",
@@ -1994,32 +1994,32 @@
   {
     "id": "policy_20260221_00250",
     "title": "北京市关于加强文创人才队伍建设的实施意见",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00020",
     "title": "四川省关于加快文化旅游深度融合的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00040",
     "title": "上海市关于加强文创人才队伍建设的扶持政策",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00534",
@@ -2037,12 +2037,12 @@
   {
     "id": "policy_20260221_00090",
     "title": "湖北省关于支持非遗保护传承发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00897",
@@ -2071,22 +2071,22 @@
   {
     "id": "policy_20260221_00052",
     "title": "湖南省关于支持非遗保护传承扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00147",
     "title": "安徽省关于推动数字文化产业实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业实施意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00555",
@@ -2117,12 +2117,12 @@
   {
     "id": "policy_20260221_00175",
     "title": "湖北省关于促进文创产业发展的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00863",
@@ -2177,12 +2177,12 @@
   {
     "id": "policy_20260221_00047",
     "title": "上海市关于加快文化旅游深度融合的指导意见",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00942",
@@ -2212,12 +2212,12 @@
   {
     "id": "policy_20260221_00038",
     "title": "河南省关于培育文创市场主体的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00975",
@@ -2408,12 +2408,12 @@
   {
     "id": "policy_20260221_00215",
     "title": "湖南省关于加强文创人才队伍建设的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00833",
@@ -2456,12 +2456,12 @@
   {
     "id": "policy_20260221_00185",
     "title": "山东省关于支持非遗保护传承行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00622",
@@ -2478,12 +2478,12 @@
   {
     "id": "policy_20260221_00193",
     "title": "江苏省关于加强文创人才队伍建设的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00728",
@@ -2500,32 +2500,32 @@
   {
     "id": "policy_20260221_00116",
     "title": "云南省关于加快文化旅游深度融合的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00017",
     "title": "上海市关于推动数字文化产业指导意见",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业指导意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00012",
     "title": "浙江省关于促进文创产业发展的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00767",
@@ -2543,12 +2543,12 @@
   {
     "id": "policy_20260221_00216",
     "title": "四川省关于支持非遗保护传承扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00943",
@@ -2604,12 +2604,12 @@
   {
     "id": "policy_20260221_00125",
     "title": "云南省关于推动数字文化产业发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业发展规划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00533",
@@ -2651,12 +2651,12 @@
   {
     "id": "policy_20260221_0002",
     "title": "北京市关于促进文创产业发展的实施意见",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00705",
@@ -2674,22 +2674,22 @@
   {
     "id": "policy_20260221_00209",
     "title": "北京市关于加强文创人才队伍建设的管理办法",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00180",
     "title": "福建省关于促进文创产业发展的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00748",
@@ -2719,32 +2719,32 @@
   {
     "id": "policy_20260221_00080",
     "title": "湖南省关于推进文创科技创新的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00197",
     "title": "河南省关于推进文创科技创新的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00182",
     "title": "北京市关于优化文创营商环境的指导意见",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00732",
@@ -2799,12 +2799,12 @@
   {
     "id": "policy_20260221_00126",
     "title": "安徽省关于加强文创人才队伍建设的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00599",
@@ -2859,22 +2859,22 @@
   {
     "id": "policy_20260221_00232",
     "title": "上海市关于推进文创科技创新的行动计划",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00238",
     "title": "江苏省关于加强文创人才队伍建设的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00854",
@@ -2892,12 +2892,12 @@
   {
     "id": "policy_20260221_00261",
     "title": "上海市关于培育文创市场主体的行动计划",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00709",
@@ -2914,12 +2914,12 @@
   {
     "id": "policy_20260221_00099",
     "title": "浙江省关于支持非遗保护传承行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00813",
@@ -2974,12 +2974,12 @@
   {
     "id": "policy_20260221_00268",
     "title": "陕西省关于加强文创人才队伍建设的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00536",
@@ -2996,12 +2996,12 @@
   {
     "id": "policy_20260221_00225",
     "title": "陕西省关于加强文创人才队伍建设的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00768",
@@ -3069,12 +3069,12 @@
   {
     "id": "policy_20260221_00174",
     "title": "云南省关于加强文创人才队伍建设的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00915",
@@ -3091,12 +3091,12 @@
   {
     "id": "policy_20260221_00218",
     "title": "贵州省关于加快文化旅游深度融合的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "贵州省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00884",
@@ -3163,42 +3163,42 @@
   {
     "id": "policy_20260221_00110",
     "title": "上海市关于优化文创营商环境的发展规划",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进优化文创营商环境发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00097",
     "title": "上海市关于推进文创科技创新的实施意见",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00050",
     "title": "上海市关于加快文化旅游深度融合的扶持政策",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加快文化旅游深度融合发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00244",
     "title": "安徽省关于促进文创产业发展的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00919",
@@ -3252,12 +3252,12 @@
   {
     "id": "policy_20260221_00137",
     "title": "陕西省关于支持非遗保护传承行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00841",
@@ -3311,12 +3311,12 @@
   {
     "id": "policy_20260221_00074",
     "title": "上海市关于推动数字文化产业管理办法",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业管理办法发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00783",
@@ -3334,22 +3334,22 @@
   {
     "id": "policy_20260221_00141",
     "title": "四川省关于促进文创产业发展的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00048",
     "title": "云南省关于培育文创市场主体的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00630",
@@ -3392,32 +3392,32 @@
   {
     "id": "policy_20260221_00058",
     "title": "广东省关于促进文创产业发展的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00113",
     "title": "湖南省关于加强文创人才队伍建设的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00010",
     "title": "湖北省关于优化文创营商环境的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00739",
@@ -3435,22 +3435,22 @@
   {
     "id": "policy_20260221_00028",
     "title": "陕西省关于加快文化旅游深度融合的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00205",
     "title": "贵州省关于优化文创营商环境的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "贵州省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进优化文创营商环境发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00669",
@@ -3479,22 +3479,22 @@
   {
     "id": "policy_20260221_00122",
     "title": "陕西省关于培育文创市场主体的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00100",
     "title": "河南省关于培育文创市场主体的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进培育文创市场主体发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00699",
@@ -3550,62 +3550,62 @@
   {
     "id": "policy_20260221_00073",
     "title": "浙江省关于培育文创市场主体的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_0003",
     "title": "广东关于推动数字文化产业行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "广东",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业行动计划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_0000",
     "title": "山东关于推动数字文化产业发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "山东",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业发展规划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_0002",
     "title": "广东关于加快非遗保护传承的实施方案",
-    "level": null,
+    "level": "provincial",
     "region": "广东",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_0004",
     "title": "陕西关于促进文创产业发展的管理规范",
-    "level": null,
+    "level": "provincial",
     "region": "陕西",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_0001",
     "title": "广东关于促进文创产业发展的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "广东",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00589",
@@ -3623,12 +3623,12 @@
   {
     "id": "policy_20260221_00221",
     "title": "安徽省关于加强文创人才队伍建设的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00992",
@@ -3658,32 +3658,32 @@
   {
     "id": "policy_20260221_00249",
     "title": "福建省关于培育文创市场主体的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进培育文创市场主体发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00170",
     "title": "北京市关于加快文化旅游深度融合的指导意见",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00063",
     "title": "安徽省关于加强文创人才队伍建设的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00862",
@@ -3700,12 +3700,12 @@
   {
     "id": "policy_20260221_00087",
     "title": "河南省关于支持非遗保护传承扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00539",
@@ -3734,22 +3734,22 @@
   {
     "id": "policy_20260221_00149",
     "title": "江苏省关于优化文创营商环境的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00135",
     "title": "湖北省关于推进文创科技创新的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00878",
@@ -3767,12 +3767,12 @@
   {
     "id": "policy_20260221_00111",
     "title": "四川省关于加强文创人才队伍建设的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00575",
@@ -3840,52 +3840,52 @@
   {
     "id": "policy_20260221_00060",
     "title": "湖北省关于推进文创科技创新的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00094",
     "title": "贵州省关于培育文创市场主体的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "贵州省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进培育文创市场主体发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00046",
     "title": "安徽省关于促进文创产业发展的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00086",
     "title": "河南省关于优化文创营商环境的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00011",
     "title": "北京市关于加强文创人才队伍建设的指导意见",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00902",
@@ -4064,12 +4064,12 @@
   {
     "id": "policy_20260221_00233",
     "title": "北京市关于推动数字文化产业指导意见",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业指导意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00559",
@@ -4111,12 +4111,12 @@
   {
     "id": "policy_20260221_00190",
     "title": "福建省关于培育文创市场主体的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00807",
@@ -4184,22 +4184,22 @@
   {
     "id": "policy_20260221_00260",
     "title": "山东省关于加强文创人才队伍建设的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00106",
     "title": "四川省关于支持非遗保护传承管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00934",
@@ -4216,22 +4216,22 @@
   {
     "id": "policy_20260221_00178",
     "title": "云南省关于推进文创科技创新的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00213",
     "title": "河南省关于支持非遗保护传承发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00874",
@@ -4273,12 +4273,12 @@
   {
     "id": "policy_20260221_00037",
     "title": "贵州省关于推动数字文化产业指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "贵州省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业指导意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00792",
@@ -4321,22 +4321,22 @@
   {
     "id": "policy_20260221_00014",
     "title": "四川省关于促进文创产业发展的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00255",
     "title": "北京市关于培育文创市场主体的行动计划",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00995",
@@ -4354,12 +4354,12 @@
   {
     "id": "policy_20260221_00138",
     "title": "广东省关于加强文创人才队伍建设的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00829",
@@ -4389,12 +4389,12 @@
   {
     "id": "policy_20260221_00267",
     "title": "湖北省关于推动数字文化产业指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业指导意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00680",
@@ -4586,22 +4586,22 @@
   {
     "id": "policy_20260221_00196",
     "title": "云南省关于加快文化旅游深度融合的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_0004",
     "title": "浙江省关于促进文创产业发展的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00855",
@@ -4618,12 +4618,12 @@
   {
     "id": "policy_20260221_00136",
     "title": "安徽省关于培育文创市场主体的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00814",
@@ -4654,22 +4654,22 @@
   {
     "id": "policy_20260221_00079",
     "title": "四川省关于推动数字文化产业发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业发展规划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00188",
     "title": "北京市关于加强文创人才队伍建设的扶持政策",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00778",
@@ -4725,12 +4725,12 @@
   {
     "id": "policy_20260221_00129",
     "title": "广东省关于加强文创人才队伍建设的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00834",
@@ -4748,12 +4748,12 @@
   {
     "id": "policy_20260221_00119",
     "title": "北京市关于培育文创市场主体的实施意见",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00765",
@@ -4782,12 +4782,12 @@
   {
     "id": "policy_20260221_00226",
     "title": "四川省关于支持非遗保护传承扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00548",
@@ -4816,12 +4816,12 @@
   {
     "id": "policy_20260221_00009",
     "title": "浙江省关于推进文创科技创新的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00982",
@@ -4864,12 +4864,12 @@
   {
     "id": "policy_20260221_00156",
     "title": "安徽省关于支持非遗保护传承行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00786",
@@ -4937,12 +4937,12 @@
   {
     "id": "policy_20260221_00083",
     "title": "陕西省关于加快文化旅游深度融合的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00606",
@@ -4998,12 +4998,12 @@
   {
     "id": "policy_20260221_00117",
     "title": "贵州省关于加强文创人才队伍建设的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "贵州省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00759",
@@ -5020,12 +5020,12 @@
   {
     "id": "policy_20260221_00263",
     "title": "上海市关于促进文创产业发展的发展规划",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00953",
@@ -5055,12 +5055,12 @@
   {
     "id": "policy_20260221_00251",
     "title": "湖南省关于推进文创科技创新的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00552",
@@ -5090,32 +5090,32 @@
   {
     "id": "policy_20260221_00015",
     "title": "云南省关于优化文创营商环境的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00026",
     "title": "上海市关于加强文创人才队伍建设的发展规划",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00109",
     "title": "广东省关于推进文创科技创新的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00600",
@@ -5132,12 +5132,12 @@
   {
     "id": "policy_20260221_00171",
     "title": "陕西省关于优化文创营商环境的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00686",
@@ -5190,12 +5190,12 @@
   {
     "id": "policy_20260221_00151",
     "title": "贵州省关于支持非遗保护传承管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "贵州省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00816",
@@ -5238,22 +5238,22 @@
   {
     "id": "policy_20260221_00192",
     "title": "福建省关于促进文创产业发展的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00200",
     "title": "浙江省关于培育文创市场主体的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00889",
@@ -5270,22 +5270,22 @@
   {
     "id": "policy_20260221_00256",
     "title": "河南省关于培育文创市场主体的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进培育文创市场主体发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00034",
     "title": "上海市关于加强文创人才队伍建设的行动计划",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00554",
@@ -5302,12 +5302,12 @@
   {
     "id": "policy_20260221_00155",
     "title": "山东省关于推进文创科技创新的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00826",
@@ -5324,12 +5324,12 @@
   {
     "id": "policy_20260221_0001",
     "title": "北京市关于促进文创产业发展的实施意见",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00980",
@@ -5346,12 +5346,12 @@
   {
     "id": "policy_20260221_00230",
     "title": "四川省关于推进文创科技创新的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00716",
@@ -5408,12 +5408,12 @@
   {
     "id": "policy_20260221_00016",
     "title": "江苏省关于支持非遗保护传承实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00679",
@@ -5431,22 +5431,22 @@
   {
     "id": "policy_20260221_00054",
     "title": "上海市关于推动数字文化产业发展规划",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业发展规划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00177",
     "title": "贵州省关于加强文创人才队伍建设的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "贵州省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00815",
@@ -5572,12 +5572,12 @@
   {
     "id": "policy_20260221_00239",
     "title": "四川省关于加强文创人才队伍建设的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00926",
@@ -5643,12 +5643,12 @@
   {
     "id": "policy_20260221_00092",
     "title": "上海市关于加快文化旅游深度融合的发展规划",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加快文化旅游深度融合发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00653",
@@ -5665,22 +5665,22 @@
   {
     "id": "policy_20260221_00165",
     "title": "湖北省关于支持非遗保护传承实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00027",
     "title": "陕西省关于支持非遗保护传承扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00991",
@@ -5783,12 +5783,12 @@
   {
     "id": "policy_20260221_00144",
     "title": "浙江省关于推进文创科技创新的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00612",
@@ -5806,12 +5806,12 @@
   {
     "id": "policy_20260221_00164",
     "title": "山东省关于加强文创人才队伍建设的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00593",
@@ -5828,12 +5828,12 @@
   {
     "id": "policy_20260221_00024",
     "title": "浙江省关于加快文化旅游深度融合的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00708",
@@ -5851,22 +5851,22 @@
   {
     "id": "policy_20260221_00095",
     "title": "上海市关于推进文创科技创新的指导意见",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00089",
     "title": "云南省关于推动数字文化产业行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业行动计划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00903",
@@ -5908,22 +5908,22 @@
   {
     "id": "policy_20260221_00252",
     "title": "陕西省关于优化文创营商环境的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进优化文创营商环境发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00214",
     "title": "湖南省关于促进文创产业发展的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00925",
@@ -5953,12 +5953,12 @@
   {
     "id": "policy_20260221_00081",
     "title": "安徽省关于支持非遗保护传承指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00879",
@@ -5987,12 +5987,12 @@
   {
     "id": "policy_20260221_00158",
     "title": "云南省关于支持非遗保护传承指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00603",
@@ -6021,12 +6021,12 @@
   {
     "id": "policy_20260221_00070",
     "title": "浙江省关于支持非遗保护传承扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00913",
@@ -6056,12 +6056,12 @@
   {
     "id": "policy_20260221_00204",
     "title": "山东省关于推进文创科技创新的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00527",
@@ -6079,12 +6079,12 @@
   {
     "id": "policy_20260221_00241",
     "title": "浙江省关于加强文创人才队伍建设的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00962",
@@ -6127,12 +6127,12 @@
   {
     "id": "policy_20260221_00224",
     "title": "江苏省关于优化文创营商环境的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进优化文创营商环境发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00602",
@@ -6175,22 +6175,22 @@
   {
     "id": "policy_20260221_00124",
     "title": "广东省关于促进文创产业发展的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00202",
     "title": "福建省关于促进文创产业发展的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00808",
@@ -6219,12 +6219,12 @@
   {
     "id": "policy_20260221_00189",
     "title": "江苏省关于支持非遗保护传承行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00986",
@@ -6266,22 +6266,22 @@
   {
     "id": "policy_20260221_00179",
     "title": "广东省关于加快文化旅游深度融合的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00152",
     "title": "浙江省关于推动数字文化产业扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业扶持政策发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00950",
@@ -6298,12 +6298,12 @@
   {
     "id": "policy_20260221_00159",
     "title": "湖南省关于培育文创市场主体的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00988",
@@ -6320,22 +6320,22 @@
   {
     "id": "policy_20260221_00128",
     "title": "浙江省关于加强文创人才队伍建设的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00258",
     "title": "四川省关于推进文创科技创新的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00987",
@@ -6377,12 +6377,12 @@
   {
     "id": "policy_20260221_00120",
     "title": "广东省关于推动数字文化产业行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业行动计划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00577",
@@ -6424,12 +6424,12 @@
   {
     "id": "policy_20260221_00163",
     "title": "江苏省关于推动数字文化产业发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业发展规划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00852",
@@ -6471,22 +6471,22 @@
   {
     "id": "policy_20260221_00078",
     "title": "云南省关于加强文创人才队伍建设的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00068",
     "title": "上海市关于推动数字文化产业指导意见",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业指导意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00557",
@@ -6574,100 +6574,100 @@
     "title": "成都市文创产业金融支持政策",
     "level": "city",
     "region": "四川省",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00412",
     "title": "成都市文创产业金融支持政策",
     "level": "city",
     "region": "四川省",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00358",
     "title": "成都市文创产业金融支持政策",
     "level": "city",
     "region": "四川省",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00340",
     "title": "成都市文创产业金融支持政策",
     "level": "city",
     "region": "四川省",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00376",
     "title": "成都市文创产业金融支持政策",
     "level": "city",
     "region": "四川省",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00286",
     "title": "成都市文创产业金融支持政策",
     "level": "city",
     "region": "四川省",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00439",
     "title": "成都市文创产业金融支持政策",
     "level": "city",
     "region": "四川省",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00394",
     "title": "成都市文创产业金融支持政策",
     "level": "city",
     "region": "四川省",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00322",
     "title": "成都市文创产业金融支持政策",
     "level": "city",
     "region": "四川省",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00466",
     "title": "成都市文创产业金融支持政策",
     "level": "city",
     "region": "四川省",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00479",
@@ -6967,110 +6967,110 @@
     "title": "杭州市数字文化产业发展扶持政策",
     "level": "city",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00393",
     "title": "杭州市数字文化产业发展扶持政策",
     "level": "city",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00321",
     "title": "杭州市数字文化产业发展扶持政策",
     "level": "city",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00303",
     "title": "杭州市数字文化产业发展扶持政策",
     "level": "city",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00357",
     "title": "杭州市数字文化产业发展扶持政策",
     "level": "city",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00009",
     "title": "杭州市数字文化产业发展扶持政策",
     "level": "city",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00375",
     "title": "杭州市数字文化产业发展扶持政策",
     "level": "city",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00285",
     "title": "杭州市数字文化产业发展扶持政策",
     "level": "city",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00438",
     "title": "杭州市数字文化产业发展扶持政策",
     "level": "city",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00339",
     "title": "杭州市数字文化产业发展扶持政策",
     "level": "city",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00411",
     "title": "杭州市数字文化产业发展扶持政策",
     "level": "city",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00481",
@@ -7367,100 +7367,100 @@
     "title": "朝阳区文化产业园区认定管理办法",
     "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00372",
     "title": "朝阳区文化产业园区认定管理办法",
     "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00354",
     "title": "朝阳区文化产业园区认定管理办法",
     "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00390",
     "title": "朝阳区文化产业园区认定管理办法",
     "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00318",
     "title": "朝阳区文化产业园区认定管理办法",
     "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00408",
     "title": "朝阳区文化产业园区认定管理办法",
     "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00300",
     "title": "朝阳区文化产业园区认定管理办法",
     "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00435",
     "title": "朝阳区文化产业园区认定管理办法",
     "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00282",
     "title": "朝阳区文化产业园区认定管理办法",
     "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00462",
     "title": "朝阳区文化产业园区认定管理办法",
     "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00474",
@@ -7535,110 +7535,110 @@
     "title": "深圳设计之都建设行动计划",
     "level": "city",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00392",
     "title": "深圳设计之都建设行动计划",
     "level": "city",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00437",
     "title": "深圳设计之都建设行动计划",
     "level": "city",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00284",
     "title": "深圳设计之都建设行动计划",
     "level": "city",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00410",
     "title": "深圳设计之都建设行动计划",
     "level": "city",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00464",
     "title": "深圳设计之都建设行动计划",
     "level": "city",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00302",
     "title": "深圳设计之都建设行动计划",
     "level": "city",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00374",
     "title": "深圳设计之都建设行动计划",
     "level": "city",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00008",
     "title": "深圳设计之都建设行动计划",
     "level": "city",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00338",
     "title": "深圳设计之都建设行动计划",
     "level": "city",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00320",
     "title": "深圳设计之都建设行动计划",
     "level": "city",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00475",
@@ -7659,100 +7659,100 @@
     "title": "浦东新区文化产业发展专项资金实施细则",
     "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00355",
     "title": "浦东新区文化产业发展专项资金实施细则",
     "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00463",
     "title": "浦东新区文化产业发展专项资金实施细则",
     "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00337",
     "title": "浦东新区文化产业发展专项资金实施细则",
     "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00373",
     "title": "浦东新区文化产业发展专项资金实施细则",
     "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00409",
     "title": "浦东新区文化产业发展专项资金实施细则",
     "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00319",
     "title": "浦东新区文化产业发展专项资金实施细则",
     "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00436",
     "title": "浦东新区文化产业发展专项资金实施细则",
     "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00391",
     "title": "浦东新区文化产业发展专项资金实施细则",
     "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00301",
     "title": "浦东新区文化产业发展专项资金实施细则",
     "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00472",
@@ -7799,12 +7799,12 @@
   {
     "id": "policy_20260221_00160",
     "title": "浙江省关于加快文化旅游深度融合的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00698",
@@ -7833,22 +7833,22 @@
   {
     "id": "policy_20260221_00101",
     "title": "湖北省关于加快文化旅游深度融合的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加快文化旅游深度融合发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00059",
     "title": "江苏省关于培育文创市场主体的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00996",
@@ -7903,32 +7903,32 @@
   {
     "id": "policy_20260221_00195",
     "title": "江苏省关于推进文创科技创新的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00212",
     "title": "江苏省关于加强文创人才队伍建设的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00061",
     "title": "上海市关于推动数字文化产业行动计划",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业行动计划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00747",
@@ -8034,12 +8034,12 @@
   {
     "id": "policy_20260221_00235",
     "title": "江苏省关于促进文创产业发展的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00689",
@@ -8082,22 +8082,22 @@
   {
     "id": "policy_20260221_00093",
     "title": "云南省关于优化文创营商环境的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进优化文创营商环境发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00018",
     "title": "河南省关于优化文创营商环境的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00810",
@@ -8200,22 +8200,22 @@
   {
     "id": "policy_20260221_00039",
     "title": "河南省关于推动数字文化产业实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业实施意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00245",
     "title": "江苏省关于支持非遗保护传承扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00872",
@@ -8244,12 +8244,12 @@
   {
     "id": "policy_20260221_00187",
     "title": "河南省关于加强文创人才队伍建设的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00910",
@@ -8266,32 +8266,32 @@
   {
     "id": "policy_20260221_00076",
     "title": "福建省关于加强文创人才队伍建设的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00148",
     "title": "广东省关于加强文创人才队伍建设的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00257",
     "title": "山东省关于推进文创科技创新的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00753",
@@ -8320,22 +8320,22 @@
   {
     "id": "policy_20260221_00064",
     "title": "陕西省关于推进文创科技创新的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00139",
     "title": "湖北省关于推动数字文化产业发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业发展规划发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00584",
@@ -8353,22 +8353,22 @@
   {
     "id": "policy_20260221_00248",
     "title": "福建省关于加强文创人才队伍建设的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00132",
     "title": "四川省关于推动数字文化产业实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业实施意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00896",
@@ -8447,22 +8447,22 @@
   {
     "id": "policy_20260221_00123",
     "title": "浙江省关于培育文创市场主体的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00069",
     "title": "湖北省关于加快文化旅游深度融合的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加快文化旅游深度融合发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00797",
@@ -8504,42 +8504,42 @@
   {
     "id": "policy_20260221_00096",
     "title": "浙江省关于支持非遗保护传承发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00127",
     "title": "湖南省关于优化文创营商环境的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00103",
     "title": "四川省关于支持非遗保护传承发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00237",
     "title": "湖南省关于加快文化旅游深度融合的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00985",
@@ -8568,22 +8568,22 @@
   {
     "id": "policy_20260221_00007",
     "title": "上海市关于支持非遗保护传承行动计划",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00227",
     "title": "陕西省关于支持非遗保护传承管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00667",
@@ -8624,12 +8624,12 @@
   {
     "id": "policy_20260221_00220",
     "title": "四川省关于优化文创营商环境的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00840",
@@ -8647,12 +8647,12 @@
   {
     "id": "policy_20260221_00217",
     "title": "安徽省关于优化文创营商环境的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00685",
@@ -8694,12 +8694,12 @@
   {
     "id": "policy_20260221_00208",
     "title": "湖南省关于优化文创营商环境的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进优化文创营商环境发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00914",
@@ -8716,22 +8716,22 @@
   {
     "id": "policy_20260221_00211",
     "title": "北京市关于加强文创人才队伍建设的发展规划",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00108",
     "title": "湖南省关于加快文化旅游深度融合的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00718",
@@ -8774,12 +8774,12 @@
   {
     "id": "policy_20260221_00114",
     "title": "江苏省关于促进文创产业发展的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00799",
@@ -8808,22 +8808,22 @@
   {
     "id": "policy_20260221_00131",
     "title": "陕西省关于加快文化旅游深度融合的扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加快文化旅游深度融合发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00071",
     "title": "上海市关于推动数字文化产业管理办法",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业管理办法发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00764",
@@ -8865,22 +8865,22 @@
   {
     "id": "policy_20260221_00091",
     "title": "湖南省关于加快文化旅游深度融合的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00166",
     "title": "云南省关于推进文创科技创新的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00846",
@@ -8897,12 +8897,12 @@
   {
     "id": "policy_20260221_00262",
     "title": "河南省关于培育文创市场主体的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进培育文创市场主体发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00927",
@@ -8944,12 +8944,12 @@
   {
     "id": "policy_20260221_00023",
     "title": "湖北省关于推动数字文化产业管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业管理办法发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00941",
@@ -8966,12 +8966,12 @@
   {
     "id": "policy_20260221_00057",
     "title": "陕西省关于优化文创营商环境的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了优化文创营商环境的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00835",
@@ -8988,12 +8988,12 @@
   {
     "id": "policy_20260221_00169",
     "title": "福建省关于加强文创人才队伍建设的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "福建省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00644",
@@ -9010,22 +9010,22 @@
   {
     "id": "policy_20260221_00030",
     "title": "江苏省关于支持非遗保护传承实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00055",
     "title": "浙江省关于培育文创市场主体的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00805",
@@ -9068,32 +9068,32 @@
   {
     "id": "policy_20260221_00033",
     "title": "河南省关于支持非遗保护传承行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00380",
     "title": "关于推进对外文化贸易高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推进对外文化贸易高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00326",
     "title": "关于推进对外文化贸易高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推进对外文化贸易高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00473",
@@ -9114,90 +9114,90 @@
     "title": "文化产业振兴规划",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00271",
     "title": "文化产业发展专项资金管理办法",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00378",
     "title": "文化产业振兴规划",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00440",
     "title": "关于进一步激发文化和旅游消费潜力的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了进一步激发文化和旅游消费潜力的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00420",
     "title": "关于恢复和扩大旅游消费的措施",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进恢复和扩大旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00309",
     "title": "关于让文物活起来扩大中华文化国际影响力的实施意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00399",
     "title": "关于让文物活起来扩大中华文化国际影响力的实施意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00445",
     "title": "关于推动国家级文化产业园区高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动国家级文化产业园区高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00269",
     "title": "关于推动数字文化产业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00003",
@@ -9217,120 +9217,120 @@
     "title": "关于推进对外文化贸易高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推进对外文化贸易高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00345",
     "title": "关于让文物活起来扩大中华文化国际影响力的实施意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00381",
     "title": "关于让文物活起来扩大中华文化国际影响力的实施意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00000",
     "title": "关于推动数字文化产业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00359",
     "title": "关于推动数字文化产业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00377",
     "title": "关于推动数字文化产业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00363",
     "title": "关于让文物活起来扩大中华文化国际影响力的实施意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00307",
     "title": "文化产业发展专项资金管理办法",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00272",
     "title": "关于推进对外文化贸易高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推进对外文化贸易高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00362",
     "title": "关于推进对外文化贸易高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推进对外文化贸易高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00360",
     "title": "文化产业振兴规划",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00270",
     "title": "文化产业振兴规划",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00507",
@@ -9363,60 +9363,60 @@
     "title": "文化产业振兴规划",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00323",
     "title": "关于推动数字文化产业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00324",
     "title": "文化产业振兴规划",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00379",
     "title": "文化产业发展专项资金管理办法",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00273",
     "title": "关于让文物活起来扩大中华文化国际影响力的实施意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00287",
     "title": "关于推动数字文化产业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00004",
@@ -9435,40 +9435,40 @@
     "title": "文化产业发展专项资金管理办法",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00342",
     "title": "文化产业振兴规划",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00306",
     "title": "文化产业振兴规划",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00414",
     "title": "关于推动数字文化产业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00516",
@@ -9489,10 +9489,10 @@
     "title": "关于推进旅游商品创意提升工作的通知",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推进旅游商品创意提升工作发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00482",
@@ -9513,30 +9513,30 @@
     "title": "关于让文物活起来扩大中华文化国际影响力的实施意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00327",
     "title": "关于让文物活起来扩大中华文化国际影响力的实施意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00418",
     "title": "关于推动国家级文化产业园区高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动国家级文化产业园区高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00478",
@@ -9557,130 +9557,130 @@
     "title": "关于推动数字文化产业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00441",
     "title": "关于推动数字文化产业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00343",
     "title": "文化产业发展专项资金管理办法",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00397",
     "title": "文化产业发展专项资金管理办法",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00417",
     "title": "关于推进旅游商品创意提升工作的通知",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推进旅游商品创意提升工作发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00419",
     "title": "关于推动露营旅游休闲健康有序发展的指导意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动露营旅游休闲健康有序发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00447",
     "title": "关于恢复和扩大旅游消费的措施",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进恢复和扩大旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00415",
     "title": "关于深化\"互联网+旅游\"推动旅游业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进深化\"互联网+旅游\"推动旅游业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00344",
     "title": "关于推进对外文化贸易高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推进对外文化贸易高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00308",
     "title": "关于推进对外文化贸易高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推进对外文化贸易高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00290",
     "title": "关于推进对外文化贸易高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推进对外文化贸易高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00446",
     "title": "关于推动露营旅游休闲健康有序发展的指导意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动露营旅游休闲健康有序发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00443",
     "title": "\"十四五\"文化和旅游发展规划",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00005",
@@ -9700,30 +9700,30 @@
     "title": "关于推动数字文化产业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00305",
     "title": "关于推动数字文化产业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00289",
     "title": "文化产业发展专项资金管理办法",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00488",
@@ -9744,10 +9744,10 @@
     "title": "文化产业发展专项资金管理办法",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00001",
@@ -9767,10 +9767,10 @@
     "title": "\"十四五\"文化和旅游发展规划",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00483",
@@ -9805,20 +9805,20 @@
     "title": "关于进一步激发文化和旅游消费潜力的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了进一步激发文化和旅游消费潜力的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00442",
     "title": "关于深化\"互联网+旅游\"推动旅游业高质量发展的意见",
     "level": "national",
     "region": "全国",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进深化\"互联网+旅游\"推动旅游业高质量发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00487",
@@ -9913,12 +9913,12 @@
   {
     "id": "policy_20260221_00041",
     "title": "四川省关于支持非遗保护传承发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00632",
@@ -9935,22 +9935,22 @@
   {
     "id": "policy_20260221_00025",
     "title": "湖北省关于加快文化旅游深度融合的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00051",
     "title": "湖北省关于推动数字文化产业扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业扶持政策发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00981",
@@ -9980,12 +9980,12 @@
   {
     "id": "policy_20260221_00194",
     "title": "云南省关于支持非遗保护传承管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "云南省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00922",
@@ -10003,22 +10003,22 @@
   {
     "id": "policy_20260221_00049",
     "title": "安徽省关于培育文创市场主体的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00168",
     "title": "上海市关于加快文化旅游深度融合的指导意见",
-    "level": null,
+    "level": "city",
     "region": "上海市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00582",
@@ -10110,12 +10110,12 @@
   {
     "id": "policy_20260221_00154",
     "title": "湖北省关于加强文创人才队伍建设的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00687",
@@ -10145,12 +10145,12 @@
   {
     "id": "policy_20260221_00234",
     "title": "湖南省关于优化文创营商环境的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进优化文创营商环境发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00865",
@@ -10192,22 +10192,22 @@
   {
     "id": "policy_20260221_00207",
     "title": "山东省关于培育文创市场主体的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了培育文创市场主体的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00032",
     "title": "安徽省关于优化文创营商环境的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00729",
@@ -10279,120 +10279,120 @@
     "title": "四川省文化旅游融合发展实施意见",
     "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00405",
     "title": "四川省文化旅游融合发展实施意见",
     "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00431",
     "title": "四川省文化旅游融合发展实施意见",
     "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00297",
     "title": "四川省文化旅游融合发展实施意见",
     "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00432",
     "title": "四川省\"十四五\"文化和旅游发展规划",
     "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00459",
     "title": "四川省\"十四五\"文化和旅游发展规划",
     "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00315",
     "title": "四川省文化旅游融合发展实施意见",
     "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00333",
     "title": "四川省文化旅游融合发展实施意见",
     "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00458",
     "title": "四川省文化旅游融合发展实施意见",
     "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00387",
     "title": "四川省文化旅游融合发展实施意见",
     "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00351",
     "title": "四川省文化旅游融合发展实施意见",
     "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00369",
     "title": "四川省文化旅游融合发展实施意见",
     "level": "provincial",
     "region": "四川省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00013",
@@ -10478,80 +10478,80 @@
     "title": "山东省文化产业高质量发展行动计划",
     "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00281",
     "title": "山东省文化产业高质量发展行动计划",
     "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00389",
     "title": "山东省文化产业高质量发展行动计划",
     "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00407",
     "title": "山东省文化产业高质量发展行动计划",
     "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00299",
     "title": "山东省文化产业高质量发展行动计划",
     "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00335",
     "title": "山东省文化产业高质量发展行动计划",
     "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00353",
     "title": "山东省文化产业高质量发展行动计划",
     "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00371",
     "title": "山东省文化产业高质量发展行动计划",
     "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00475",
@@ -10637,130 +10637,130 @@
     "title": "浙江省数字文化产业发展行动计划",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00367",
     "title": "浙江省数字文化产业发展行动计划",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00331",
     "title": "浙江省数字文化产业发展行动计划",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00349",
     "title": "浙江省数字文化产业发展行动计划",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00403",
     "title": "浙江省数字文化产业发展行动计划",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00007",
     "title": "浙江省数字文化产业发展行动计划",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00313",
     "title": "浙江省数字文化产业发展行动计划",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00455",
     "title": "浙江省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00454",
     "title": "浙江省文化和旅游发展\"十四五\"规划",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00295",
     "title": "浙江省数字文化产业发展行动计划",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00427",
     "title": "浙江省文化和旅游发展\"十四五\"规划",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00428",
     "title": "浙江省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00385",
     "title": "浙江省数字文化产业发展行动计划",
     "level": "provincial",
     "region": "浙江省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00489",
@@ -10910,120 +10910,120 @@
     "title": "陕西省文物保护条例",
     "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00352",
     "title": "陕西省文物保护条例",
     "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00433",
     "title": "陕西省文物保护条例",
     "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00316",
     "title": "陕西省文物保护条例",
     "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00388",
     "title": "陕西省文物保护条例",
     "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00460",
     "title": "陕西省文物保护条例",
     "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00370",
     "title": "陕西省文物保护条例",
     "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00298",
     "title": "陕西省文物保护条例",
     "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00406",
     "title": "陕西省文物保护条例",
     "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00461",
     "title": "陕西省\"十四五\"文化和旅游发展规划",
     "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00280",
     "title": "陕西省文物保护条例",
     "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00434",
     "title": "陕西省\"十四五\"文化和旅游发展规划",
     "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00021",
@@ -11137,130 +11137,130 @@
     "title": "北京市推进文化创意产业创新发展的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00328",
     "title": "北京市推进文化创意产业创新发展的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00382",
     "title": "北京市推进文化创意产业创新发展的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00274",
     "title": "北京市推进文化创意产业创新发展的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00310",
     "title": "北京市推进文化创意产业创新发展的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00004",
     "title": "北京市推进文化创意产业创新发展的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00292",
     "title": "北京市推进文化创意产业创新发展的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00449",
     "title": "北京市关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00364",
     "title": "北京市推进文化创意产业创新发展的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00346",
     "title": "北京市推进文化创意产业创新发展的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00422",
     "title": "北京市关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00421",
     "title": "北京市推进文化创意产业创新发展的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00400",
     "title": "北京市推进文化创意产业创新发展的实施意见",
     "level": "provincial",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00501",
@@ -11454,130 +11454,130 @@
     "title": "广东省数字文化产业发展行动计划",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00348",
     "title": "广东省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00006",
     "title": "广东省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00425",
     "title": "广东省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00426",
     "title": "广东省数字文化产业发展行动计划",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00402",
     "title": "广东省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00330",
     "title": "广东省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00452",
     "title": "广东省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00294",
     "title": "广东省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00366",
     "title": "广东省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00276",
     "title": "广东省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00384",
     "title": "广东省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00312",
     "title": "广东省关于促进文化和旅游消费的实施意见",
     "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文化和旅游消费发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00477",
@@ -11612,120 +11612,120 @@
     "title": "江苏省\"十四五\"文化和旅游发展规划",
     "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00457",
     "title": "江苏省非物质文化遗产保护条例",
     "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00314",
     "title": "江苏省非物质文化遗产保护条例",
     "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00296",
     "title": "江苏省非物质文化遗产保护条例",
     "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00456",
     "title": "江苏省\"十四五\"文化和旅游发展规划",
     "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00278",
     "title": "江苏省非物质文化遗产保护条例",
     "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00404",
     "title": "江苏省非物质文化遗产保护条例",
     "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00368",
     "title": "江苏省非物质文化遗产保护条例",
     "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00350",
     "title": "江苏省非物质文化遗产保护条例",
     "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00332",
     "title": "江苏省非物质文化遗产保护条例",
     "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00386",
     "title": "江苏省非物质文化遗产保护条例",
     "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00430",
     "title": "江苏省非物质文化遗产保护条例",
     "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00487",
@@ -11774,130 +11774,130 @@
     "title": "上海市\"十四五\"时期深化世界著名旅游城市建设规划",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00383",
     "title": "上海市文化创意产业发展专项资金管理办法",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00347",
     "title": "上海市文化创意产业发展专项资金管理办法",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00275",
     "title": "上海市文化创意产业发展专项资金管理办法",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00365",
     "title": "上海市文化创意产业发展专项资金管理办法",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00401",
     "title": "上海市文化创意产业发展专项资金管理办法",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00450",
     "title": "上海市促进文化创意产业发展专项资金管理办法",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00329",
     "title": "上海市文化创意产业发展专项资金管理办法",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00451",
     "title": "上海市\"十四五\"时期深化世界著名旅游城市建设规划",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了文创产业的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00423",
     "title": "上海市促进文化创意产业发展专项资金管理办法",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00005",
     "title": "上海市文化创意产业发展专项资金管理办法",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00311",
     "title": "上海市文化创意产业发展专项资金管理办法",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00293",
     "title": "上海市文化创意产业发展专项资金管理办法",
     "level": "provincial",
     "region": "上海市",
-    "category": null,
+    "category": "金融支持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在通过资金扶持、贷款优惠等金融手段，促进文创产业发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260222_00493",
@@ -11943,22 +11943,22 @@
   {
     "id": "policy_20260221_00143",
     "title": "陕西省关于加强文创人才队伍建设的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加强文创人才队伍建设的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00102",
     "title": "广东省关于促进文创产业发展的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00780",
@@ -11976,12 +11976,12 @@
   {
     "id": "policy_20260221_00029",
     "title": "广东省关于加快文化旅游深度融合的实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00893",
@@ -12049,22 +12049,22 @@
   {
     "id": "policy_20260221_00172",
     "title": "江苏省关于推进文创科技创新的指导意见",
-    "level": null,
+    "level": "provincial",
     "region": "江苏省",
-    "category": null,
+    "category": "数字化",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策推动数字技术与文创产业深度融合，促进产业数字化转型。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00247",
     "title": "安徽省关于支持非遗保护传承扶持政策",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260226_00998",
@@ -12117,22 +12117,22 @@
   {
     "id": "policy_20260221_00035",
     "title": "陕西省关于支持非遗保护传承实施意见",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00264",
     "title": "广东省关于优化文创营商环境的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "市场监管",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策规范文创市场秩序，加强知识产权保护，维护市场公平竞争。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00766",
@@ -12149,12 +12149,12 @@
   {
     "id": "policy_20260221_00150",
     "title": "安徽省关于加快文化旅游深度融合的管理办法",
-    "level": null,
+    "level": "provincial",
     "region": "安徽省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00579",
@@ -12171,22 +12171,22 @@
   {
     "id": "policy_20260221_00084",
     "title": "北京市关于促进文创产业发展的指导意见",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00066",
     "title": "贵州省关于加强文创人才队伍建设的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "贵州省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进加强文创人才队伍建设发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00636",
@@ -12266,12 +12266,12 @@
   {
     "id": "policy_20260221_00019",
     "title": "陕西省关于支持非遗保护传承行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "陕西省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00647",
@@ -12288,22 +12288,22 @@
   {
     "id": "policy_20260221_00198",
     "title": "北京市关于推动数字文化产业指导意见",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业指导意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00043",
     "title": "山东省关于支持非遗保护传承发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "山东省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00642",
@@ -12356,22 +12356,22 @@
   {
     "id": "policy_20260221_00062",
     "title": "北京市关于推动数字文化产业指导意见",
-    "level": null,
+    "level": "city",
     "region": "北京市",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进推动数字文化产业指导意见发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00201",
     "title": "湖北省关于加快文化旅游深度融合的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "湖北省",
-    "category": null,
+    "category": "产业规划",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策明确了加快文化旅游深度融合的发展方向和重点任务。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260224_00519",
@@ -12389,12 +12389,12 @@
   {
     "id": "policy_20260221_00075",
     "title": "广东省关于促进文创产业发展的行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "广东省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进促进文创产业发展发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00850",
@@ -12425,22 +12425,22 @@
   {
     "id": "policy_20260221_00167",
     "title": "河南省关于支持非遗保护传承行动计划",
-    "level": null,
+    "level": "provincial",
     "region": "河南省",
-    "category": null,
+    "category": "文化传承",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策旨在加强文化遗产保护传承，推动传统文化创造性转化。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260221_00053",
     "title": "湖南省关于优化文创营商环境的发展规划",
-    "level": null,
+    "level": "provincial",
     "region": "湖南省",
-    "category": null,
+    "category": "产业扶持",
     "tags": [],
-    "summary": "",
-    "issue_date": ""
+    "summary": "本政策通过资金扶持、税收优惠等措施，促进优化文创营商环境发展。",
+    "issue_date": "2024年"
   },
   {
     "id": "policy_20260225_00906",

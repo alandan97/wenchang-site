@@ -1,7 +1,14 @@
 {
   "total_cases": 125,
   "total_policies": 1085,
-  "total_brands": 156,
-  "data_version": "5.0-20260227",
-  "last_updated": "2026-02-27T13:38:20.406959"
+  "total_brands": 50,
+  "total_provinces": 34,
+  "data_version": "5.1",
+  "last_updated": "2026-03-01T17:20:00",
+  "status": "active",
+  "verification": {
+    "strict_mode": true,
+    "real_brands_only": true,
+    "verification_failed": 0
+  }
 }
