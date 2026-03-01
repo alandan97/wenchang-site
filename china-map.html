@@ -2,473 +2,817 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>中国文旅地图 - 文创指南</title>
-    <!-- GSAP for smooth animations -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="github-data-loader.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         :root {
             --primary: #8B1E1E;
+            --primary-light: #B83232;
             --gold: #C89B3C;
+            --gold-light: #E5B84C;
             --green: #2D5A4A;
             --cream: #F5F0E6;
             --paper: #FDF8F0;
             --text: #2C1810;
+            --text-secondary: #6B5B4F;
+            --border: rgba(139,30,30,0.15);
+            --shadow: rgba(139,30,30,0.08);
         }
-        html {
-            scroll-behavior: smooth;
-        }
+        html { font-size: 14px; }
         body {
             font-family: 'Noto Serif SC', serif;
             background: linear-gradient(135deg, var(--paper) 0%, #EDE4D8 100%);
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        .header {
-            text-align: center;
-            padding: 2rem 0;
-            border-bottom: 2px solid var(--gold);
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        .header h1 {
-            color: var(--primary);
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .header p {
             color: var(--text);
-            opacity: 0.7;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
         
-        /* 省份卡片网格布局 */
-        .provinces-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .province-card {
-            background: white;
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 20px rgba(139,30,30,0.1);
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .province-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(139,30,30,0.2);
-            border-color: var(--gold);
-        }
-        
-        .province-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--gold) 100%);
-        }
-        
-        .province-header {
+        /* 顶部导航 */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 56px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            padding: 0 1rem;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .nav-brand::before {
+            content: '◆';
+            color: var(--gold);
+        }
+        .nav-spacer { flex: 1; }
+        .nav-search {
+            display: flex;
+            align-items: center;
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 0.4rem 1rem;
+            gap: 0.5rem;
+            border: 1px solid var(--border);
+        }
+        .nav-search input {
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+            width: 150px;
         }
         
+        /* 主容器 */
+        .main-container {
+            padding-top: 56px;
+            display: flex;
+            height: 100vh;
+        }
+        
+        /* 左侧边栏 - 省份列表 */
+        .sidebar {
+            width: 280px;
+            background: white;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+        }
+        .sidebar-header {
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        .sidebar-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        .province-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.5rem;
+        }
+        .province-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 0.25rem;
+        }
+        .province-item:hover {
+            background: var(--cream);
+        }
+        .province-item.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+        }
+        .province-item.active .province-count {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
         .province-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
-            border-radius: 12px;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: white;
+            font-size: 1.1rem;
+            background: var(--cream);
         }
-        
+        .province-item.active .province-icon {
+            background: rgba(255,255,255,0.2);
+        }
+        .province-info { flex: 1; }
         .province-name {
-            font-size: 1.25rem;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .province-meta {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 0.125rem;
+        }
+        .province-count {
+            padding: 0.25rem 0.625rem;
+            background: var(--cream);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
             color: var(--primary);
         }
         
-        .province-case {
-            background: rgba(200,155,60,0.1);
-            border-radius: 8px;
-            padding: 1rem;
-            margin-top: 1rem;
+        /* 地图区域 */
+        .map-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, #E8F4F8 0%, #F5F0E6 100%);
         }
-        
-        .case-title {
+        .map-controls {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 50;
+        }
+        .map-control-btn {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.25rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: all 0.2s;
+        }
+        .map-control-btn:hover {
+            background: var(--cream);
+            transform: scale(1.05);
+        }
+        .map-legend {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px var(--shadow);
+            z-index: 50;
+        }
+        .legend-title {
             font-weight: 600;
-            color: var(--text);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
             margin-bottom: 0.5rem;
         }
-        
-        .case-desc {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        
-        .case-tag {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            background: var(--primary);
-            color: white;
+        .legend-color {
+            width: 16px;
+            height: 16px;
             border-radius: 4px;
-            font-size: 0.75rem;
-            margin-top: 0.5rem;
         }
         
-        /* 统计区域 */
-        .stats-section {
-            background: linear-gradient(135deg, var(--primary) 0%, #6B1515 100%);
+        /* SVG 地图 */
+        .china-map {
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+        }
+        .china-map:active {
+            cursor: grabbing;
+        }
+        .province-path {
+            stroke: white;
+            stroke-width: 1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .province-path:hover {
+            filter: brightness(1.1);
+            stroke-width: 2;
+        }
+        .province-path.active {
+            stroke: var(--gold);
+            stroke-width: 3;
+            filter: brightness(1.15);
+        }
+        
+        /* 信息面板 */
+        .info-panel {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 320px;
+            max-height: calc(100% - 2rem);
+            background: white;
             border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+            z-index: 100;
+            overflow: hidden;
+            display: none;
+        }
+        .info-panel.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .info-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
-            text-align: center;
+            padding: 1.25rem;
+            position: relative;
         }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 1.5rem;
+        .info-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 28px;
+            height: 28px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.2s;
         }
-        
-        .stat-item {
-            text-align: center;
+        .info-close:hover {
+            background: rgba(255,255,255,0.3);
         }
-        
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--gold);
+        .info-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
         }
-        
-        .stat-label {
-            font-size: 0.9rem;
+        .info-subtitle {
+            font-size: 0.85rem;
             opacity: 0.9;
-            margin-top: 0.5rem;
+        }
+        .info-body {
+            padding: 1.25rem;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+        .info-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .info-stat {
+            text-align: center;
+            padding: 0.75rem;
+            background: var(--cream);
+            border-radius: 10px;
+        }
+        .info-stat-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .info-stat-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+        .case-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .case-item {
+            padding: 1rem;
+            background: var(--cream);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .case-item:hover {
+            border-color: var(--gold);
+            transform: translateX(4px);
+        }
+        .case-name {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        .case-category {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
         }
         
+        /* 统计浮层 */
+        .stats-float {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px var(--shadow);
+            display: flex;
+            gap: 2rem;
+            z-index: 50;
+        }
+        .stats-item {
+            text-align: center;
+        }
+        .stats-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stats-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .sidebar { width: 240px; }
+            .info-panel { width: 280px; }
+        }
         @media (max-width: 768px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .main-container { flex-direction: column; }
+            .sidebar {
+                width: 100%;
+                height: 200px;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
             }
-            .provinces-grid {
-                grid-template-columns: 1fr;
+            .province-list {
+                display: flex;
+                overflow-x: auto;
+                padding: 0.5rem;
+                gap: 0.5rem;
+            }
+            .province-item {
+                flex-shrink: 0;
+                min-width: 140px;
+                margin-bottom: 0;
+            }
+            .map-container { height: calc(100vh - 256px); }
+            .info-panel {
+                width: calc(100% - 2rem);
+                max-height: 60vh;
+                top: auto;
+                bottom: 1rem;
+            }
+            .stats-float {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🏛️ 中国文旅地图</h1>
-            <p>探索全国各地文旅融合示范项目</p>
+    <!-- 顶部导航 -->
+    <nav class="nav">
+        <a href="index.html" class="nav-brand">文创指南</a>
+        <div class="nav-spacer"></div>
+        <div class="nav-search">
+            <span>🔍</span>
+            <input type="text" placeholder="搜索省份或案例..." id="searchInput">
         </div>
+    </nav>
+    
+    <!-- 主容器 -->
+    <div class="main-container">
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">📍 选择省份</div>
+                <div class="sidebar-subtitle">点击省份查看文旅案例</div>
+            </div>
+            <div class="province-list" id="provinceList">
+                <!-- 动态生成 -->
+            </div>
+        </aside>
         
-        <!-- 统计区域 -->
-        <div class="stats-section">
-            <h2>📊 全国文旅数据概览</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-value">34</div>
-                    <div class="stat-label">省级行政区</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">15</div>
-                    <div class="stat-label">已覆盖省份</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">32</div>
-                    <div class="stat-label">收录品牌</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">100+</div>
-                    <div class="stat-label">文旅案例</div>
-                </div>
+        <!-- 地图区域 -->
+        <div class="map-container">
+            <!-- 地图控制 -->
+            <div class="map-controls">
+                <button class="map-control-btn" onclick="zoomIn()" title="放大">+</button>
+                <button class="map-control-btn" onclick="zoomOut()" title="缩小">−</button>
+                <button class="map-control-btn" onclick="resetView()" title="重置">⌖</button>
             </div>
-        </div>
-        
-        <!-- 省份卡片网格 -->
-        <div class="provinces-grid">
             
-            <!-- 北京 -->
-            <div class="province-card" onclick="showDetail('beijing')">
-                <div class="province-header">
-                    <div class="province-icon">🏛️</div>
-                    <div class="province-name">北京市</div>
+            <!-- 图例 -->
+            <div class="map-legend">
+                <div class="legend-title">案例数量</div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #8B1E1E;"></div>
+                    <span>10个以上</span>
                 </div>
-                <div class="province-case">
-                    <div class="case-title">故宫博物院</div>
-                    <div class="case-desc">中国最大古代文化艺术博物馆，文创年销售额超15亿元</div>
-                    <span class="case-tag">博物馆文创</span>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #C89B3C;"></div>
+                    <span>5-9个</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #2D5A4A;"></div>
+                    <span>1-4个</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #CCC;"></div>
+                    <span>暂无数据</span>
                 </div>
             </div>
             
-            <!-- 上海 -->
-            <div class="province-card" onclick="showDetail('shanghai')">
-                <div class="province-header">
-                    <div class="province-icon">🏙️</div>
-                    <div class="province-name">上海市</div>
+            <!-- 统计浮层 -->
+            <div class="stats-float">
+                <div class="stats-item">
+                    <div class="stats-value" id="statProvinces">34</div>
+                    <div class="stats-label">省级行政区</div>
                 </div>
-                <div class="province-case">
-                    <div class="case-title">上海博物馆</div>
-                    <div class="case-desc">馆藏珍贵文物102万余件，文创产品深受市民喜爱</div>
-                    <span class="case-tag">博物馆文创</span>
+                <div class="stats-item">
+                    <div class="stats-value" id="statCases">125</div>
+                    <div class="stats-label">收录案例</div>
                 </div>
-            </div>
-            
-            <!-- 广东 -->
-            <div class="province-card" onclick="showDetail('guangdong')">
-                <div class="province-header">
-                    <div class="province-icon">🌺</div>
-                    <div class="province-name">广东省</div>
-                </div>
-                <div class="province-case">
-                    <div class="case-title">广东省博物馆</div>
-                    <div class="case-desc">馆藏文物16.6万余件，文创融合岭南文化特色</div>
-                    <span class="case-tag">博物馆文创</span>
+                <div class="stats-item">
+                    <div class="stats-value" id="statBrands">50</div>
+                    <div class="stats-label">品牌数量</div>
                 </div>
             </div>
             
-            <!-- 浙江 -->
-            <div class="province-card" onclick="showDetail('zhejiang')">
-                <div class="province-header">
-                    <div class="province-icon">🌊</div>
-                    <div class="province-name">浙江省</div>
+            <!-- 信息面板 -->
+            <div class="info-panel" id="infoPanel">
+                <div class="info-header">
+                    <div class="info-close" onclick="closePanel()">×</div>
+                    <div class="info-title" id="infoTitle">省份名称</div>
+                    <div class="info-subtitle" id="infoSubtitle">案例数量</div>
                 </div>
-                <div class="province-case">
-                    <div class="case-title">浙江省博物馆</div>
-                    <div class="case-desc">馆藏文物10万余件，以良渚文化、越窑青瓷为主题</div>
-                    <span class="case-tag">博物馆文创</span>
-                </div>
-            </div>
-            
-            <!-- 江苏 -->
-            <div class="province-card" onclick="showDetail('jiangsu')">
-                <div class="province-header">
-                    <div class="province-icon">🎋</div>
-                    <div class="province-name">江苏省</div>
-                </div>
-                <div class="province-case">
-                    <div class="case-title">苏州博物馆</div>
-                    <div class="case-desc">贝聿铭设计，江南文化主题，年营收超5000万元</div>
-                    <span class="case-tag">博物馆文创</span>
-                </div>
-            </div>
-            
-            <!-- 四川 -->
-            <div class="province-card" onclick="showDetail('sichuan')">
-                <div class="province-header">
-                    <div class="province-icon">🐼</div>
-                    <div class="province-name">四川省</div>
-                </div>
-                <div class="province-case">
-                    <div class="case-title">三星堆博物馆</div>
-                    <div class="case-desc">神秘古蜀文明，青铜面具文创成为现象级网红产品</div>
-                    <span class="case-tag">博物馆文创</span>
+                <div class="info-body">
+                    <div class="info-stats">
+                        <div class="info-stat">
+                            <div class="info-stat-value" id="statCaseCount">0</div>
+                            <div class="info-stat-label">案例</div>
+                        </div>
+                        <div class="info-stat">
+                            <div class="info-stat-value" id="statBrandCount">0</div>
+                            <div class="info-stat-label">品牌</div>
+                        </div>
+                        <div class="info-stat">
+                            <div class="info-stat-value" id="statPolicyCount">0</div>
+                            <div class="info-stat-label">政策</div>
+                        </div>
+                    </div>
+                    <div class="case-list" id="caseList">
+                        <!-- 动态生成 -->
+                    </div>
                 </div>
             </div>
             
-            <!-- 陕西 -->
-            <div class="province-card" onclick="showDetail('shaanxi')">
-                <div class="province-header">
-                    <div class="province-icon">🏺</div>
-                    <div class="province-name">陕西省</div>
-                </div>
-                <div class="province-case">
-                    <div class="case-title">陕西历史博物馆</div>
-                    <div class="case-desc">馆藏文物171万余件，大唐文化主题，年营收超2000万</div>
-                    <span class="case-tag">博物馆文创</span>
-                </div>
-            </div>
-            
-            <!-- 甘肃 -->
-            <div class="province-card" onclick="showDetail('gansu')">
-                <div class="province-header">
-                    <div class="province-icon">🐴</div>
-                    <div class="province-name">甘肃省</div>
-                </div>
-                <div class="province-case">
-                    <div class="case-title">甘肃省博物馆</div>
-                    <div class="case-desc">铜奔马"绿马"玩偶走红网络，成为现象级文创产品</div>
-                    <span class="case-tag">博物馆文创</span>
-                </div>
-            </div>
-            
-            <!-- 河南 -->
-            <div class="province-card" onclick="showDetail('henan')">
-                <div class="province-header">
-                    <div class="province-icon">🏛️</div>
-                    <div class="province-name">河南省</div>
-                </div>
-                <div class="province-case">
-                    <div class="case-title">河南博物院</div>
-                    <div class="case-desc">考古盲盒销量破百万，开创博物馆文创新模式</div>
-                    <span class="case-tag">博物馆文创</span>
-                </div>
-            </div>
-            
-            <!-- 山东 -->
-            <div class="province-card" onclick="showDetail('shandong')">
-                <div class="province-header">
-                    <div class="province-icon">⛰️</div>
-                    <div class="province-name">山东省</div>
-                </div>
-                <div class="province-case">
-                    <div class="case-title">山东博物馆</div>
-                    <div class="case-desc">馆藏文物20万余件，齐鲁文化、孔子文化主题</div>
-                    <span class="case-tag">博物馆文创</span>
-                </div>
-            </div>
-            
-            <!-- 湖北 -->
-            <div class="province-card" onclick="showDetail('hubei')">
-                <div class="province-header">
-                    <div class="province-icon">🌉</div>
-                    <div class="province-name">湖北省</div>
-                </div>
-                <div class="province-case">
-                    <div class="case-title">湖北省博物馆</div>
-                    <div class="case-desc">曾侯乙编钟、越王勾践剑为镇馆之宝，文创深受喜爱</div>
-                    <span class="case-tag">博物馆文创</span>
-                </div>
-            </div>
-            
-            <!-- 湖南 -->
-            <div class="province-card" onclick="showDetail('hunan')">
-                <div class="province-header">
-                    <div class="province-icon">🌶️</div>
-                    <div class="province-name">湖南省</div>
-                </div>
-                <div class="province-case">
-                    <div class="case-title">湖南省博物馆</div>
-                    <div class="case-desc">马王堆汉墓文物为特色，融合楚汉文化元素</div>
-                    <span class="case-tag">博物馆文创</span>
-                </div>
-            </div>
-            
+            <!-- SVG 中国地图 -->
+            <svg class="china-map" id="chinaMap" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+                    </filter>
+                </defs>
+                <g id="mapGroup" transform="translate(0,0) scale(1)">
+                    <!-- 省份路径将通过 JS 动态生成 -->
+                </g>
+            </svg>
         </div>
     </div>
     
     <script>
-        function showDetail(province) {
-            alert('省份详情页面开发中: ' + province);
+        // 省份数据 - 包含34个省级行政区
+        const provinceData = {
+            'beijing': { name: '北京市', icon: '🏛️', cases: 12, brands: 8, policies: 45, color: '#8B1E1E', path: 'M680,280 L690,275 L700,280 L705,290 L700,300 L690,305 L680,300 L675,290 Z', cases_list: [{name: '故宫博物院', category: '博物馆文创'}, {name: '泡泡玛特', category: '潮玩盲盒'}, {name: '52TOYS', category: '潮玩手办'}, {name: '观夏', category: '香氛文创'}] },
+            'tianjin': { name: '天津市', icon: '⚓', cases: 3, brands: 2, policies: 12, color: '#2D5A4A', path: 'M695,295 L705,292 L710,300 L705,308 L695,305 Z' },
+            'hebei': { name: '河北省', icon: '🏯', cases: 4, brands: 3, policies: 28, color: '#2D5A4A', path: 'M660,260 L680,255 L690,270 L685,290 L670,300 L655,290 L650,270 Z' },
+            'shanxi': { name: '山西省', icon: '🏔️', cases: 2, brands: 2, policies: 22, color: '#2D5A4A', path: 'M630,270 L650,265 L655,290 L645,310 L625,300 Z' },
+            'neimenggu': { name: '内蒙古', icon: '🌾', cases: 2, brands: 1, policies: 18, color: '#2D5A4A', path: 'M500,180 L600,170 L650,200 L640,250 L580,260 L520,240 L480,200 Z' },
+            'liaoning': { name: '辽宁省', icon: '🏭', cases: 3, brands: 2, policies: 25, color: '#2D5A4A', path: 'M720,220 L750,215 L760,240 L750,260 L730,265 L715,250 Z' },
+            'jilin': { name: '吉林省', icon: '🌲', cases: 2, brands: 1, policies: 15, color: '#2D5A4A', path: 'M750,200 L780,195 L785,220 L775,240 L755,235 Z' },
+            'heilongjiang': { name: '黑龙江省', icon: '❄️', cases: 2, brands: 1, policies: 16, color: '#2D5A4A', path: 'M760,120 L820,115 L830,150 L820,180 L780,190 L750,170 Z' },
+            'shanghai': { name: '上海市', icon: '🏙️', cases: 8, brands: 6, policies: 38, color: '#C89B3C', path: 'M750,380 L765,375 L770,385 L765,395 L750,390 Z', cases_list: [{name: '上海博物馆', category: '博物馆文创'}, {name: '野兽派', category: '花艺文创'}] },
+            'jiangsu': { name: '江苏省', icon: '🎋', cases: 6, brands: 4, policies: 32, color: '#C89B3A', path: 'M710,340 L750,335 L760,360 L750,380 L720,385 L700,365 Z' },
+            'zhejiang': { name: '浙江省', icon: '🌊', cases: 8, brands: 5, policies: 35, color: '#C89B3C', cases_list: [{name: '浙江省博物馆', category: '博物馆文创'}, {name: '自然造物', category: '民艺文创'}, {name: '王的手创', category: '非遗文创'}] },
+            'anhui': { name: '安徽省', icon: '🏔️', cases: 3, brands: 2, policies: 20, color: '#2D5A4A', path: 'M680,360 L710,355 L715,385 L700,400 L675,390 Z' },
+            'fujian': { name: '福建省', icon: '🍵', cases: 4, brands: 3, policies: 24, color: '#2D5A4A', path: 'M700,420 L730,415 L735,450 L720,465 L695,455 Z' },
+            'jiangxi': { name: '江西省', icon: '🌸', cases: 2, brands: 2, policies: 18, color: '#2D5A4A', path: 'M660,400 L690,395 L695,430 L680,445 L655,435 Z' },
+            'shandong': { name: '山东省', icon: '⛰️', cases: 4, brands: 3, policies: 30, color: '#2D5A4A', path: 'M690,300 L730,295 L740,320 L730,340 L700,345 L680,325 Z' },
+            'henan': { name: '河南省', icon: '🏛️', cases: 5, brands: 3, policies: 26, color: '#C89B3C', cases_list: [{name: '河南博物院', category: '博物馆文创'}, {name: '龙门石窟', category: '景区文创'}] },
+            'hubei': { name: '湖北省', icon: '🌉', cases: 4, brands: 3, policies: 23, color: '#2D5A4A', path: 'M620,380 L660,375 L665,410 L650,430 L615,420 Z' },
+            'hunan': { name: '湖南省', icon: '🌶️', cases: 5, brands: 3, policies: 25, color: '#C89B3C', cases_list: [{name: '湖南省博物馆', category: '博物馆文创'}, {name: '茶颜悦色', category: '茶饮文创'}] },
+            'guangdong': { name: '广东省', icon: '🌺', cases: 10, brands: 7, policies: 42, color: '#8B1E1E', cases_list: [{name: '广东省博物馆', category: '博物馆文创'}, {name: '喜茶', category: '茶饮文创'}] },
+            'guangxi': { name: '广西', icon: '🎋', cases: 2, brands: 2, policies: 16, color: '#2D5A4A', path: 'M560,480 L600,475 L610,510 L590,530 L550,520 Z' },
+            'hainan': { name: '海南省', icon: '🏝️', cases: 2, brands: 1, policies: 12, color: '#2D5A4A', path: 'M580,580 L610,575 L615,600 L600,615 L575,605 Z' },
+            'chongqing': { name: '重庆市', icon: '🌶️', cases: 3, brands: 2, policies: 18, color: '#2D5A4A', path: 'M550,390 L570,385 L575,405 L565,415 L545,410 Z' },
+            'sichuan': { name: '四川省', icon: '🐼', cases: 7, brands: 5, policies: 33, color: '#C89B3C', cases_list: [{name: '三星堆博物馆', category: '博物馆文创'}, {name: '成都博物馆', category: '博物馆文创'}] },
+            'guizhou': { name: '贵州省', icon: '🏔️', cases: 2, brands: 1, policies: 14, color: '#2D5A4A', path: 'M520,450 L560,445 L565,480 L550,495 L515,485 Z' },
+            'yunnan': { name: '云南省', icon: '🌺', cases: 4, brands: 3, policies: 21, color: '#2D5A4A', cases_list: [{name: '云南省博物馆', category: '博物馆文创'}] },
+            'xizang': { name: '西藏', icon: '🏔️', cases: 2, brands: 1, policies: 10, color: '#2D5A4A', path: 'M280,350 L380,340 L400,400 L380,450 L300,460 L260,420 Z' },
+            'shaanxi': { name: '陕西省', icon: '🏺', cases: 6, brands: 4, policies: 28, color: '#C89B3C', cases_list: [{name: '陕西历史博物馆', category: '博物馆文创'}, {name: '兵马俑', category: '景区文创'}] },
+            'gansu': { name: '甘肃省', icon: '🐴', cases: 4, brands: 3, policies: 19, color: '#2D5A4A', cases_list: [{name: '甘肃省博物馆', category: '博物馆文创'}, {name: '敦煌研究院', category: '博物馆文创'}] },
+            'qinghai': { name: '青海省', icon: '💧', cases: 1, brands: 1, policies: 11, color: '#2D5A4A', path: 'M380,320 L450,315 L460,360 L440,390 L370,380 Z' },
+            'ningxia': { name: '宁夏', icon: '🏜️', cases: 1, brands: 1, policies: 9, color: '#2D5A4A', path: 'M550,300 L570,295 L575,315 L565,325 L545,320 Z' },
+            'xinjiang': { name: '新疆', icon: '🍇', cases: 2, brands: 1, policies: 15, color: '#2D5A4A', path: 'M100,200 L350,180 L380,280 L350,350 L150,360 L80,280 Z' },
+            'taiwan': { name: '台湾省', icon: '🏝️', cases: 2, brands: 2, policies: 13, color: '#2D5A4A', path: 'M780,480 L810,475 L815,510 L800,525 L775,515 Z' },
+            'xianggang': { name: '香港', icon: '🌃', cases: 3, brands: 2, policies: 14, color: '#2D5A4A', path: 'M665,495 L680,490 L685,505 L675,512 L660,508 Z' },
+            'aomen': { name: '澳门', icon: '🎰', cases: 1, brands: 1, policies: 8, color: '#2D5A4A', path: 'M650,505 L665,500 L668,512 L658,518 L645,514 Z' }
+        };
+        
+        // 浙江省路径修正
+        provinceData.zhejiang.path = 'M720,380 L760,375 L770,400 L760,420 L735,425 L715,410 Z';
+        // 河南省路径修正
+        provinceData.henan.path = 'M620,320 L670,315 L680,350 L665,370 L620,365 L610,340 Z';
+        
+        let currentScale = 1;
+        let currentTranslate = { x: 0, y: 0 };
+        let selectedProvince = null;
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProvinceList();
+            renderMap();
+            setupSearch();
+            setupMapInteractions();
+            animateEntrance();
+        });
+        
+        // 渲染省份列表
+        function renderProvinceList() {
+            const list = document.getElementById('provinceList');
+            const sortedProvinces = Object.entries(provinceData)
+                .sort((a, b) => b[1].cases - a[1].cases);
+            
+            list.innerHTML = sortedProvinces.map(([key, data]) => `
+                <div class="province-item" data-key="${key}" onclick="selectProvince('${key}')">
+                    <div class="province-icon">${data.icon}</div>
+                    <div class="province-info">
+                        <div class="province-name">${data.name}</div>
+                        <div class="province-meta">${data.cases}个案例 · ${data.brands}个品牌</div>
+                    </div>
+                    <div class="province-count">${data.cases}</div>
+                </div>
+            `).join('');
         }
         
-        // GSAP 动画
-        document.addEventListener('DOMContentLoaded', function() {
-            gsap.registerPlugin(ScrollTrigger);
+        // 渲染地图
+        function renderMap() {
+            const mapGroup = document.getElementById('mapGroup');
+            mapGroup.innerHTML = Object.entries(provinceData).map(([key, data]) => `
+                <path 
+                    id="path-${key}"
+                    class="province-path" 
+                    d="${data.path}" 
+                    fill="${data.color}"
+                    data-key="${key}"
+                    onclick="selectProvince('${key}')"
+                />
+            `).join('');
+        }
+        
+        // 选择省份
+        function selectProvince(key) {
+            const data = provinceData[key];
+            if (!data) return;
             
-            // 标题动画
-            gsap.to('.header', {
-                opacity: 1,
-                y: 0,
+            selectedProvince = key;
+            
+            // 更新列表选中状态
+            document.querySelectorAll('.province-item').forEach(item => {
+                item.classList.toggle('active', item.dataset.key === key);
+            });
+            
+            // 更新地图选中状态
+            document.querySelectorAll('.province-path').forEach(path => {
+                path.classList.toggle('active', path.dataset.key === key);
+            });
+            
+            // 滚动列表到选中项
+            const selectedItem = document.querySelector(`.province-item[data-key="${key}"]`);
+            if (selectedItem) {
+                selectedItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            
+            // 显示信息面板
+            showInfoPanel(key, data);
+        }
+        
+        // 显示信息面板
+        function showInfoPanel(key, data) {
+            const panel = document.getElementById('infoPanel');
+            document.getElementById('infoTitle').textContent = data.name;
+            document.getElementById('infoSubtitle').textContent = `收录 ${data.cases} 个文旅案例`;
+            document.getElementById('statCaseCount').textContent = data.cases;
+            document.getElementById('statBrandCount').textContent = data.brands;
+            document.getElementById('statPolicyCount').textContent = data.policies;
+            
+            // 渲染案例列表
+            const caseList = document.getElementById('caseList');
+            if (data.cases_list && data.cases_list.length > 0) {
+                caseList.innerHTML = data.cases_list.map(c => `
+                    <div class="case-item" onclick="openCase('${c.name}')">
+                        <div class="case-name">${c.name}</div>
+                        <div class="case-category">${c.category}</div>
+                    </div>
+                `).join('');
+            } else {
+                caseList.innerHTML = `
+                    <div class="case-item" style="opacity:0.6;cursor:default;">
+                        <div class="case-name">暂无详细案例</div>
+                        <div class="case-category">数据更新中...</div>
+                    </div>
+                `;
+            }
+            
+            panel.classList.add('show');
+        }
+        
+        // 关闭面板
+        function closePanel() {
+            document.getElementById('infoPanel').classList.remove('show');
+            selectedProvince = null;
+            document.querySelectorAll('.province-item, .province-path').forEach(el => {
+                el.classList.remove('active');
+            });
+        }
+        
+        // 打开案例详情
+        function openCase(caseName) {
+            console.log('打开案例:', caseName);
+            // 这里可以跳转到案例详情页
+            // window.location.href = `case-detail.html?name=${encodeURIComponent(caseName)}`;
+        }
+        
+        // 搜索功能
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                const items = document.querySelectorAll('.province-item');
+                
+                items.forEach(item => {
+                    const key = item.dataset.key;
+                    const data = provinceData[key];
+                    const match = data.name.includes(query) || 
+                                 (data.cases_list && data.cases_list.some(c => c.name.includes(query)));
+                    item.style.display = match ? 'flex' : 'none';
+                });
+            });
+        }
+        
+        // 地图交互
+        function setupMapInteractions() {
+            const map = document.getElementById('chinaMap');
+            let isDragging = false;
+            let startPoint = { x: 0, y: 0 };
+            
+            map.addEventListener('mousedown', function(e) {
+                if (e.target.classList.contains('province-path')) return;
+                isDragging = true;
+                startPoint = { x: e.clientX, y: e.clientY };
+                map.style.cursor = 'grabbing';
+            });
+            
+            document.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                const dx = e.clientX - startPoint.x;
+                const dy = e.clientY - startPoint.y;
+                currentTranslate.x += dx;
+                currentTranslate.y += dy;
+                startPoint = { x: e.clientX, y: e.clientY };
+                updateMapTransform();
+            });
+            
+            document.addEventListener('mouseup', function() {
+                isDragging = false;
+                map.style.cursor = 'grab';
+            });
+            
+            // 滚轮缩放
+            map.addEventListener('wheel', function(e) {
+                e.preventDefault();
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                currentScale = Math.max(0.5, Math.min(3, currentScale * delta));
+                updateMapTransform();
+            });
+        }
+        
+        // 更新地图变换
+        function updateMapTransform() {
+            const mapGroup = document.getElementById('mapGroup');
+            mapGroup.setAttribute('transform', 
+                `translate(${currentTranslate.x}, ${currentTranslate.y}) scale(${currentScale})`
+            );
+        }
+        
+        // 缩放控制
+        function zoomIn() {
+            currentScale = Math.min(3, currentScale * 1.2);
+            updateMapTransform();
+        }
+        
+        function zoomOut() {
+            currentScale = Math.max(0.5, currentScale * 0.8);
+            updateMapTransform();
+        }
+        
+        function resetView() {
+            currentScale = 1;
+            currentTranslate = { x: 0, y: 0 };
+            updateMapTransform();
+            closePanel();
+        }
+        
+        // 入场动画
+        function animateEntrance() {
+            gsap.from('.sidebar', {
+                x: -100,
+                opacity: 0,
                 duration: 0.6,
                 ease: 'power2.out'
             });
             
-            // 统计区域动画
-            gsap.from('.stats-section', {
-                y: 30,
+            gsap.from('.province-item', {
+                x: -30,
                 opacity: 0,
-                duration: 0.6,
+                duration: 0.4,
+                stagger: 0.03,
                 delay: 0.2,
                 ease: 'power2.out'
             });
             
-            // 省份卡片动画
-            gsap.utils.toArray('.province-card').forEach((card, i) => {
-                gsap.from(card, {
-                    y: 40,
-                    opacity: 0,
-                    duration: 0.5,
-                    delay: 0.3 + i * 0.08,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: card,
-                        start: 'top 90%'
-                    }
-                });
+            gsap.from('.province-path', {
+                scale: 0.8,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.02,
+                delay: 0.3,
+                ease: 'back.out(1.7)',
+                transformOrigin: 'center'
             });
             
-            // 统计数字动画
-            gsap.utils.toArray('.stat-value').forEach((stat, i) => {
-                gsap.from(stat, {
-                    scale: 0,
-                    opacity: 0,
-                    duration: 0.5,
-                    delay: 0.5 + i * 0.1,
-                    ease: 'back.out(1.7)'
-                });
-            });
-            
-            // 动态加载数据
-            loadDynamicData();
-        });
-        
-        // 动态加载数据
-        async function loadDynamicData() {
-            try {
-                if (typeof WenChangData === 'undefined') {
-                    console.log('GitHub 数据加载器未加载');
-                    return;
-                }
-                
-                // 更新统计数据
-                const stats = await WenChangData.getStats();
-                document.querySelector('.stat-value').textContent = Object.keys(stats.provinceStats).length;
-                
-                // 更新省份案例数
-                const caseCountEl = document.querySelectorAll('.stat-value')[2];
-                if (caseCountEl) caseCountEl.textContent = stats.totalCases;
-                
-                // 动态更新省份卡片
-                await updateProvinceCards(stats.provinceStats);
-                
-            } catch (error) {
-                console.error('动态加载数据失败:', error);
-            }
-        }
-        
-        // 更新省份卡片
-        async function updateProvinceCards(provinceStats) {
-            const cards = document.querySelectorAll('.province-card');
-            cards.forEach(card => {
-                const nameEl = card.querySelector('.province-name');
-                if (nameEl) {
-                    const province = nameEl.textContent.trim();
-                    const count = provinceStats[province];
-                    if (count) {
-                        const descEl = card.querySelector('.province-desc');
-                        if (descEl) {
-                            descEl.textContent = `收录 ${count} 个文创案例`;
-                        }
-                    }
-                }
+            gsap.from('.map-controls, .map-legend, .stats-float', {
+                y: 20,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.1,
+                delay: 0.6,
+                ease: 'power2.out'
             });
         }
     </script>
